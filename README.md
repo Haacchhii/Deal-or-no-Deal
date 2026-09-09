@@ -4,7 +4,17 @@ A public condo photo showcase for browsing units before an in-person viewing.
 
 ## Current status
 
-Working static website built with Vite and vanilla JavaScript. Includes a landing page, tower/floor directory, unit albums, thumbnail navigation and a full-window photo viewer. No database or server is required. Public hosting has not been configured.
+Working static website built with Vite and vanilla JavaScript. Includes a landing page, tower/floor directory, unit albums, thumbnail navigation and a full-window photo viewer. No database or server is required.
+
+## GitHub Pages
+
+The workflow in `.github/workflows/deploy-pages.yml` tests and builds the site, then publishes only `dist/` on pushes to `main`. Pull requests run the checks without publishing.
+
+Repository **Settings → Pages → Build and deployment → Source** must be **GitHub Actions**. Do not select the root of `main` as a branch source: that serves the development HTML without compiling its JavaScript and CSS, resulting in a blank page with only “Skip to content.”
+
+Live address: https://haacchhii.github.io/Unit-Page/
+
+The build checks both catalog images and the generated HTML's bundle paths under `/Unit-Page/`. To roll back a faulty release, revert its commit on `main`; the workflow rebuilds and republishes that version.
 
 ## Run locally
 
