@@ -1,0 +1,52 @@
+{
+  "name": "The Residences",
+  "preview": true,
+  "hero": {
+    "src": "units/2103B/living-room.webp",
+    "alt": "Illustrative condo living room with a sofa and sunlit balcony"
+  },
+  "units": [
+    {
+      "id": "1504A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "bedroom",
+          "caption": "Bedroom",
+          "alt": "Sample bedroom with ivory bedding, walnut headboard and a city-view window"
+        },
+        {
+          "file": "living-room",
+          "caption": "Living area",
+          "alt": "Sample living room with a linen sofa, walnut table and balcony"
+        },
+        {
+          "file": "kitchen",
+          "caption": "Kitchen & dining",
+          "alt": "Sample compact kitchen with walnut cabinets and a dining table for two"
+        }
+      ]
+    },
+    {
+      "id": "2103B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "living-room",
+          "caption": "Living area",
+          "alt": "Sample living room with a linen sofa, walnut table and balcony"
+        },
+        {
+          "file": "kitchen",
+          "caption": "Kitchen & dining",
+          "alt": "Sample compact kitchen with walnut cabinets and a dining table for two"
+        },
+        {
+          "file": "bedroom",
+          "caption": "Bedroom",
+          "alt": "Sample bedroom with ivory bedding, walnut headboard and a city-view window"
+        }
+      ]
+    }
+  ]
+}
