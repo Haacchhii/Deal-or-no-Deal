@@ -40,6 +40,8 @@ Routes use URL fragments, so links such as `#/units/2103B` work on static hostin
 
 The two example albums intentionally reuse three generated interiors. They demonstrate navigation, not actual differences between those units. No other units or availability are invented.
 
+Unit `1210B` (Tower B, 12th floor) contains four user-provided photographs: living/kitchen/dining, staircase, sleeping area and bathroom. It is marked `sample: false`; the living-area image is its cover. Full-size images preserve the original framing, while directory thumbnails may be visually cropped to fit their tile.
+
 ## Implementation details
 
 - `src/catalog.json`: the single content catalog; no photo filenames embedded in page components.

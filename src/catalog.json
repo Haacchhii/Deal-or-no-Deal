@@ -7,6 +7,32 @@
   },
   "units": [
     {
+      "id": "1210B",
+      "sample": false,
+      "photos": [
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining",
+          "alt": "Unit 1210B living area with a sofa, coffee table and dining table beside the kitchen"
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase & main living area",
+          "alt": "Wooden staircase with a handrail beside the living, dining and kitchen area of Unit 1210B"
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area",
+          "alt": "Unit 1210B sleeping area with two metal bunk beds, a curtained window and wall-mounted air conditioner"
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom",
+          "alt": "Unit 1210B bathroom with a shower, pedestal sink and toilet"
+        }
+      ]
+    },
+    {
       "id": "1504A",
       "sample": true,
       "photos": [
