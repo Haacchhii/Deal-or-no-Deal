@@ -12,6 +12,11 @@
       "sample": false,
       "photos": [
         {
+          "file": "building-placeholder",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior"
+        },
+        {
           "file": "living-kitchen-dining",
           "caption": "Living, kitchen & dining",
           "alt": "Unit 1210B living area with a sofa, coffee table and dining table beside the kitchen"
@@ -30,6 +35,11 @@
           "file": "bathroom",
           "caption": "Bathroom",
           "alt": "Unit 1210B bathroom with a shower, pedestal sink and toilet"
+        },
+        {
+          "file": "pool-placeholder",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area"
         }
       ]
     },
