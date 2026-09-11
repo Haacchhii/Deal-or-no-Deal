@@ -29,7 +29,7 @@ function footer() {
 }
 function home() {
   return `${header("home")}<main id="main" tabindex="-1"><section class="hero" aria-labelledby="home-heading">
-    <img class="hero-photo" src="${esc(catalog.hero.src)}" alt="${esc(catalog.hero.alt)}" width="1800" height="1200" fetchpriority="high">
+    <img class="hero-photo" src="${esc(catalog.hero.src)}" alt="${esc(catalog.hero.alt)}" width="${catalog.hero.width || 1800}" height="${catalog.hero.height || 1200}" fetchpriority="high">
     <div class="hero-shade"></div><div class="hero-content"><p class="eyebrow">${esc(buildingName)}</p><h1 id="home-heading">A closer look at<br>your next <em>home.</em></h1><p class="hero-intro">Explore JPP Rental Homestay units before your personal viewing.</p><a class="button button-light" href="#/units?tower=A">Browse unit photos <span aria-hidden="true">↗</span></a></div>
     <span class="hero-note">${catalog.preview ? `${esc(buildingName)} · Photo gallery preview` : `Discover ${esc(buildingName)}`}</span>
     <a class="hero-scroll" href="#/units?tower=A" aria-label="Explore our unit collection">Explore <span aria-hidden="true">↓</span></a>

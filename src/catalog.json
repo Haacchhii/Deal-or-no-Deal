@@ -3,8 +3,10 @@
   "building": "Victoria De Makati",
   "preview": true,
   "hero": {
-    "src": "units/2103B/living-room.webp",
-    "alt": "Illustrative condo living room with a sofa and sunlit balcony"
+    "src": "brand/victoria-de-makati-hero.webp",
+    "alt": "Victoria De Makati building exterior under a blue sky",
+    "width": 1011,
+    "height": 1555
   },
   "units": [
     {
