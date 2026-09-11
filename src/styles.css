@@ -516,6 +516,181 @@ main:focus {
 .gallery {
   margin-top: 1.5rem;
 }
+.gallery-walkthrough {
+  margin-top: 2.5rem;
+}
+.gallery-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.gallery-section-heading .eyebrow,
+.walkthrough-intro .eyebrow {
+  grid-column: 1 / -1;
+  color: var(--muted);
+}
+.gallery-section-heading h2,
+.walkthrough-intro h2 {
+  font-size: clamp(2.7rem, 4.2vw, 4.7rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+.gallery-section-heading > p:last-child,
+.walkthrough-intro > p:last-child {
+  max-width: 330px;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.overview-card {
+  padding: 0;
+  text-align: left;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid #e3e5dd;
+}
+.overview-card img {
+  width: 100%;
+  aspect-ratio: 1.6;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.overview-card:hover img {
+  transform: scale(1.025);
+}
+.overview-card-label {
+  min-height: 64px;
+  padding: 1rem 1.1rem;
+  display: grid;
+  grid-template-columns: 2.4rem 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+}
+.overview-card-label b,
+.walkthrough-label > span {
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--muted);
+}
+.overview-card-label > span {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.overview-card-label i {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  transition: color 0.2s, background 0.2s;
+}
+.overview-card:hover .overview-card-label i {
+  color: var(--paper);
+  background: var(--forest);
+  border-color: var(--forest);
+}
+.walkthrough-link {
+  width: fit-content;
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  margin: 2rem auto 5.5rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--forest);
+  font-size: 0.8125rem;
+}
+.walkthrough-link span {
+  font-size: 1.25rem;
+}
+.walkthrough {
+  padding-top: 1px;
+}
+.walkthrough-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.25rem 2rem;
+  align-items: end;
+  margin-bottom: 2rem;
+}
+.walkthrough-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+.walkthrough-step {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.52fr) minmax(0, 1.48fr);
+  min-height: 390px;
+  background: var(--forest);
+  color: var(--paper);
+}
+.walkthrough-step:nth-child(even) {
+  grid-template-columns: minmax(0, 1.48fr) minmax(190px, 0.52fr);
+}
+.walkthrough-step:nth-child(even) .walkthrough-label {
+  order: 2;
+}
+.walkthrough-label {
+  padding: clamp(1.5rem, 4vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.walkthrough-label > span {
+  color: #c9d4c8;
+}
+.walkthrough-label h3 {
+  max-width: 220px;
+  font-size: clamp(2.2rem, 3.2vw, 3.8rem);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+}
+.walkthrough-label p {
+  font-size: 0.75rem;
+  color: #d5ddd5;
+  line-height: 1.6;
+}
+.walkthrough-photo {
+  position: relative;
+  overflow: hidden;
+  min-height: 290px;
+  background: var(--forest-dark);
+  padding: 0;
+}
+.walkthrough-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.walkthrough-photo:hover img {
+  transform: scale(1.025);
+}
+.walkthrough-photo > span {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  color: white;
+  background: rgba(16, 43, 37, 0.78);
+  padding: 0.6rem 0.85rem;
+  font-size: 0.75rem;
+}
+.walkthrough-photo > span b {
+  margin-left: 0.75rem;
+}
 .sample-notice + .gallery {
   margin-top: 0;
 }
@@ -784,6 +959,10 @@ main:focus {
   .photo-stage {
     aspect-ratio: 1.8;
   }
+  .walkthrough-step,
+  .walkthrough-step:nth-child(even) {
+    grid-template-columns: minmax(170px, 0.6fr) minmax(0, 1.4fr);
+  }
 }
 @media (max-width: 700px) {
   .site-header {
@@ -955,6 +1134,66 @@ main:focus {
   }
   .sample-notice {
     font-size: 0.6875rem;
+  }
+  .gallery-walkthrough {
+    margin-top: 2rem;
+  }
+  .gallery-section-heading {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .gallery-section-heading > p:last-child {
+    font-size: 0.75rem;
+  }
+  .overview-grid {
+    gap: 0.75rem;
+  }
+  .overview-card-label {
+    grid-template-columns: 1.7rem 1fr;
+    min-height: 56px;
+    padding: 0.75rem;
+  }
+  .overview-card-label > span {
+    font-size: 1.2rem;
+  }
+  .overview-card-label i {
+    display: none;
+  }
+  .walkthrough-link {
+    margin: 1.5rem auto 3.75rem;
+    font-size: 0.75rem;
+  }
+  .walkthrough-intro {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .walkthrough-intro > p:last-child {
+    font-size: 0.75rem;
+  }
+  .walkthrough-steps {
+    gap: 1.5rem;
+  }
+  .walkthrough-step,
+  .walkthrough-step:nth-child(even) {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+  .walkthrough-step:nth-child(even) .walkthrough-label {
+    order: 0;
+  }
+  .walkthrough-label {
+    padding: 1.5rem;
+    min-height: 190px;
+  }
+  .walkthrough-label h3 {
+    max-width: none;
+    font-size: 2.8rem;
+  }
+  .walkthrough-photo {
+    aspect-ratio: 1.15;
+    min-height: 0;
   }
   .photo-stage {
     aspect-ratio: 1.15;

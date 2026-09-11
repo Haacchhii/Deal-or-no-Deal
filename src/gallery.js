@@ -3,6 +3,16 @@ import { escapeHtml as esc, photoPath, wrapIndex } from "./catalog.js";
 export function galleryMarkup(unit) {
   const first = unit.photos[0];
   const controls = unit.photos.length > 1;
+  if (unit.photos.length === 4) {
+    return `<section class="gallery gallery-walkthrough" aria-label="Unit ${esc(unit.id)} photographs" tabindex="0">
+      <section class="gallery-overview" aria-labelledby="overview-heading">
+        <div class="gallery-section-heading"><p class="eyebrow">At a glance</p><h2 id="overview-heading">See every <em>space.</em></h2><p>Choose a room to view it full screen, or continue below for a guided walkthrough.</p></div>
+        <div class="overview-grid">${unit.photos.map((photo, index) => `<button class="overview-card" data-index="${index}" aria-label="View ${esc(photo.caption)} full screen"><img src="${photoPath(unit, photo, "thumb")}" alt="${esc(photo.alt)}" width="640" height="427" loading="${index === 0 ? "eager" : "lazy"}"><span class="overview-card-label"><b>${String(index + 1).padStart(2, "0")}</b><span>${esc(photo.caption)}</span><i aria-hidden="true">↗</i></span></button>`).join("")}</div>
+        <a class="walkthrough-link" href="#walkthrough">Walk through the home <span aria-hidden="true">↓</span></a>
+      </section>
+      <section class="walkthrough" id="walkthrough" aria-labelledby="walkthrough-heading"><div class="walkthrough-intro"><p class="eyebrow">A closer look</p><h2 id="walkthrough-heading">Walk through<br>the <em>home.</em></h2><p>Four spaces, one simple tour.</p></div><div class="walkthrough-steps">${unit.photos.map((photo, index) => `<article class="walkthrough-step"><div class="walkthrough-label"><span>${String(index + 1).padStart(2, "0")}</span><h3>${esc(photo.caption)}</h3><p>${index === 0 ? "Start in the main living space." : "Continue through the home."}</p></div><button class="walkthrough-photo" data-index="${index}" aria-label="View ${esc(photo.caption)} full screen"><img src="${photoPath(unit, photo)}" alt="${esc(photo.alt)}" width="1800" height="1200" loading="lazy"><span>View full screen <b aria-hidden="true">↗</b></span></button></article>`).join("")}</div></section>
+    </section>${lightboxMarkup(unit, controls)}`;
+  }
   return `<section class="gallery" aria-label="Unit ${esc(unit.id)} photographs" tabindex="0">
     <div class="photo-stage">
       <img class="main-photo" src="${photoPath(unit, first)}" alt="${esc(first.alt)}" width="1800" height="1200" fetchpriority="high">
@@ -13,8 +23,11 @@ export function galleryMarkup(unit) {
     </div>
     <div class="gallery-caption"><span class="current-caption" aria-live="polite">${esc(first.caption)}</span><span>Use arrows to explore</span></div>
     <div class="thumbnails" aria-label="Choose a photograph">${unit.photos.map((photo, index) => `<button class="thumbnail" data-index="${index}" aria-label="Show ${esc(photo.caption)}" aria-pressed="${index === 0}"><img src="${photoPath(unit, photo, "thumb")}" alt="" width="640" height="427" loading="lazy"><span>${esc(photo.caption)}</span></button>`).join("")}</div>
-  </section>
-  <dialog class="lightbox" aria-label="Unit ${esc(unit.id)} photo viewer">
+  </section>${lightboxMarkup(unit, controls)}`;
+}
+
+function lightboxMarkup(unit, controls) {
+  return `<dialog class="lightbox" aria-label="Unit ${esc(unit.id)} photo viewer">
     <div class="lightbox-top"><span>UNIT ${esc(unit.id)}</span><button class="close-viewer" autofocus aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button></div>
     <div class="lightbox-image"><img alt=""><p class="viewer-error" hidden>Photo could not be loaded.</p></div>
     <div class="lightbox-bottom"><button data-step="-1" aria-label="Previous photo" ${controls ? "" : "hidden"}>←</button><p class="viewer-caption" aria-live="polite"></p><button data-step="1" aria-label="Next photo" ${controls ? "" : "hidden"}>→</button></div>
@@ -30,7 +43,7 @@ export function mountGallery(unit) {
   const viewerImage = dialog.querySelector("img");
   const caption = gallery.querySelector(".current-caption");
   const counter = gallery.querySelector(".photo-counter");
-  const buttons = [...gallery.querySelectorAll(".thumbnail")];
+  const buttons = [...gallery.querySelectorAll("[data-index]")];
   function syncViewer() {
     const photo = unit.photos[index];
     viewerImage.src = photoPath(unit, photo);
@@ -42,18 +55,27 @@ export function mountGallery(unit) {
   function show(next) {
     index = wrapIndex(next, unit.photos.length);
     const photo = unit.photos[index];
-    mainImage.src = photoPath(unit, photo);
-    mainImage.alt = photo.alt;
-    gallery.querySelector(".photo-error").hidden = true;
-    caption.textContent = photo.caption;
-    counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(unit.photos.length).padStart(2, "0")}`;
-    buttons.forEach((button, i) =>
-      button.setAttribute("aria-pressed", String(index === i)),
-    );
+    if (mainImage) {
+      mainImage.src = photoPath(unit, photo);
+      mainImage.alt = photo.alt;
+      gallery.querySelector(".photo-error").hidden = true;
+      caption.textContent = photo.caption;
+      counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(unit.photos.length).padStart(2, "0")}`;
+      buttons.forEach((button, i) =>
+        button.setAttribute("aria-pressed", String(index === i)),
+      );
+    }
     if (dialog.open) syncViewer();
   }
-  buttons.forEach((button, i) =>
-    button.addEventListener("click", () => show(i)),
+  buttons.forEach((button) =>
+    button.addEventListener("click", () => {
+      show(Number(button.dataset.index));
+      if (!mainImage) {
+        syncViewer();
+        dialog.showModal();
+        document.body.classList.add("viewer-open");
+      }
+    }),
   );
   document
     .querySelectorAll("[data-step]")
@@ -62,13 +84,13 @@ export function mountGallery(unit) {
         show(index + Number(button.dataset.step)),
       ),
     );
-  mainImage.addEventListener("error", () => {
+  mainImage?.addEventListener("error", () => {
     gallery.querySelector(".photo-error").hidden = false;
   });
   viewerImage.addEventListener("error", () => {
     dialog.querySelector(".viewer-error").hidden = false;
   });
-  gallery.querySelector(".expand-photo").addEventListener("click", () => {
+  gallery.querySelector(".expand-photo")?.addEventListener("click", () => {
     syncViewer();
     dialog.showModal();
     document.body.classList.add("viewer-open");
@@ -90,7 +112,7 @@ export function mountGallery(unit) {
   for (const surface of [
     gallery.querySelector(".photo-stage"),
     dialog.querySelector(".lightbox-image"),
-  ]) {
+  ].filter(Boolean)) {
     surface.addEventListener("pointerdown", (event) => {
       if (event.pointerType !== "mouse")
         pointerStart = { x: event.clientX, y: event.clientY };

@@ -9,6 +9,7 @@ import {
   wrapIndex,
   escapeHtml,
 } from "../src/catalog.js";
+import { galleryMarkup } from "../src/gallery.js";
 
 test("real identifiers preserve the unit component and derive tower and floor", () => {
   assert.deepEqual(parseUnit("2103B"), {
@@ -72,6 +73,22 @@ test("gallery wraps both directions, including single-photo albums", () => {
   assert.equal(wrapIndex(-1, 3), 2);
   assert.equal(wrapIndex(3, 3), 0);
   assert.equal(wrapIndex(-1, 1), 0);
+});
+test("four-photo albums begin with an at-a-glance overview and numbered walkthrough", () => {
+  const fourPhotoUnit = {
+    id: "1210B",
+    photos: [
+      { file: "living", alt: "Living room", caption: "Living & dining" },
+      { file: "stairs", alt: "Staircase", caption: "Staircase" },
+      { file: "sleep", alt: "Bedroom", caption: "Sleeping area" },
+      { file: "bath", alt: "Bathroom", caption: "Bathroom" },
+    ],
+  };
+  const markup = galleryMarkup(fourPhotoUnit);
+  assert.match(markup, /See every <em>space/);
+  assert.match(markup, /<span>01<\/span><h3>Living &amp; dining<\/h3>/);
+  assert.match(markup, /<span>04<\/span><h3>Bathroom<\/h3>/);
+  assert.match(markup, /data-index="3"/);
 });
 test("catalog text cannot inject markup", () =>
   assert.equal(
