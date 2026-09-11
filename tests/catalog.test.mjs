@@ -90,6 +90,25 @@ test("four-photo albums begin with an at-a-glance overview and numbered walkthro
   assert.match(markup, /<span>04<\/span><h3>Bathroom<\/h3>/);
   assert.match(markup, /data-index="3"/);
 });
+test("six-photo albums use building and pool as the first and last visual anchors", () => {
+  const sixPhotoUnit = {
+    id: "1210B",
+    photos: [
+      { file: "building", alt: "Building exterior", caption: "The building" },
+      { file: "living", alt: "Living room", caption: "Living & dining" },
+      { file: "stairs", alt: "Staircase", caption: "Staircase" },
+      { file: "sleep", alt: "Bedroom", caption: "Sleeping area" },
+      { file: "bath", alt: "Bathroom", caption: "Bathroom" },
+      { file: "pool", alt: "Pool", caption: "Pool area" },
+    ],
+  };
+  const markup = galleryMarkup(sixPhotoUnit);
+  assert.match(markup, /Building &amp;<br><em>surroundings/);
+  assert.match(markup, /Inside Unit <em>1210B<\/em>/);
+  assert.match(markup, /Pool &amp;<br><em>amenities/);
+  assert.match(markup, /data-index="0"/);
+  assert.match(markup, /data-index="5"/);
+});
 test("catalog text cannot inject markup", () =>
   assert.equal(
     escapeHtml('<img onerror="x">'),

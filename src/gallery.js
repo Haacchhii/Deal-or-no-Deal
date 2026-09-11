@@ -3,6 +3,7 @@ import { escapeHtml as esc, photoPath, wrapIndex } from "./catalog.js";
 export function galleryMarkup(unit) {
   const first = unit.photos[0];
   const controls = unit.photos.length > 1;
+  if (unit.photos.length === 6) return sixPhotoGallery(unit, controls);
   if (unit.photos.length === 4) {
     return `<section class="gallery gallery-walkthrough" aria-label="Unit ${esc(unit.id)} photographs" tabindex="0">
       <section class="gallery-overview" aria-labelledby="overview-heading">
@@ -23,6 +24,18 @@ export function galleryMarkup(unit) {
     </div>
     <div class="gallery-caption"><span class="current-caption" aria-live="polite">${esc(first.caption)}</span><span>Use arrows to explore</span></div>
     <div class="thumbnails" aria-label="Choose a photograph">${unit.photos.map((photo, index) => `<button class="thumbnail" data-index="${index}" aria-label="Show ${esc(photo.caption)}" aria-pressed="${index === 0}"><img src="${photoPath(unit, photo, "thumb")}" alt="" width="640" height="427" loading="lazy"><span>${esc(photo.caption)}</span></button>`).join("")}</div>
+  </section>${lightboxMarkup(unit, controls)}`;
+}
+
+function sixPhotoGallery(unit, controls) {
+  const [building, ...remaining] = unit.photos;
+  const pool = remaining.pop();
+  const unitPhotos = remaining;
+  const feature = (photo, index, title, copy, className) => `<section class="gallery-feature ${className}"><button class="gallery-feature-photo" data-index="${index}" aria-label="View ${esc(photo.caption)} full screen"><img src="${photoPath(unit, photo)}" alt="${esc(photo.alt)}" width="1800" height="1200" loading="${index === 0 ? "eager" : "lazy"}"><span>View full screen <b aria-hidden="true">↗</b></span></button><div class="gallery-feature-copy"><p class="eyebrow">${String(index + 1).padStart(2, "0")} / 06</p><h2>${title}</h2><p>${copy}</p></div></section>`;
+  return `<section class="gallery gallery-six" aria-label="Unit ${esc(unit.id)} photographs" tabindex="0">
+    ${feature(building, 0, "Building &amp;<br><em>surroundings.</em>", "Begin with the building and the area around your next home.", "gallery-arrival")}
+    <section class="gallery-interior" aria-labelledby="interior-heading"><div class="gallery-interior-heading"><p class="eyebrow">02–05 / 06</p><h2 id="interior-heading">Inside Unit <em>${esc(unit.id)}</em></h2><p>Four views of the spaces inside.</p></div><div class="interior-grid">${unitPhotos.map((photo, offset) => `<button class="interior-photo" data-index="${offset + 1}" aria-label="View ${esc(photo.caption)} full screen"><img src="${photoPath(unit, photo)}" alt="${esc(photo.alt)}" width="1800" height="1200" loading="lazy"><span><b>${String(offset + 2).padStart(2, "0")}</b>${esc(photo.caption)}<i aria-hidden="true">↗</i></span></button>`).join("")}</div></section>
+    ${feature(pool, 5, "Pool &amp;<br><em>amenities.</em>", "Finish with one of the spaces you can enjoy beyond the unit.", "gallery-amenity")}
   </section>${lightboxMarkup(unit, controls)}`;
 }
 
