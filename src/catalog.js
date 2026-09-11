@@ -76,6 +76,10 @@ export function photoPath(unit, photo, size = "full") {
   return `units/${folder}/${photo.file}${size === "thumb" ? "-thumb" : ""}.webp`;
 }
 
+export function directoryCoverPhoto(unit) {
+  return unit.photos.length >= 6 ? unit.photos[1] : unit.photos[0];
+}
+
 export function validateCatalog(catalog) {
   const seen = new Set();
   if (!catalog.name || !Array.isArray(catalog.units))

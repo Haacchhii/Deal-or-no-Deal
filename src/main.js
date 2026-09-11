@@ -1,6 +1,7 @@
 import catalog from "./catalog.json";
 import {
   escapeHtml as esc,
+  directoryCoverPhoto,
   groupUnits,
   parseUnit,
   ordinal,
@@ -39,7 +40,10 @@ function directory(tower) {
   const groups = groupUnits(catalog.units, tower);
   return `${header("units")}<main class="directory page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/">Home</a><span>/</span><span>Our units</span></div><div class="directory-heading"><div><p class="eyebrow">${esc(buildingName)}</p><h1>Find your <em>space.</em></h1><p class="intro">Choose a tower. Take a look inside.</p></div><p class="collection-note">${catalog.preview ? "Explore unit photos and placeholders.<br>Placeholder albums are labeled." : "Explore the photographs<br>before your personal viewing."}</p></div>
     <nav class="tower-tabs" aria-label="Choose a tower">${["A", "B"].map((t) => `<a href="#/units?tower=${t}" ${t === tower ? 'aria-current="page"' : ""}>Tower ${t}<span aria-hidden="true">↗</span></a>`).join("")}</nav>
-    <div class="floor-list">${groups.length ? groups.map((group) => `<section class="floor-row" id="floor-${group.floor}" aria-labelledby="floor-heading-${group.floor}"><div class="floor-label"><p class="eyebrow">Tower ${tower}</p><h2 id="floor-heading-${group.floor}">${ordinal(group.floor)} floor</h2><p>${group.units.length} ${group.units.length === 1 ? "album" : "albums"}</p></div><div class="unit-grid">${group.units.map((unit) => `<a class="unit-album" href="#/units/${unit.id}" aria-label="View unit ${unit.id} photo album"><div class="unit-cover"><img src="${photoPath(unit, unit.photos[0], "thumb")}" alt="${esc(unit.photos[0].alt)}" width="640" height="427" loading="lazy">${unit.sample ? `<span class="sample-tag">${isPlaceholderAlbum(unit) ? "Placeholder photos" : "Sample interiors"}</span>` : ""}<span class="cover-arrow" aria-hidden="true">↗</span></div><div class="unit-title"><h3>${unit.id}</h3><span>${unit.photos.length} photos <span aria-hidden="true">↗</span></span></div></a>`).join("")}</div></section>`).join("") : '<div class="empty-state"><h2>More spaces, soon.</h2><p>Photo albums for this tower have not been added yet.</p></div>'}</div>
+    <div class="floor-list">${groups.length ? groups.map((group) => `<section class="floor-row" id="floor-${group.floor}" aria-labelledby="floor-heading-${group.floor}"><div class="floor-label"><p class="eyebrow">Tower ${tower}</p><h2 id="floor-heading-${group.floor}">${ordinal(group.floor)} floor</h2><p>${group.units.length} ${group.units.length === 1 ? "album" : "albums"}</p></div><div class="unit-grid">${group.units.map((unit) => {
+    const cover = directoryCoverPhoto(unit);
+    return `<a class="unit-album" href="#/units/${unit.id}" aria-label="View unit ${unit.id} photo album"><div class="unit-cover"><img src="${photoPath(unit, cover, "thumb")}" alt="${esc(cover.alt)}" width="640" height="427" loading="lazy">${unit.sample ? `<span class="sample-tag">${isPlaceholderAlbum(unit) ? "Placeholder photos" : "Sample interiors"}</span>` : ""}<span class="cover-arrow" aria-hidden="true">↗</span></div><div class="unit-title"><h3>${unit.id}</h3><span>${unit.photos.length} photos <span aria-hidden="true">↗</span></span></div></a>`;
+  }).join("")}</div></section>`).join("") : '<div class="empty-state"><h2>More spaces, soon.</h2><p>Photo albums for this tower have not been added yet.</p></div>'}</div>
     <p class="directory-footnote">Photos are for viewing reference. Please confirm current availability with the office.</p></main>${footer()}`;
 }
 

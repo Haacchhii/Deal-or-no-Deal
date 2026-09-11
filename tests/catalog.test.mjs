@@ -6,6 +6,7 @@ import {
   groupUnits,
   validateCatalog,
   photoPath,
+  directoryCoverPhoto,
   wrapIndex,
   escapeHtml,
 } from "../src/catalog.js";
@@ -89,6 +90,24 @@ test("gallery wraps both directions, including single-photo albums", () => {
   assert.equal(wrapIndex(-1, 3), 2);
   assert.equal(wrapIndex(3, 3), 0);
   assert.equal(wrapIndex(-1, 1), 0);
+});
+test("directory cards use the main living room photo for six-photo albums", () => {
+  const sixPhotoUnit = {
+    id: "1210B",
+    photos: [
+      { file: "building", alt: "Building exterior", caption: "The building" },
+      { file: "living", alt: "Living room", caption: "Living & dining" },
+      { file: "stairs", alt: "Staircase", caption: "Staircase" },
+      { file: "sleep", alt: "Bedroom", caption: "Sleeping area" },
+      { file: "bath", alt: "Bathroom", caption: "Bathroom" },
+      { file: "pool", alt: "Pool", caption: "Pool area" },
+    ],
+  };
+  assert.equal(directoryCoverPhoto(sixPhotoUnit).file, "living");
+  assert.equal(
+    directoryCoverPhoto({ ...sixPhotoUnit, photos: sixPhotoUnit.photos.slice(0, 4) }).file,
+    "building",
+  );
 });
 test("four-photo albums use a selected photo display controlled by four selectors", () => {
   const fourPhotoUnit = {
