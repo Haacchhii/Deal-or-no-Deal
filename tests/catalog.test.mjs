@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import {
   parseUnit,
   ordinal,
@@ -178,3 +179,7 @@ test("catalog text cannot inject markup", () =>
     escapeHtml('<img onerror="x">'),
     "&lt;img onerror=&quot;x&quot;&gt;",
   ));
+test("app code does not shadow browser location used by hash routing", () => {
+  const mainSource = readFileSync(new URL("../src/main.js", import.meta.url), "utf8");
+  assert.doesNotMatch(mainSource, /\bconst\s+location\s*=/);
+});
