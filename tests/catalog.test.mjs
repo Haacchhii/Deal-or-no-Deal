@@ -74,7 +74,7 @@ test("gallery wraps both directions, including single-photo albums", () => {
   assert.equal(wrapIndex(3, 3), 0);
   assert.equal(wrapIndex(-1, 1), 0);
 });
-test("four-photo albums begin with an at-a-glance overview and numbered walkthrough", () => {
+test("four-photo albums use one at-a-glance overview without a duplicate walkthrough", () => {
   const fourPhotoUnit = {
     id: "1210B",
     photos: [
@@ -86,9 +86,11 @@ test("four-photo albums begin with an at-a-glance overview and numbered walkthro
   };
   const markup = galleryMarkup(fourPhotoUnit);
   assert.match(markup, /See every <em>space/);
-  assert.match(markup, /<span>01<\/span><h3>Living &amp; dining<\/h3>/);
-  assert.match(markup, /<span>04<\/span><h3>Bathroom<\/h3>/);
+  assert.match(markup, /<b>01<\/b><span>Living &amp; dining<\/span>/);
+  assert.match(markup, /<b>04<\/b><span>Bathroom<\/span>/);
   assert.match(markup, /data-index="3"/);
+  assert.doesNotMatch(markup, /walkthrough-link/);
+  assert.doesNotMatch(markup, /id="walkthrough"/);
 });
 test("six-photo albums use building and pool as the first and last visual anchors", () => {
   const sixPhotoUnit = {
