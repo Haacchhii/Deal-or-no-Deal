@@ -102,16 +102,18 @@ main:focus {
   align-items: center;
   gap: 1.15rem;
 }
-.brand svg {
-  height: 45px;
-  width: 38px;
+.brand img {
+  width: 58px;
+  height: 58px;
   flex-shrink: 0;
+  object-fit: contain;
+  border-radius: 6px;
 }
 .brand > span {
-  font-family: var(--serif);
   text-transform: uppercase;
-  letter-spacing: 0.22em;
-  font-size: 1.3rem;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+  font-weight: 700;
   white-space: nowrap;
 }
 .site-header nav {
@@ -1154,13 +1156,13 @@ main:focus {
   .brand {
     gap: 0.6rem;
   }
-  .brand svg {
-    width: 26px;
-    height: 35px;
+  .brand img {
+    width: 42px;
+    height: 42px;
   }
   .brand > span {
-    font-size: 1rem;
-    letter-spacing: 0.13em;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
   }
   .site-header nav {
     gap: 1rem;
@@ -1475,8 +1477,9 @@ main:focus {
   .brand > span {
     font-size: 0.85rem;
   }
-  .brand svg {
-    width: 22px;
+  .brand img {
+    width: 38px;
+    height: 38px;
   }
   .unit-grid {
     grid-template-columns: 1fr;

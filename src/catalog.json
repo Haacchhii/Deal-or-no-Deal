@@ -1,5 +1,6 @@
 {
-  "name": "The Residences",
+  "name": "JPP Rental Homestay",
+  "building": "Victoria De Makati",
   "preview": true,
   "hero": {
     "src": "units/2103B/living-room.webp",

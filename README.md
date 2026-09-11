@@ -57,7 +57,7 @@ The first version focuses on photographs, with units organized by Tower A or B a
 
 ## Design concepts
 
-The working name **The Residences** and generated interior photographs are placeholders. Sample albums are not a verified inventory or a statement of availability.
+The site is branded as **JPP Rental Homestay** for **Victoria De Makati**. Generated sample albums are not a verified inventory or a statement of availability.
 
 ### Landing page
 
