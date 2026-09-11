@@ -74,7 +74,7 @@ test("gallery wraps both directions, including single-photo albums", () => {
   assert.equal(wrapIndex(3, 3), 0);
   assert.equal(wrapIndex(-1, 1), 0);
 });
-test("four-photo albums use one at-a-glance overview without a duplicate walkthrough", () => {
+test("four-photo albums use a selected photo display controlled by four selectors", () => {
   const fourPhotoUnit = {
     id: "1210B",
     photos: [
@@ -86,8 +86,13 @@ test("four-photo albums use one at-a-glance overview without a duplicate walkthr
   };
   const markup = galleryMarkup(fourPhotoUnit);
   assert.match(markup, /See every <em>space/);
+  assert.match(markup, /class="selected-photo photo-stage"/);
+  assert.match(markup, /class="main-photo"/);
+  assert.match(markup, /class="photo-counter">01 \/ 04/);
+  assert.match(markup, /class="current-caption" aria-live="polite">Living &amp; dining/);
   assert.match(markup, /<b>01<\/b><span>Living &amp; dining<\/span>/);
   assert.match(markup, /<b>04<\/b><span>Bathroom<\/span>/);
+  assert.match(markup, /aria-pressed="true"/);
   assert.match(markup, /data-index="3"/);
   assert.doesNotMatch(markup, /walkthrough-link/);
   assert.doesNotMatch(markup, /id="walkthrough"/);

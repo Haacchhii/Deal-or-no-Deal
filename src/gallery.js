@@ -7,8 +7,16 @@ export function galleryMarkup(unit) {
   if (unit.photos.length === 4) {
     return `<section class="gallery gallery-walkthrough" aria-label="Unit ${esc(unit.id)} photographs" tabindex="0">
       <section class="gallery-overview" aria-labelledby="overview-heading">
-        <div class="gallery-section-heading"><p class="eyebrow">At a glance</p><h2 id="overview-heading">See every <em>space.</em></h2><p>Choose a room to view it full screen.</p></div>
-        <div class="overview-grid">${unit.photos.map((photo, index) => `<button class="overview-card" data-index="${index}" aria-label="View ${esc(photo.caption)} full screen"><img src="${photoPath(unit, photo, "thumb")}" alt="${esc(photo.alt)}" width="640" height="427" loading="${index === 0 ? "eager" : "lazy"}"><span class="overview-card-label"><b>${String(index + 1).padStart(2, "0")}</b><span>${esc(photo.caption)}</span><i aria-hidden="true">↗</i></span></button>`).join("")}</div>
+        <div class="gallery-section-heading"><p class="eyebrow">At a glance</p><h2 id="overview-heading">See every <em>space.</em></h2><p>Choose a photo below to update the main view.</p></div>
+        <div class="selected-photo photo-stage">
+          <img class="main-photo" src="${photoPath(unit, first)}" alt="${esc(first.alt)}" width="1800" height="1200" fetchpriority="high">
+          <p class="photo-error" hidden>We couldn’t load this photo. Try another image or reload the page.</p>
+          <button class="photo-arrow previous" data-step="-1" aria-label="Previous photo">←</button>
+          <button class="photo-arrow next" data-step="1" aria-label="Next photo">→</button>
+          <div class="photo-bottom"><span class="photo-counter">01 / 04</span><button class="expand-photo">View full screen <span aria-hidden="true">↗</span></button></div>
+        </div>
+        <div class="gallery-caption"><span class="current-caption" aria-live="polite">${esc(first.caption)}</span><span>Select from the photos below</span></div>
+        <div class="overview-grid">${unit.photos.map((photo, index) => `<button class="overview-card" data-index="${index}" aria-label="Show ${esc(photo.caption)}" aria-pressed="${index === 0}"><img src="${photoPath(unit, photo, "thumb")}" alt="${esc(photo.alt)}" width="640" height="427" loading="${index === 0 ? "eager" : "lazy"}"><span class="overview-card-label"><b>${String(index + 1).padStart(2, "0")}</b><span>${esc(photo.caption)}</span><i aria-hidden="true">↗</i></span></button>`).join("")}</div>
       </section>
     </section>${lightboxMarkup(unit, controls)}`;
   }

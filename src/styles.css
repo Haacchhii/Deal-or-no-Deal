@@ -693,12 +693,32 @@ main:focus {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.25rem;
 }
+.selected-photo {
+  aspect-ratio: 16 / 9;
+  max-height: 620px;
+  margin-bottom: 0.9rem;
+  background: #10231f;
+}
+.selected-photo .main-photo {
+  object-fit: contain;
+}
 .overview-card {
   padding: 0;
   text-align: left;
   overflow: hidden;
   background: var(--white);
   border: 1px solid #e3e5dd;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+.overview-card[aria-pressed="true"] {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px var(--gold);
+}
+.overview-card:active {
+  transform: translateY(1px);
 }
 .overview-card img {
   width: 100%;
@@ -740,6 +760,11 @@ main:focus {
   transition: color 0.2s, background 0.2s;
 }
 .overview-card:hover .overview-card-label i {
+  color: var(--paper);
+  background: var(--forest);
+  border-color: var(--forest);
+}
+.overview-card[aria-pressed="true"] .overview-card-label i {
   color: var(--paper);
   background: var(--forest);
   border-color: var(--forest);
@@ -1116,6 +1141,9 @@ main:focus {
   .interior-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .selected-photo {
+    aspect-ratio: 4 / 3;
+  }
 }
 @media (max-width: 700px) {
   .site-header {
@@ -1404,6 +1432,11 @@ main:focus {
     aspect-ratio: 1.15;
     margin-left: -6.82%;
     margin-right: -6.82%;
+  }
+  .selected-photo {
+    aspect-ratio: 1.15;
+    margin-left: 0;
+    margin-right: 0;
   }
   .photo-arrow {
     width: 40px;
