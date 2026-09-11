@@ -17,12 +17,14 @@ const directoryPositions = new Map();
 let previousRoute;
 const buildingName = catalog.building || "Victoria De Makati";
 const brand = `<a class="brand" href="#/" aria-label="${esc(catalog.name)} home"><img src="brand/jpp-rental-homestay-logo.webp" alt="" width="180" height="180"><span>${esc(catalog.name)}</span></a>`;
+const isPlaceholderAlbum = (unit) =>
+  unit.photos.every((photo) => photo.placeholder);
 
 function header(active) {
   return `<header class="site-header">${brand}<nav aria-label="Main navigation"><a href="#/" ${active === "home" ? 'aria-current="page"' : ""}>Home</a><a href="#/units?tower=A" ${active === "units" ? 'aria-current="page"' : ""}>Our units</a><a class="button header-cta" href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a></nav></header>`;
 }
 function footer() {
-  return `<footer class="site-footer"><span>${esc(catalog.name)}</span><p>${esc(buildingName)} · ${catalog.preview ? "Sample albums are labeled" : "A closer look at your next home."}</p><a href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a></footer>`;
+  return `<footer class="site-footer"><span>${esc(catalog.name)}</span><p>${esc(buildingName)} · ${catalog.preview ? "Placeholder albums are labeled" : "A closer look at your next home."}</p><a href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a></footer>`;
 }
 function home() {
   return `${header("home")}<main id="main" tabindex="-1"><section class="hero" aria-labelledby="home-heading">
@@ -35,15 +37,15 @@ function home() {
 
 function directory(tower) {
   const groups = groupUnits(catalog.units, tower);
-  return `${header("units")}<main class="directory page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/">Home</a><span>/</span><span>Our units</span></div><div class="directory-heading"><div><p class="eyebrow">${esc(buildingName)}</p><h1>Find your <em>space.</em></h1><p class="intro">Choose a tower. Take a look inside.</p></div><p class="collection-note">${catalog.preview ? "Explore unit photos and sample interiors.<br>Sample albums are labeled." : "Explore the photographs<br>before your personal viewing."}</p></div>
+  return `${header("units")}<main class="directory page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/">Home</a><span>/</span><span>Our units</span></div><div class="directory-heading"><div><p class="eyebrow">${esc(buildingName)}</p><h1>Find your <em>space.</em></h1><p class="intro">Choose a tower. Take a look inside.</p></div><p class="collection-note">${catalog.preview ? "Explore unit photos and placeholders.<br>Placeholder albums are labeled." : "Explore the photographs<br>before your personal viewing."}</p></div>
     <nav class="tower-tabs" aria-label="Choose a tower">${["A", "B"].map((t) => `<a href="#/units?tower=${t}" ${t === tower ? 'aria-current="page"' : ""}>Tower ${t}<span aria-hidden="true">↗</span></a>`).join("")}</nav>
-    <div class="floor-list">${groups.length ? groups.map((group) => `<section class="floor-row" id="floor-${group.floor}" aria-labelledby="floor-heading-${group.floor}"><div class="floor-label"><p class="eyebrow">Tower ${tower}</p><h2 id="floor-heading-${group.floor}">${ordinal(group.floor)} floor</h2><p>${group.units.length} ${group.units.length === 1 ? "album" : "albums"}</p></div><div class="unit-grid">${group.units.map((unit) => `<a class="unit-album" href="#/units/${unit.id}" aria-label="View unit ${unit.id} photo album"><div class="unit-cover"><img src="${photoPath(unit, unit.photos[0], "thumb")}" alt="${esc(unit.photos[0].alt)}" width="640" height="427" loading="lazy">${unit.sample ? '<span class="sample-tag">Sample interiors</span>' : ""}<span class="cover-arrow" aria-hidden="true">↗</span></div><div class="unit-title"><h3>${unit.id}</h3><span>${unit.photos.length} photos <span aria-hidden="true">↗</span></span></div></a>`).join("")}</div></section>`).join("") : '<div class="empty-state"><h2>More spaces, soon.</h2><p>Photo albums for this tower have not been added yet.</p></div>'}</div>
+    <div class="floor-list">${groups.length ? groups.map((group) => `<section class="floor-row" id="floor-${group.floor}" aria-labelledby="floor-heading-${group.floor}"><div class="floor-label"><p class="eyebrow">Tower ${tower}</p><h2 id="floor-heading-${group.floor}">${ordinal(group.floor)} floor</h2><p>${group.units.length} ${group.units.length === 1 ? "album" : "albums"}</p></div><div class="unit-grid">${group.units.map((unit) => `<a class="unit-album" href="#/units/${unit.id}" aria-label="View unit ${unit.id} photo album"><div class="unit-cover"><img src="${photoPath(unit, unit.photos[0], "thumb")}" alt="${esc(unit.photos[0].alt)}" width="640" height="427" loading="lazy">${unit.sample ? `<span class="sample-tag">${isPlaceholderAlbum(unit) ? "Placeholder photos" : "Sample interiors"}</span>` : ""}<span class="cover-arrow" aria-hidden="true">↗</span></div><div class="unit-title"><h3>${unit.id}</h3><span>${unit.photos.length} photos <span aria-hidden="true">↗</span></span></div></a>`).join("")}</div></section>`).join("") : '<div class="empty-state"><h2>More spaces, soon.</h2><p>Photo albums for this tower have not been added yet.</p></div>'}</div>
     <p class="directory-footnote">Photos are for viewing reference. Please confirm current availability with the office.</p></main>${footer()}`;
 }
 
 function album(unit) {
   const details = parseUnit(unit.id);
-  return `${header("units")}<main class="album page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/units?tower=${details.tower}">Our units</a><span>/</span><span>${esc(buildingName)}</span><span>/</span><a href="#/units?tower=${details.tower}">Tower ${details.tower}</a><span>/</span><span>${ordinal(details.floor)} floor</span></div><div class="album-heading"><div><h1>Unit <em>${unit.id}</em></h1><p class="intro">${esc(buildingName)} <span aria-hidden="true">·</span> Tower ${details.tower} <span aria-hidden="true">·</span> ${ordinal(details.floor)} floor</p></div><a class="back-link" href="#/units?tower=${details.tower}">← Back to units</a></div>${unit.sample ? '<p class="sample-notice">Sample interiors · These images illustrate the gallery and are not photographs of this unit.</p>' : ""}${galleryMarkup(unit)}</main>${footer()}`;
+  return `${header("units")}<main class="album page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/units?tower=${details.tower}">Our units</a><span>/</span><span>${esc(buildingName)}</span><span>/</span><a href="#/units?tower=${details.tower}">Tower ${details.tower}</a><span>/</span><span>${ordinal(details.floor)} floor</span></div><div class="album-heading"><div><h1>Unit <em>${unit.id}</em></h1><p class="intro">${esc(buildingName)} <span aria-hidden="true">·</span> Tower ${details.tower} <span aria-hidden="true">·</span> ${ordinal(details.floor)} floor</p></div><a class="back-link" href="#/units?tower=${details.tower}">← Back to units</a></div>${unit.sample ? `<p class="sample-notice">${isPlaceholderAlbum(unit) ? "Placeholder photos · Replace these images when unit photos are available." : "Sample interiors · These images illustrate the gallery and are not photographs of this unit."}</p>` : ""}${galleryMarkup(unit)}</main>${footer()}`;
 }
 
 function getRoute() {
@@ -54,7 +56,7 @@ function getRoute() {
       type: "directory",
       tower: new URLSearchParams(query).get("tower") === "B" ? "B" : "A",
     };
-  const match = /^\/units\/([0-9]+[AB])$/.exec(path);
+  const match = /^\/units\/([0-9AB-]+)$/.exec(path);
   const unit = match && catalog.units.find((unit) => unit.id === match[1]);
   return unit ? { type: "album", unit } : { type: "missing" };
 }

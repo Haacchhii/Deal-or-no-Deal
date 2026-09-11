@@ -8,6 +8,552 @@
   },
   "units": [
     {
+      "id": "0715A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "0801A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "0806B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "0810B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "0818B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "0825B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "0902B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "0925B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1004B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1023B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1101B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1105A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1124B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
       "id": "1210B",
       "sample": false,
       "photos": [
@@ -44,23 +590,1514 @@
       ]
     },
     {
-      "id": "1504A",
+      "id": "1216B",
       "sample": true,
       "photos": [
         {
-          "file": "bedroom",
-          "caption": "Bedroom",
-          "alt": "Sample bedroom with ivory bedding, walnut headboard and a city-view window"
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
         },
         {
-          "file": "living-room",
-          "caption": "Living area",
-          "alt": "Sample living room with a linen sofa, walnut table and balcony"
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
         },
         {
-          "file": "kitchen",
-          "caption": "Kitchen & dining",
-          "alt": "Sample compact kitchen with walnut cabinets and a dining table for two"
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1218A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1224-25B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1231A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1235A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1403B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1412B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1504B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1505B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1506A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1507A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1508B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1510B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1514B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1516B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1517A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1521A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1526B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1527B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1606B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1619A-1620A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1623A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1633A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1634A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1709A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1730B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1812A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1821B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1910B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1911B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1932B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "2002B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "2018B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "2019B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "2023A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "2036A",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
         }
       ]
     },
@@ -69,19 +2106,124 @@
       "sample": true,
       "photos": [
         {
-          "file": "living-room",
-          "caption": "Living area",
-          "alt": "Sample living room with a linen sofa, walnut table and balcony"
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
         },
         {
-          "file": "kitchen",
-          "caption": "Kitchen & dining",
-          "alt": "Sample compact kitchen with walnut cabinets and a dining table for two"
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
         },
         {
-          "file": "bedroom",
-          "caption": "Bedroom",
-          "alt": "Sample bedroom with ivory bedding, walnut headboard and a city-view window"
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "2116B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "2132B",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
         }
       ]
     }

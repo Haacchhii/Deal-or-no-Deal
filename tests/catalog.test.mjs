@@ -18,8 +18,20 @@ test("real identifiers preserve the unit component and derive tower and floor", 
     number: "03",
     tower: "B",
   });
+  assert.deepEqual(parseUnit("1224-25B"), {
+    id: "1224-25B",
+    floor: 12,
+    number: "24-25",
+    tower: "B",
+  });
+  assert.deepEqual(parseUnit("1619A-1620A"), {
+    id: "1619A-1620A",
+    floor: 16,
+    number: "19-20",
+    tower: "A",
+  });
   assert.equal(parseUnit("1504A").floor, 15);
-  for (const id of ["2103C", "../2103B", "0000A", "2100B"])
+  for (const id of ["2103C", "../2103B", "0000A", "2100B", "1619A-1720A"])
     assert.throws(() => parseUnit(id));
 });
 test("floor labels handle teen suffixes", () => {
@@ -67,6 +79,10 @@ test("catalog rejects duplicates, empty albums and unsafe paths before building"
   assert.equal(
     photoPath(unit, unit.photos[0], "thumb"),
     "units/2103B/living-room-thumb.webp",
+  );
+  assert.equal(
+    photoPath(unit, { file: "building", placeholder: true }, "thumb"),
+    "units/_placeholders/building-thumb.webp",
   );
 });
 test("gallery wraps both directions, including single-photo albums", () => {

@@ -1,8 +1,49 @@
 export function parseUnit(id) {
-  const match = /^(\d{1,2})(\d{2})([AB])$/.exec(id);
-  if (!match || Number(match[1]) < 1 || Number(match[2]) < 1)
+  const simple = /^(\d{1,2})(\d{2})([AB])$/.exec(id);
+  if (simple) {
+    if (Number(simple[1]) < 1 || Number(simple[2]) < 1)
+      throw new Error(`Invalid unit number: ${id}`);
+    return {
+      id,
+      floor: Number(simple[1]),
+      number: simple[2],
+      tower: simple[3],
+    };
+  }
+  const compactCombined = /^(\d{1,2})(\d{2})-(\d{2})([AB])$/.exec(id);
+  if (compactCombined) {
+    if (
+      Number(compactCombined[1]) < 1 ||
+      Number(compactCombined[2]) < 1 ||
+      Number(compactCombined[3]) < 1
+    )
+      throw new Error(`Invalid unit number: ${id}`);
+    return {
+      id,
+      floor: Number(compactCombined[1]),
+      number: `${compactCombined[2]}-${compactCombined[3]}`,
+      tower: compactCombined[4],
+    };
+  }
+  const explicitCombined =
+    /^(\d{1,2})(\d{2})([AB])-(\d{1,2})(\d{2})([AB])$/.exec(id);
+  if (!explicitCombined) throw new Error(`Invalid unit number: ${id}`);
+  const startFloor = Number(explicitCombined[1]);
+  const endFloor = Number(explicitCombined[4]);
+  if (
+    startFloor < 1 ||
+    Number(explicitCombined[2]) < 1 ||
+    Number(explicitCombined[5]) < 1 ||
+    startFloor !== endFloor ||
+    explicitCombined[3] !== explicitCombined[6]
+  )
     throw new Error(`Invalid unit number: ${id}`);
-  return { id, floor: Number(match[1]), number: match[2], tower: match[3] };
+  return {
+    id,
+    floor: startFloor,
+    number: `${explicitCombined[2]}-${explicitCombined[5]}`,
+    tower: explicitCombined[3],
+  };
 }
 
 export function ordinal(value) {
@@ -19,7 +60,11 @@ export function groupUnits(units, tower) {
   units
     .map((unit) => ({ ...unit, ...parseUnit(unit.id) }))
     .filter((unit) => unit.tower === tower)
-    .sort((a, b) => b.floor - a.floor || Number(a.number) - Number(b.number))
+    .sort(
+      (a, b) =>
+        b.floor - a.floor ||
+        Number(a.number.split("-")[0]) - Number(b.number.split("-")[0]),
+    )
     .forEach((unit) =>
       groups.set(unit.floor, [...(groups.get(unit.floor) || []), unit]),
     );
@@ -27,7 +72,8 @@ export function groupUnits(units, tower) {
 }
 
 export function photoPath(unit, photo, size = "full") {
-  return `units/${unit.id}/${photo.file}${size === "thumb" ? "-thumb" : ""}.webp`;
+  const folder = photo.placeholder ? "_placeholders" : unit.id;
+  return `units/${folder}/${photo.file}${size === "thumb" ? "-thumb" : ""}.webp`;
 }
 
 export function validateCatalog(catalog) {

@@ -35,17 +35,18 @@ Routes use URL fragments, so links such as `#/units/2103B` work on static hostin
 2. Name source files descriptively, for example `living-room.jpg`, `bedroom.jpg` and `kitchen.jpg`.
 3. Run `npm run photos -- 2103B "C:/path/to/originals"`. This writes optimized full-size WebP files and 640px thumbnails into `public/units/2103B/`. It preserves aspect ratio, rotates based on orientation, strips embedded metadata by default, and refuses existing filenames to avoid accidental replacement. For an update, use a new filename such as `living-room-v2.jpg` and point the catalog to it.
 4. Edit `src/catalog.json`. Each unit has an `id`, a `sample` flag, and an ordered `photos` list. Each photo has a filename stem (`file`), readable `caption` and descriptive `alt` text. The first photo is the album cover. Paths are derived centrally by `src/catalog.js`. For the six-photo gallery, use this exact order: building exterior, four unit photographs, then the pool photograph. The site automatically presents the first and last images as the building and amenity anchors on desktop.
-5. Set a unit's `sample` flag to `false` only when its entire album contains the owner's real photographs. Set the global `preview` flag to `false` after replacing the temporary business identity and hero imagery. Update `hero.src` and `hero.alt` when replacing the hero.
+5. Placeholder-only units use shared assets from `public/units/_placeholders/` and set `placeholder: true` on each photo. Set a unit's `sample` flag to `false` only when its album contains the owner's real unit photographs. Set the global `preview` flag to `false` after replacing the temporary placeholder and hero imagery. Update `hero.src` and `hero.alt` when replacing the hero.
 6. Run `npm test` and `npm run build`, review the result, then redeploy. Keep old assets until the updated catalog is deployed; remove unused files separately when ready.
 
-The two example albums intentionally reuse three generated interiors. They demonstrate navigation, not actual differences between those units. No other units or availability are invented.
+The catalog contains the owner's supplied unit numbers. Units without real photographs use clearly labeled placeholder albums; they are not a verified inventory or a statement of availability.
 
-Unit `1210B` (Tower B, 12th floor) contains four user-provided photographs: living/kitchen/dining, staircase, sleeping area and bathroom. It is marked `sample: false`; the living-area image is its cover. Full-size images preserve the original framing, while directory thumbnails may be visually cropped to fit their tile.
+Unit `1210B` (Tower B, 12th floor) contains four user-provided photographs: living/kitchen/dining, staircase, sleeping area and bathroom. It is marked `sample: false` and currently uses placeholders only for the building and pool positions in the six-photo hierarchy. Full-size images preserve the original framing, while directory thumbnails may be visually cropped to fit their tile.
 
 ## Implementation details
 
 - `src/catalog.json`: the single content catalog; no photo filenames embedded in page components.
-- `public/units/<unit-number>/`: optimized photographs and thumbnails tracked in Git.
+- `public/units/<unit-number>/`: optimized real photographs and thumbnails tracked in Git.
+- `public/units/_placeholders/`: shared six-photo placeholder set used by units waiting on real images.
 - `src/main.js`: landing page, directory and shareable album routing.
 - `src/gallery.js`: photo navigation, touch swipes and native modal viewer with Escape/focus handling.
 - `src/styles.css`: shared green/ivory theme and responsive layouts. Google Fonts enhance the typography; local serif/sans-serif fallbacks keep it usable without font-network access.
@@ -57,7 +58,7 @@ The first version focuses on photographs, with units organized by Tower A or B a
 
 ## Design concepts
 
-The site is branded as **JPP Rental Homestay** for **Victoria De Makati**. Generated sample albums are not a verified inventory or a statement of availability.
+The site is branded as **JPP Rental Homestay** for **Victoria De Makati**. Placeholder albums are not a verified inventory or a statement of availability.
 
 ### Landing page
 
