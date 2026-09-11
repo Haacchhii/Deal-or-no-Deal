@@ -330,110 +330,28 @@ main:focus {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--line);
-  background:
-    radial-gradient(circle at 28% 18%, rgba(200, 173, 120, 0.34), transparent 18%),
-    linear-gradient(135deg, #e8e5d8, #f8f7f0 46%, #dce5df);
+  background: #dde3dc;
   transition:
     transform 0.28s ease,
     border-color 0.28s ease,
     box-shadow 0.28s ease;
 }
-.map-card:before {
-  content: "";
-  position: absolute;
-  inset: 1rem;
-  border: 1px solid rgba(24, 60, 52, 0.12);
-  pointer-events: none;
-}
-.map-card:hover,
-.map-card:focus-visible {
+.map-card:hover {
   transform: translateY(-6px);
   border-color: var(--gold);
   box-shadow: 0 24px 70px rgba(24, 60, 52, 0.16);
 }
-.map-grid {
+.map-card iframe {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  border: 0;
+  filter: saturate(0.88) contrast(0.98);
+}
+.map-overlay {
   position: absolute;
-  inset: 0;
-}
-.road {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.86);
-  box-shadow: 0 0 0 1px rgba(24, 60, 52, 0.08);
-}
-.road-main {
-  width: 135%;
-  height: 52px;
-  left: -12%;
-  top: 58%;
-  transform: rotate(-10deg);
-}
-.road-cross {
-  width: 44px;
-  height: 130%;
-  left: 55%;
-  top: -12%;
-  transform: rotate(18deg);
-}
-.road-diagonal {
-  width: 112%;
-  height: 30px;
-  left: 2%;
-  top: 30%;
-  transform: rotate(30deg);
-  opacity: 0.72;
-}
-.block {
-  position: absolute;
-  border: 1px solid rgba(24, 60, 52, 0.12);
-  background: rgba(24, 60, 52, 0.08);
-}
-.block-a {
-  width: 28%;
-  height: 24%;
-  left: 10%;
-  top: 13%;
-}
-.block-b {
-  width: 22%;
-  height: 22%;
-  right: 12%;
-  top: 15%;
-}
-.block-c {
-  width: 26%;
-  height: 20%;
-  right: 17%;
-  bottom: 13%;
-}
-.map-pin {
-  position: absolute;
-  left: 52%;
-  top: 42%;
-  width: 78px;
-  height: 78px;
-  border-radius: 999px 999px 999px 0;
-  background: var(--forest);
-  transform: translate(-50%, -50%) rotate(-45deg);
-  box-shadow: 0 18px 44px rgba(24, 60, 52, 0.3);
-  transition: transform 0.28s ease;
-}
-.map-card:hover .map-pin,
-.map-card:focus-visible .map-pin {
-  transform: translate(-50%, -58%) rotate(-45deg);
-}
-.map-pin span {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  border-radius: 999px;
-  background: var(--gold);
-  left: 24px;
-  top: 24px;
-}
-.map-label {
-  position: absolute;
-  left: 2rem;
-  right: 2rem;
+  left: 1.25rem;
+  right: 1.25rem;
   bottom: 2rem;
   background: rgba(247, 247, 242, 0.94);
   border: 1px solid rgba(24, 60, 52, 0.12);
@@ -442,18 +360,37 @@ main:focus {
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.28s ease,
+    background 0.28s ease;
 }
-.map-label span {
+.map-card:hover .map-overlay,
+.map-overlay:focus-visible {
+  transform: translateY(-6px);
+  background: rgba(247, 247, 242, 0.98);
+}
+.map-overlay span {
   font-family: var(--serif);
   color: var(--forest);
   font-size: clamp(1.5rem, 2.5vw, 2.25rem);
   line-height: 1;
 }
-.map-label small {
+.map-overlay small {
   color: var(--muted);
   text-align: right;
   line-height: 1.5;
   max-width: 260px;
+}
+.map-overlay b {
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 999px;
+  flex-shrink: 0;
+  background: var(--forest);
+  color: var(--paper);
 }
 .site-footer {
   border-top: 1px solid var(--line);
@@ -1399,7 +1336,7 @@ main:focus {
   .map-card {
     min-height: 320px;
   }
-  .map-label {
+  .map-overlay {
     left: 1rem;
     right: 1rem;
     bottom: 1rem;
@@ -1407,7 +1344,7 @@ main:focus {
     flex-direction: column;
     gap: 0.5rem;
   }
-  .map-label small {
+  .map-overlay small {
     text-align: left;
   }
   .site-footer {

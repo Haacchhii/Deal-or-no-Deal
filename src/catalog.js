@@ -88,7 +88,8 @@ export function validateCatalog(catalog) {
     if (
       !catalog.location.name?.trim() ||
       !catalog.location.address?.trim() ||
-      !/^https:\/\/www\.google\.com\/maps/.test(catalog.location.mapsUrl || "")
+      !/^https:\/\/www\.google\.com\/maps/.test(catalog.location.mapsUrl || "") ||
+      !/^https:\/\/www\.google\.com\/maps/.test(catalog.location.embedUrl || "")
     )
       throw new Error("Catalog location requires a Google Maps link.");
   }

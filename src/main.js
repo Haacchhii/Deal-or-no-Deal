@@ -25,6 +25,8 @@ const siteLocation = catalog.location || {
   address: "Washington St, Brgy. Pio del Pilar, Makati",
   mapsUrl:
     "https://www.google.com/maps?output=search&q=victoria+de+makati+condominium,+washington+st,+brgy.+pio+del+pilar,+makati",
+  embedUrl:
+    "https://www.google.com/maps?q=victoria+de+makati+condominium,+washington+st,+brgy.+pio+del+pilar,+makati&output=embed",
 };
 
 function header(active) {
@@ -34,7 +36,7 @@ function footer() {
   return `<footer class="site-footer"><span>${esc(catalog.name)}</span><p>${esc(buildingName)} · ${catalog.preview ? "Placeholder albums are labeled" : "A closer look at your next home."}</p><a href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a></footer>`;
 }
 function locationSection() {
-  return `<section class="location-section" aria-labelledby="location-heading"><div class="location-copy"><p class="eyebrow"><span class="fine-line"></span>Location</p><h2 id="location-heading">Find us at<br><em>${esc(siteLocation.name)}</em></h2><p>${esc(siteLocation.address)}</p><a class="button" href="${esc(siteLocation.mapsUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Maps <span aria-hidden="true">↗</span></a></div><a class="map-card" href="${esc(siteLocation.mapsUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(siteLocation.name)} on Google Maps"><div class="map-grid" aria-hidden="true"><span class="road road-main"></span><span class="road road-cross"></span><span class="road road-diagonal"></span><span class="block block-a"></span><span class="block block-b"></span><span class="block block-c"></span><span class="map-pin"><span></span></span></div><div class="map-label"><span>${esc(siteLocation.name)}</span><small>${esc(siteLocation.address)}</small></div></a></section>`;
+  return `<section class="location-section" aria-labelledby="location-heading"><div class="location-copy"><p class="eyebrow"><span class="fine-line"></span>Location</p><h2 id="location-heading">Find us at<br><em>${esc(siteLocation.name)}</em></h2><p>${esc(siteLocation.address)}</p><a class="button" href="${esc(siteLocation.mapsUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Maps <span aria-hidden="true">↗</span></a></div><div class="map-card"><iframe title="${esc(siteLocation.name)} map" src="${esc(siteLocation.embedUrl)}" width="900" height="520" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a class="map-overlay" href="${esc(siteLocation.mapsUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(siteLocation.name)} on Google Maps"><span>${esc(siteLocation.name)}</span><small>${esc(siteLocation.address)}</small><b aria-hidden="true">↗</b></a></div></section>`;
 }
 function home() {
   return `${header("home")}<main id="main" tabindex="-1"><section class="hero" aria-labelledby="home-heading">
