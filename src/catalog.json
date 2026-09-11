@@ -8,6 +8,11 @@
     "width": 1011,
     "height": 1555
   },
+  "location": {
+    "name": "Victoria De Makati Condominium",
+    "address": "Washington St, Brgy. Pio del Pilar, Makati",
+    "mapsUrl": "https://www.google.com/maps?output=search&q=victoria+de+makati+condominium,+washington+st,+brgy.+pio+del+pilar,+makati"
+  },
   "units": [
     {
       "id": "0715A",

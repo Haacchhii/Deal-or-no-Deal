@@ -63,6 +63,28 @@ test("catalog rejects duplicates, empty albums and unsafe paths before building"
   assert.doesNotThrow(() =>
     validateCatalog({ name: "Example", units: [unit] }),
   );
+  assert.doesNotThrow(() =>
+    validateCatalog({
+      name: "Example",
+      location: {
+        name: "Victoria De Makati Condominium",
+        address: "Washington St, Brgy. Pio del Pilar, Makati",
+        mapsUrl: "https://www.google.com/maps?output=search&q=victoria+de+makati",
+      },
+      units: [unit],
+    }),
+  );
+  assert.throws(() =>
+    validateCatalog({
+      name: "Example",
+      location: {
+        name: "Victoria De Makati Condominium",
+        address: "Washington St, Brgy. Pio del Pilar, Makati",
+        mapsUrl: "javascript:alert(1)",
+      },
+      units: [unit],
+    }),
+  );
   assert.throws(() =>
     validateCatalog({ name: "Example", units: [unit, unit] }),
   );

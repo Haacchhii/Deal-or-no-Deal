@@ -292,6 +292,169 @@ main:focus {
 .tower-links a:hover span:last-child {
   transform: translate(3px, -3px);
 }
+.location-section {
+  padding: 1rem 5% 5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(360px, 1.12fr);
+  align-items: stretch;
+  gap: 2.5rem;
+}
+.location-copy {
+  border-top: 1px solid var(--line);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.location-copy .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.location-copy h2 {
+  font-size: clamp(2.5rem, 4.2vw, 4.75rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  max-width: 620px;
+}
+.location-copy p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 1.25rem 0 1.75rem;
+  max-width: 390px;
+}
+.map-card {
+  min-height: 360px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background:
+    radial-gradient(circle at 28% 18%, rgba(200, 173, 120, 0.34), transparent 18%),
+    linear-gradient(135deg, #e8e5d8, #f8f7f0 46%, #dce5df);
+  transition:
+    transform 0.28s ease,
+    border-color 0.28s ease,
+    box-shadow 0.28s ease;
+}
+.map-card:before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgba(24, 60, 52, 0.12);
+  pointer-events: none;
+}
+.map-card:hover,
+.map-card:focus-visible {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+  box-shadow: 0 24px 70px rgba(24, 60, 52, 0.16);
+}
+.map-grid {
+  position: absolute;
+  inset: 0;
+}
+.road {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 0 0 1px rgba(24, 60, 52, 0.08);
+}
+.road-main {
+  width: 135%;
+  height: 52px;
+  left: -12%;
+  top: 58%;
+  transform: rotate(-10deg);
+}
+.road-cross {
+  width: 44px;
+  height: 130%;
+  left: 55%;
+  top: -12%;
+  transform: rotate(18deg);
+}
+.road-diagonal {
+  width: 112%;
+  height: 30px;
+  left: 2%;
+  top: 30%;
+  transform: rotate(30deg);
+  opacity: 0.72;
+}
+.block {
+  position: absolute;
+  border: 1px solid rgba(24, 60, 52, 0.12);
+  background: rgba(24, 60, 52, 0.08);
+}
+.block-a {
+  width: 28%;
+  height: 24%;
+  left: 10%;
+  top: 13%;
+}
+.block-b {
+  width: 22%;
+  height: 22%;
+  right: 12%;
+  top: 15%;
+}
+.block-c {
+  width: 26%;
+  height: 20%;
+  right: 17%;
+  bottom: 13%;
+}
+.map-pin {
+  position: absolute;
+  left: 52%;
+  top: 42%;
+  width: 78px;
+  height: 78px;
+  border-radius: 999px 999px 999px 0;
+  background: var(--forest);
+  transform: translate(-50%, -50%) rotate(-45deg);
+  box-shadow: 0 18px 44px rgba(24, 60, 52, 0.3);
+  transition: transform 0.28s ease;
+}
+.map-card:hover .map-pin,
+.map-card:focus-visible .map-pin {
+  transform: translate(-50%, -58%) rotate(-45deg);
+}
+.map-pin span {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  background: var(--gold);
+  left: 24px;
+  top: 24px;
+}
+.map-label {
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  background: rgba(247, 247, 242, 0.94);
+  border: 1px solid rgba(24, 60, 52, 0.12);
+  padding: 1.1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+.map-label span {
+  font-family: var(--serif);
+  color: var(--forest);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  line-height: 1;
+}
+.map-label small {
+  color: var(--muted);
+  text-align: right;
+  line-height: 1.5;
+  max-width: 260px;
+}
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 1.5rem 5%;
@@ -1117,6 +1280,12 @@ main:focus {
   .tower-links {
     min-width: 180px;
   }
+  .location-section {
+    grid-template-columns: 1fr;
+  }
+  .location-copy {
+    min-height: 0;
+  }
   .floor-row {
     grid-template-columns: 150px 1fr;
     gap: 1.5rem;
@@ -1219,6 +1388,27 @@ main:focus {
   }
   .tower-links a {
     flex: 1;
+  }
+  .location-section {
+    padding: 0 6% 3rem;
+    gap: 1.5rem;
+  }
+  .location-copy h2 {
+    font-size: 3rem;
+  }
+  .map-card {
+    min-height: 320px;
+  }
+  .map-label {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .map-label small {
+    text-align: left;
   }
   .site-footer {
     flex-wrap: wrap;

@@ -84,6 +84,14 @@ export function validateCatalog(catalog) {
   const seen = new Set();
   if (!catalog.name || !Array.isArray(catalog.units))
     throw new Error("Catalog requires a name and units array.");
+  if (catalog.location) {
+    if (
+      !catalog.location.name?.trim() ||
+      !catalog.location.address?.trim() ||
+      !/^https:\/\/www\.google\.com\/maps/.test(catalog.location.mapsUrl || "")
+    )
+      throw new Error("Catalog location requires a Google Maps link.");
+  }
   for (const unit of catalog.units) {
     parseUnit(unit.id);
     if (seen.has(unit.id)) throw new Error(`Duplicate unit: ${unit.id}`);

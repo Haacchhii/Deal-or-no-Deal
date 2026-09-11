@@ -20,6 +20,12 @@ const buildingName = catalog.building || "Victoria De Makati";
 const brand = `<a class="brand" href="#/" aria-label="${esc(catalog.name)} home"><img src="brand/jpp-rental-homestay-logo.webp" alt="" width="180" height="180"><span>${esc(catalog.name)}</span></a>`;
 const isPlaceholderAlbum = (unit) =>
   unit.photos.every((photo) => photo.placeholder);
+const location = catalog.location || {
+  name: buildingName,
+  address: "Washington St, Brgy. Pio del Pilar, Makati",
+  mapsUrl:
+    "https://www.google.com/maps?output=search&q=victoria+de+makati+condominium,+washington+st,+brgy.+pio+del+pilar,+makati",
+};
 
 function header(active) {
   return `<header class="site-header">${brand}<nav aria-label="Main navigation"><a href="#/" ${active === "home" ? 'aria-current="page"' : ""}>Home</a><a href="#/units?tower=A" ${active === "units" ? 'aria-current="page"' : ""}>Our units</a><a class="button header-cta" href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a></nav></header>`;
@@ -27,13 +33,16 @@ function header(active) {
 function footer() {
   return `<footer class="site-footer"><span>${esc(catalog.name)}</span><p>${esc(buildingName)} · ${catalog.preview ? "Placeholder albums are labeled" : "A closer look at your next home."}</p><a href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a></footer>`;
 }
+function locationSection() {
+  return `<section class="location-section" aria-labelledby="location-heading"><div class="location-copy"><p class="eyebrow"><span class="fine-line"></span>Location</p><h2 id="location-heading">Find us at<br><em>${esc(location.name)}</em></h2><p>${esc(location.address)}</p><a class="button" href="${esc(location.mapsUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Maps <span aria-hidden="true">↗</span></a></div><a class="map-card" href="${esc(location.mapsUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(location.name)} on Google Maps"><div class="map-grid" aria-hidden="true"><span class="road road-main"></span><span class="road road-cross"></span><span class="road road-diagonal"></span><span class="block block-a"></span><span class="block block-b"></span><span class="block block-c"></span><span class="map-pin"><span></span></span></div><div class="map-label"><span>${esc(location.name)}</span><small>${esc(location.address)}</small></div></a></section>`;
+}
 function home() {
   return `${header("home")}<main id="main" tabindex="-1"><section class="hero" aria-labelledby="home-heading">
     <img class="hero-photo" src="${esc(catalog.hero.src)}" alt="${esc(catalog.hero.alt)}" width="${catalog.hero.width || 1800}" height="${catalog.hero.height || 1200}" fetchpriority="high">
     <div class="hero-shade"></div><div class="hero-content"><p class="eyebrow">${esc(buildingName)}</p><h1 id="home-heading">A closer look at<br>your next <em>home.</em></h1><p class="hero-intro">Explore JPP Rental Homestay units before your personal viewing.</p><a class="button button-light" href="#/units?tower=A">Browse unit photos <span aria-hidden="true">↗</span></a></div>
     <span class="hero-note">${catalog.preview ? `${esc(buildingName)} · Photo gallery preview` : `Discover ${esc(buildingName)}`}</span>
     <a class="hero-scroll" href="#/units?tower=A" aria-label="Explore our unit collection">Explore <span aria-hidden="true">↓</span></a>
-  </section><section class="tower-intro" aria-labelledby="towers-heading"><p class="eyebrow"><span class="fine-line"></span>${esc(buildingName)}</p><h2 id="towers-heading">Two towers.<br><em>Your point of view.</em></h2><div class="tower-links"><a href="#/units?tower=A"><span>Tower A</span><span aria-hidden="true">↗</span></a><a href="#/units?tower=B"><span>Tower B</span><span aria-hidden="true">↗</span></a></div></section></main>${footer()}`;
+  </section><section class="tower-intro" aria-labelledby="towers-heading"><p class="eyebrow"><span class="fine-line"></span>${esc(buildingName)}</p><h2 id="towers-heading">Two towers.<br><em>Your point of view.</em></h2><div class="tower-links"><a href="#/units?tower=A"><span>Tower A</span><span aria-hidden="true">↗</span></a><a href="#/units?tower=B"><span>Tower B</span><span aria-hidden="true">↗</span></a></div></section>${locationSection()}</main>${footer()}`;
 }
 
 function directory(tower) {
