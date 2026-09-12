@@ -234,9 +234,11 @@ test("unit albums show nearby locations and shared placeholders", () => {
   assert.match(markup, /Ayala Central Business District/);
   assert.match(markup, /Makati Medical Center/);
   assert.match(markup, /Ayala Triangle Gardens/);
+  assert.match(markup, /Placeholder for nearby schools and institutions/);
   assert.match(markup, /units\/_placeholders\/nearby-shopping\.webp/);
   assert.match(markup, /units\/_placeholders\/nearby-business\.webp/);
   assert.match(markup, /units\/_placeholders\/nearby-parks\.webp/);
+  assert.doesNotMatch(markup, /nearby-photo-grid/);
 });
 test("catalog text cannot inject markup", () =>
   assert.equal(
