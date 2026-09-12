@@ -14,6 +14,7 @@ import {
   escapeHtml,
 } from "../src/catalog.js";
 import { galleryMarkup } from "../src/gallery.js";
+import { inclusionsSection } from "../src/inclusions.js";
 
 test("real identifiers preserve the unit component and derive tower and floor", () => {
   assert.deepEqual(parseUnit("2103B"), {
@@ -215,6 +216,14 @@ test("five-photo albums use a guided three-interior layout", () => {
   assert.match(markup, /1st Floor · Three views of the spaces inside/);
   assert.match(markup, /Inside Unit <em>1633A<\/em>/);
   assert.match(markup, /data-index="4"/);
+});
+test("unit albums show furnished move-in-ready inclusions", () => {
+  const markup = inclusionsSection();
+  assert.match(markup, /Inclusions/);
+  assert.match(markup, /All units are furnished and move-in ready/);
+  assert.match(markup, /Water/);
+  assert.match(markup, /Wifi/);
+  assert.match(markup, /Association dues/);
 });
 test("catalog text cannot inject markup", () =>
   assert.equal(

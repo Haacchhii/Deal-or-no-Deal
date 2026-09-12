@@ -11,6 +11,7 @@ import {
   validateCatalog,
 } from "./catalog.js";
 import { galleryMarkup, mountGallery } from "./gallery.js";
+import { inclusionsSection } from "./inclusions.js";
 import "./styles.css";
 
 validateCatalog(catalog);
@@ -63,7 +64,7 @@ function directory(tower) {
 function album(unit) {
   const details = parseUnit(unit.unitNumber || unit.id);
   const albumName = unitAlbumName(unit);
-  return `${header("units")}<main class="album page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/units?tower=${details.tower}">Our units</a><span>/</span><span>${esc(buildingName)}</span><span>/</span><a href="#/units?tower=${details.tower}">Tower ${details.tower}</a><span>/</span><span>${ordinal(details.floor)} floor</span>${unit.spaceLabel ? `<span>/</span><span>${esc(unit.spaceLabel)}</span>` : ""}</div><div class="album-heading"><div><h1>Unit <em>${esc(unitDisplayName(unit))}</em></h1><p class="intro">${esc(buildingName)} <span aria-hidden="true">·</span> Tower ${details.tower} <span aria-hidden="true">·</span> ${ordinal(details.floor)} floor${unit.spaceLabel ? ` <span aria-hidden="true">·</span> ${esc(unit.spaceLabel)}` : ""}</p></div><a class="back-link" href="#/units?tower=${details.tower}">← Back to units</a></div>${unit.sample ? `<p class="sample-notice">${isPlaceholderAlbum(unit) ? `Placeholder photos · Replace these images when ${esc(albumName)} photos are available.` : "Sample interiors · These images illustrate the gallery and are not photographs of this unit."}</p>` : ""}${galleryMarkup(unit)}</main>${footer()}`;
+  return `${header("units")}<main class="album page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/units?tower=${details.tower}">Our units</a><span>/</span><span>${esc(buildingName)}</span><span>/</span><a href="#/units?tower=${details.tower}">Tower ${details.tower}</a><span>/</span><span>${ordinal(details.floor)} floor</span>${unit.spaceLabel ? `<span>/</span><span>${esc(unit.spaceLabel)}</span>` : ""}</div><div class="album-heading"><div><h1>Unit <em>${esc(unitDisplayName(unit))}</em></h1><p class="intro">${esc(buildingName)} <span aria-hidden="true">·</span> Tower ${details.tower} <span aria-hidden="true">·</span> ${ordinal(details.floor)} floor${unit.spaceLabel ? ` <span aria-hidden="true">·</span> ${esc(unit.spaceLabel)}` : ""}</p></div><a class="back-link" href="#/units?tower=${details.tower}">← Back to units</a></div>${unit.sample ? `<p class="sample-notice">${isPlaceholderAlbum(unit) ? `Placeholder photos · Replace these images when ${esc(albumName)} photos are available.` : "Sample interiors · These images illustrate the gallery and are not photographs of this unit."}</p>` : ""}${galleryMarkup(unit)}${inclusionsSection()}</main>${footer()}`;
 }
 
 function getRoute() {
