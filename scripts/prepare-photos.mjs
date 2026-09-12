@@ -3,10 +3,10 @@ import path from "node:path";
 import sharp from "sharp";
 import { parseUnit } from "../src/catalog.js";
 
-const [unitId, sourceFolder] = process.argv.slice(2);
+const [unitId, sourceFolder, realUnitNumber = unitId] = process.argv.slice(2);
 if (!unitId || !sourceFolder)
   throw new Error('Usage: npm run photos -- 2103B "C:/path/to/originals"');
-parseUnit(unitId);
+parseUnit(realUnitNumber);
 const destination = path.resolve("public", "units", unitId);
 const sources = (await readdir(sourceFolder)).filter((name) =>
   /\.(jpe?g|png|webp)$/i.test(name),
