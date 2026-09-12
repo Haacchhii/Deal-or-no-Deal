@@ -998,7 +998,7 @@
     },
     {
       "id": "1506A",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
           "file": "building",
@@ -1007,28 +1007,24 @@
           "placeholder": true
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "613000091-1387675916067859-141604389571367820-n",
+          "caption": "Living, kitchen & dining",
+          "alt": "Living, kitchen and dining area inside unit 1506A"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "615056642-886059613795902-2447348353368203423-n",
+          "caption": "Sleeping area",
+          "alt": "Sleeping area inside unit 1506A"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
+          "file": "635012382-1556284875435704-5747606354179834121-n",
+          "caption": "Kitchen & storage",
+          "alt": "Kitchen and storage area inside unit 1506A"
         },
         {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
+          "file": "637437449-2422740894813515-863234871545140646-n",
+          "caption": "Bathroom",
+          "alt": "Bathroom inside unit 1506A"
         },
         {
           "file": "pool",
