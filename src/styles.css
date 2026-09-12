@@ -690,6 +690,12 @@ main:focus {
   object-fit: cover;
   transition: transform 0.5s ease;
 }
+.gallery-arrival .gallery-feature-photo {
+  background: #0f1513;
+}
+.gallery-arrival .gallery-feature-photo img {
+  object-fit: contain;
+}
 .gallery-feature-photo:hover img {
   transform: scale(1.02);
 }
