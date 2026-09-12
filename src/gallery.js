@@ -1,11 +1,18 @@
-import { escapeHtml as esc, photoPath, wrapIndex } from "./catalog.js";
+import {
+  escapeHtml as esc,
+  photoPath,
+  unitAlbumName,
+  unitDisplayName,
+  wrapIndex,
+} from "./catalog.js";
 
 export function galleryMarkup(unit) {
   const first = unit.photos[0];
   const controls = unit.photos.length > 1;
+  const albumName = unitAlbumName(unit);
   if (unit.photos.length === 6) return sixPhotoGallery(unit, controls);
   if (unit.photos.length === 4) {
-    return `<section class="gallery gallery-walkthrough" aria-label="Unit ${esc(unit.id)} photographs" tabindex="0">
+    return `<section class="gallery gallery-walkthrough" aria-label="Unit ${esc(albumName)} photographs" tabindex="0">
       <section class="gallery-overview" aria-labelledby="overview-heading">
         <div class="gallery-section-heading"><p class="eyebrow">At a glance</p><h2 id="overview-heading">See every <em>space.</em></h2><p>Choose a photo below to update the main view.</p></div>
         <div class="selected-photo photo-stage">
@@ -20,7 +27,7 @@ export function galleryMarkup(unit) {
       </section>
     </section>${lightboxMarkup(unit, controls)}`;
   }
-  return `<section class="gallery" aria-label="Unit ${esc(unit.id)} photographs" tabindex="0">
+  return `<section class="gallery" aria-label="Unit ${esc(albumName)} photographs" tabindex="0">
     <div class="photo-stage">
       <img class="main-photo" src="${photoPath(unit, first)}" alt="${esc(first.alt)}" width="1800" height="1200" fetchpriority="high">
       <p class="photo-error" hidden>We couldn’t load this photo. Try another image or reload the page.</p>
@@ -34,20 +41,23 @@ export function galleryMarkup(unit) {
 }
 
 function sixPhotoGallery(unit, controls) {
+  const albumName = unitAlbumName(unit);
+  const displayName = unitDisplayName(unit);
   const [building, ...remaining] = unit.photos;
   const pool = remaining.pop();
   const unitPhotos = remaining;
   const feature = (photo, index, title, copy, className) => `<section class="gallery-feature ${className}"><button class="gallery-feature-photo" data-index="${index}" aria-label="View ${esc(photo.caption)} full screen"><img src="${photoPath(unit, photo)}" alt="${esc(photo.alt)}" width="1800" height="1200" loading="${index === 0 ? "eager" : "lazy"}"><span>View full screen <b aria-hidden="true">↗</b></span></button><div class="gallery-feature-copy"><p class="eyebrow">${String(index + 1).padStart(2, "0")} / 06</p><h2>${title}</h2><p>${copy}</p></div></section>`;
-  return `<section class="gallery gallery-six" aria-label="Unit ${esc(unit.id)} photographs" tabindex="0">
+  return `<section class="gallery gallery-six" aria-label="Unit ${esc(albumName)} photographs" tabindex="0">
     ${feature(building, 0, "Building &amp;<br><em>surroundings.</em>", "Begin with the building and the area around your next home.", "gallery-arrival")}
-    <section class="gallery-interior" aria-labelledby="interior-heading"><div class="gallery-interior-heading"><p class="eyebrow">02–05 / 06</p><h2 id="interior-heading">Inside Unit <em>${esc(unit.id)}</em></h2><p>Four views of the spaces inside.</p></div><div class="interior-grid">${unitPhotos.map((photo, offset) => `<button class="interior-photo" data-index="${offset + 1}" aria-label="View ${esc(photo.caption)} full screen"><img src="${photoPath(unit, photo)}" alt="${esc(photo.alt)}" width="1800" height="1200" loading="lazy"><span><b>${String(offset + 2).padStart(2, "0")}</b>${esc(photo.caption)}<i aria-hidden="true">↗</i></span></button>`).join("")}</div></section>
+    <section class="gallery-interior" aria-labelledby="interior-heading"><div class="gallery-interior-heading"><p class="eyebrow">02–05 / 06</p><h2 id="interior-heading">Inside Unit <em>${esc(displayName)}</em></h2><p>${unit.spaceLabel ? `${esc(unit.spaceLabel)} · ` : ""}Four views of the spaces inside.</p></div><div class="interior-grid">${unitPhotos.map((photo, offset) => `<button class="interior-photo" data-index="${offset + 1}" aria-label="View ${esc(photo.caption)} full screen"><img src="${photoPath(unit, photo)}" alt="${esc(photo.alt)}" width="1800" height="1200" loading="lazy"><span><b>${String(offset + 2).padStart(2, "0")}</b>${esc(photo.caption)}<i aria-hidden="true">↗</i></span></button>`).join("")}</div></section>
     ${feature(pool, 5, "Pool &amp;<br><em>amenities.</em>", "Finish with one of the spaces you can enjoy beyond the unit.", "gallery-amenity")}
   </section>${lightboxMarkup(unit, controls)}`;
 }
 
 function lightboxMarkup(unit, controls) {
-  return `<dialog class="lightbox" aria-label="Unit ${esc(unit.id)} photo viewer">
-    <div class="lightbox-top"><span>UNIT ${esc(unit.id)}</span><button class="close-viewer" autofocus aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button></div>
+  const albumName = unitAlbumName(unit);
+  return `<dialog class="lightbox" aria-label="Unit ${esc(albumName)} photo viewer">
+    <div class="lightbox-top"><span>UNIT ${esc(albumName)}</span><button class="close-viewer" autofocus aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button></div>
     <div class="lightbox-image"><img alt=""><p class="viewer-error" hidden>Photo could not be loaded.</p></div>
     <div class="lightbox-bottom"><button data-step="-1" aria-label="Previous photo" ${controls ? "" : "hidden"}>←</button><p class="viewer-caption" aria-live="polite"></p><button data-step="1" aria-label="Next photo" ${controls ? "" : "hidden"}>→</button></div>
   </dialog>`;

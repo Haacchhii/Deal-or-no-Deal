@@ -8,6 +8,8 @@ import {
   validateCatalog,
   photoPath,
   directoryCoverPhoto,
+  unitAlbumName,
+  unitDisplayName,
   wrapIndex,
   escapeHtml,
 } from "../src/catalog.js";
@@ -55,6 +57,24 @@ test("groups only requested tower, numerically sorted by floor then unit", () =>
     [["2101B", "2103B"], ["1504B"]],
   );
   assert.deepEqual(groupUnits([], "A"), []);
+});
+test("route-safe albums can share one real unit number", () => {
+  const splitUnit = {
+    id: "1633A-1st-floor",
+    unitNumber: "1633A",
+    displayName: "1633A",
+    spaceLabel: "1st Floor",
+    photos: [{ file: "living-room", alt: "Living room", caption: "Living area" }],
+  };
+  assert.doesNotThrow(() =>
+    validateCatalog({ name: "Example", units: [splitUnit] }),
+  );
+  const [sixteenthFloor] = groupUnits([splitUnit], "A");
+  assert.equal(sixteenthFloor.floor, 16);
+  assert.equal(sixteenthFloor.units[0].id, "1633A-1st-floor");
+  assert.equal(sixteenthFloor.units[0].unitNumber, "1633A");
+  assert.equal(unitDisplayName(splitUnit), "1633A");
+  assert.equal(unitAlbumName(splitUnit), "1633A · 1st Floor");
 });
 const unit = {
   id: "2103B",

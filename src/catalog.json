@@ -1502,7 +1502,55 @@
       ]
     },
     {
-      "id": "1633A",
+      "id": "1633A-1st-floor",
+      "unitNumber": "1633A",
+      "displayName": "1633A",
+      "spaceLabel": "1st Floor",
+      "sample": true,
+      "photos": [
+        {
+          "file": "building",
+          "caption": "Building exterior placeholder",
+          "alt": "Placeholder image for the Victoria De Makati building exterior",
+          "placeholder": true
+        },
+        {
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
+        },
+        {
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
+        },
+        {
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
+        },
+        {
+          "file": "pool",
+          "caption": "Pool placeholder",
+          "alt": "Placeholder image for the Victoria De Makati pool area",
+          "placeholder": true
+        }
+      ]
+    },
+    {
+      "id": "1633A-2nd-floor",
+      "unitNumber": "1633A",
+      "displayName": "1633A",
+      "spaceLabel": "2nd Floor",
       "sample": true,
       "photos": [
         {

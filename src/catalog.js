@@ -58,7 +58,16 @@ export function ordinal(value) {
 export function groupUnits(units, tower) {
   const groups = new Map();
   units
-    .map((unit) => ({ ...unit, ...parseUnit(unit.id) }))
+    .map((unit) => {
+      const details = parseUnit(unit.unitNumber || unit.id);
+      return {
+        ...unit,
+        floor: details.floor,
+        number: details.number,
+        tower: details.tower,
+        unitNumber: unit.unitNumber || details.id,
+      };
+    })
     .filter((unit) => unit.tower === tower)
     .sort(
       (a, b) =>
@@ -74,6 +83,16 @@ export function groupUnits(units, tower) {
 export function photoPath(unit, photo, size = "full") {
   const folder = photo.placeholder ? "_placeholders" : unit.id;
   return `units/${folder}/${photo.file}${size === "thumb" ? "-thumb" : ""}.webp`;
+}
+
+export function unitDisplayName(unit) {
+  return unit.displayName || unit.unitNumber || unit.id;
+}
+
+export function unitAlbumName(unit) {
+  return unit.spaceLabel
+    ? `${unitDisplayName(unit)} · ${unit.spaceLabel}`
+    : unitDisplayName(unit);
 }
 
 export function directoryCoverPhoto(unit) {
@@ -94,7 +113,9 @@ export function validateCatalog(catalog) {
       throw new Error("Catalog location requires a Google Maps link.");
   }
   for (const unit of catalog.units) {
-    parseUnit(unit.id);
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/i.test(unit.id))
+      throw new Error(`Unsafe unit route id: ${unit.id}`);
+    parseUnit(unit.unitNumber || unit.id);
     if (seen.has(unit.id)) throw new Error(`Duplicate unit: ${unit.id}`);
     seen.add(unit.id);
     if (!Array.isArray(unit.photos) || !unit.photos.length)

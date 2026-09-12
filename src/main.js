@@ -6,6 +6,8 @@ import {
   parseUnit,
   ordinal,
   photoPath,
+  unitAlbumName,
+  unitDisplayName,
   validateCatalog,
 } from "./catalog.js";
 import { galleryMarkup, mountGallery } from "./gallery.js";
@@ -53,14 +55,15 @@ function directory(tower) {
     <nav class="tower-tabs" aria-label="Choose a tower">${["A", "B"].map((t) => `<a href="#/units?tower=${t}" ${t === tower ? 'aria-current="page"' : ""}>Tower ${t}<span aria-hidden="true">↗</span></a>`).join("")}</nav>
     <div class="floor-list">${groups.length ? groups.map((group) => `<section class="floor-row" id="floor-${group.floor}" aria-labelledby="floor-heading-${group.floor}"><div class="floor-label"><p class="eyebrow">Tower ${tower}</p><h2 id="floor-heading-${group.floor}">${ordinal(group.floor)} floor</h2><p>${group.units.length} ${group.units.length === 1 ? "album" : "albums"}</p></div><div class="unit-grid">${group.units.map((unit) => {
     const cover = directoryCoverPhoto(unit);
-    return `<a class="unit-album" href="#/units/${unit.id}" aria-label="View unit ${unit.id} photo album"><div class="unit-cover"><img src="${photoPath(unit, cover, "thumb")}" alt="${esc(cover.alt)}" width="640" height="427" loading="lazy">${unit.sample ? `<span class="sample-tag">${isPlaceholderAlbum(unit) ? "Placeholder photos" : "Sample interiors"}</span>` : ""}<span class="cover-arrow" aria-hidden="true">↗</span></div><div class="unit-title"><h3>${unit.id}</h3><span>${unit.photos.length} photos <span aria-hidden="true">↗</span></span></div></a>`;
+    return `<a class="unit-album" href="#/units/${unit.id}" aria-label="View ${esc(unitAlbumName(unit))} photo album"><div class="unit-cover"><img src="${photoPath(unit, cover, "thumb")}" alt="${esc(cover.alt)}" width="640" height="427" loading="lazy">${unit.sample ? `<span class="sample-tag">${isPlaceholderAlbum(unit) ? "Placeholder photos" : "Sample interiors"}</span>` : ""}<span class="cover-arrow" aria-hidden="true">↗</span></div><div class="unit-title"><h3>${esc(unitDisplayName(unit))}</h3><span>${unit.spaceLabel ? `${esc(unit.spaceLabel)} · ` : ""}${unit.photos.length} photos <span aria-hidden="true">↗</span></span></div></a>`;
   }).join("")}</div></section>`).join("") : '<div class="empty-state"><h2>More spaces, soon.</h2><p>Photo albums for this tower have not been added yet.</p></div>'}</div>
     <p class="directory-footnote">Photos are for viewing reference. Please confirm current availability with the office.</p></main>${footer()}`;
 }
 
 function album(unit) {
-  const details = parseUnit(unit.id);
-  return `${header("units")}<main class="album page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/units?tower=${details.tower}">Our units</a><span>/</span><span>${esc(buildingName)}</span><span>/</span><a href="#/units?tower=${details.tower}">Tower ${details.tower}</a><span>/</span><span>${ordinal(details.floor)} floor</span></div><div class="album-heading"><div><h1>Unit <em>${unit.id}</em></h1><p class="intro">${esc(buildingName)} <span aria-hidden="true">·</span> Tower ${details.tower} <span aria-hidden="true">·</span> ${ordinal(details.floor)} floor</p></div><a class="back-link" href="#/units?tower=${details.tower}">← Back to units</a></div>${unit.sample ? `<p class="sample-notice">${isPlaceholderAlbum(unit) ? "Placeholder photos · Replace these images when unit photos are available." : "Sample interiors · These images illustrate the gallery and are not photographs of this unit."}</p>` : ""}${galleryMarkup(unit)}</main>${footer()}`;
+  const details = parseUnit(unit.unitNumber || unit.id);
+  const albumName = unitAlbumName(unit);
+  return `${header("units")}<main class="album page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/units?tower=${details.tower}">Our units</a><span>/</span><span>${esc(buildingName)}</span><span>/</span><a href="#/units?tower=${details.tower}">Tower ${details.tower}</a><span>/</span><span>${ordinal(details.floor)} floor</span>${unit.spaceLabel ? `<span>/</span><span>${esc(unit.spaceLabel)}</span>` : ""}</div><div class="album-heading"><div><h1>Unit <em>${esc(unitDisplayName(unit))}</em></h1><p class="intro">${esc(buildingName)} <span aria-hidden="true">·</span> Tower ${details.tower} <span aria-hidden="true">·</span> ${ordinal(details.floor)} floor${unit.spaceLabel ? ` <span aria-hidden="true">·</span> ${esc(unit.spaceLabel)}` : ""}</p></div><a class="back-link" href="#/units?tower=${details.tower}">← Back to units</a></div>${unit.sample ? `<p class="sample-notice">${isPlaceholderAlbum(unit) ? `Placeholder photos · Replace these images when ${esc(albumName)} photos are available.` : "Sample interiors · These images illustrate the gallery and are not photographs of this unit."}</p>` : ""}${galleryMarkup(unit)}</main>${footer()}`;
 }
 
 function getRoute() {
@@ -71,7 +74,7 @@ function getRoute() {
       type: "directory",
       tower: new URLSearchParams(query).get("tower") === "B" ? "B" : "A",
     };
-  const match = /^\/units\/([0-9AB-]+)$/.exec(path);
+  const match = /^\/units\/([A-Za-z0-9-]+)$/.exec(path);
   const unit = match && catalog.units.find((unit) => unit.id === match[1]);
   return unit ? { type: "album", unit } : { type: "missing" };
 }
@@ -90,7 +93,7 @@ function render({ initial = false } = {}) {
         : route.type === "album"
           ? album(route.unit)
           : `${header("units")}<main id="main" class="page-shell empty-state" tabindex="-1"><p class="eyebrow">Our collection</p><h1>That album isn’t here.</h1><p>The unit may not have photos yet, or the link may be incorrect.</p><a class="button" href="#/units?tower=A">Back to the units ↗</a></main>${footer()}`;
-  document.title = `${route.type === "album" ? `Unit ${route.unit.id}` : route.type === "directory" ? `Tower ${route.tower} · ${buildingName}` : route.type === "missing" ? "Album not found" : buildingName} | ${catalog.name}`;
+  document.title = `${route.type === "album" ? `Unit ${unitAlbumName(route.unit)}` : route.type === "directory" ? `Tower ${route.tower} · ${buildingName}` : route.type === "missing" ? "Album not found" : buildingName} | ${catalog.name}`;
   cleanup = route.type === "album" ? mountGallery(route.unit) : () => {};
   document
     .querySelectorAll(".unit-cover img, .hero-photo")
