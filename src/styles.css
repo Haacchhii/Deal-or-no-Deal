@@ -665,6 +665,87 @@ main:focus {
   color: var(--paper);
   font-size: 1rem;
 }
+.nearby-locations {
+  margin-top: clamp(3rem, 7vw, 6rem);
+  padding-top: clamp(2rem, 5vw, 4rem);
+  border-top: 1px solid var(--line);
+}
+.nearby-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.25fr) minmax(0, 0.55fr) minmax(240px, 0.2fr);
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.nearby-heading h2 {
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+.nearby-heading > p:last-child {
+  max-width: 260px;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.nearby-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.nearby-photo-grid figure {
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+.nearby-photo-grid img {
+  width: 100%;
+  aspect-ratio: 1.35;
+  object-fit: cover;
+  display: block;
+}
+.nearby-photo-grid figcaption {
+  padding: 0.85rem 1rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.nearby-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border: 1px solid var(--line);
+  background: var(--white);
+}
+.nearby-group {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.nearby-group:nth-child(2n) {
+  border-right: 0;
+}
+.nearby-group:nth-last-child(-n + 1) {
+  border-bottom: 0;
+}
+.nearby-group h3 {
+  margin-bottom: 0.85rem;
+  font-size: 1.55rem;
+}
+.nearby-group ul {
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+.nearby-group li {
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+.nearby-group li::before {
+  content: "•";
+  color: var(--forest);
+  margin-right: 0.45rem;
+}
 .gallery-walkthrough {
   margin-top: 2.5rem;
 }
@@ -1512,6 +1593,31 @@ main:focus {
   .unit-inclusions li {
     padding: 0.85rem;
     font-size: 0.875rem;
+  }
+  .nearby-heading {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .nearby-heading h2 {
+    font-size: 3.5rem;
+  }
+  .nearby-heading > p:last-child {
+    max-width: 300px;
+    font-size: 0.75rem;
+  }
+  .nearby-photo-grid,
+  .nearby-grid {
+    grid-template-columns: 1fr;
+  }
+  .nearby-group,
+  .nearby-group:nth-child(2n) {
+    border-right: 0;
+  }
+  .nearby-group:nth-last-child(-n + 1) {
+    border-bottom: 1px solid var(--line);
+  }
+  .nearby-group:last-child {
+    border-bottom: 0;
   }
   .gallery-walkthrough {
     margin-top: 2rem;

@@ -14,7 +14,7 @@ import {
   escapeHtml,
 } from "../src/catalog.js";
 import { galleryMarkup } from "../src/gallery.js";
-import { inclusionsSection } from "../src/inclusions.js";
+import { inclusionsSection, nearbyLocationsSection } from "../src/inclusions.js";
 
 test("real identifiers preserve the unit component and derive tower and floor", () => {
   assert.deepEqual(parseUnit("2103B"), {
@@ -224,6 +224,19 @@ test("unit albums show furnished move-in-ready inclusions", () => {
   assert.match(markup, /Water/);
   assert.match(markup, /Wifi/);
   assert.match(markup, /Association dues/);
+  assert.match(markup, /Rental fee/);
+});
+test("unit albums show nearby locations and shared placeholders", () => {
+  const markup = nearbyLocationsSection();
+  assert.match(markup, /Nearby Locations/);
+  assert.match(markup, /Prime location/);
+  assert.match(markup, /Ayala Malls/);
+  assert.match(markup, /Ayala Central Business District/);
+  assert.match(markup, /Makati Medical Center/);
+  assert.match(markup, /Ayala Triangle Gardens/);
+  assert.match(markup, /units\/_placeholders\/nearby-shopping\.webp/);
+  assert.match(markup, /units\/_placeholders\/nearby-business\.webp/);
+  assert.match(markup, /units\/_placeholders\/nearby-parks\.webp/);
 });
 test("catalog text cannot inject markup", () =>
   assert.equal(
