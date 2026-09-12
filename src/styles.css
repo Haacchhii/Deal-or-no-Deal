@@ -710,6 +710,9 @@ main:focus {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.5rem;
 }
+.gallery-five .interior-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 .interior-photo {
   padding: 0;
   position: relative;

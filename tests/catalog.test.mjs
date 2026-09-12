@@ -196,6 +196,26 @@ test("six-photo albums use building and pool as the first and last visual anchor
   assert.match(markup, /data-index="0"/);
   assert.match(markup, /data-index="5"/);
 });
+test("five-photo albums use a guided three-interior layout", () => {
+  const fivePhotoUnit = {
+    id: "1633A-1st-floor",
+    unitNumber: "1633A",
+    spaceLabel: "1st Floor",
+    photos: [
+      { file: "building", alt: "Building exterior", caption: "The building" },
+      { file: "living", alt: "Living room", caption: "Living & dining" },
+      { file: "sleep", alt: "Bedroom", caption: "Sleeping area" },
+      { file: "bath", alt: "Bathroom", caption: "Bathroom" },
+      { file: "pool", alt: "Pool", caption: "Pool area" },
+    ],
+  };
+  const markup = galleryMarkup(fivePhotoUnit);
+  assert.match(markup, /gallery-five/);
+  assert.match(markup, /02–04 \/ 05/);
+  assert.match(markup, /1st Floor · Three views of the spaces inside/);
+  assert.match(markup, /Inside Unit <em>1633A<\/em>/);
+  assert.match(markup, /data-index="4"/);
+});
 test("catalog text cannot inject markup", () =>
   assert.equal(
     escapeHtml('<img onerror="x">'),

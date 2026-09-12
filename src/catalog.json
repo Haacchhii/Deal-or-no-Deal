@@ -222,7 +222,7 @@
     },
     {
       "id": "0825B",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
           "file": "building",
@@ -231,28 +231,24 @@
           "placeholder": true
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "776383083-1808313153917734-2605470082082727187-n",
+          "caption": "Living, kitchen & dining",
+          "alt": "Living, kitchen and dining area inside unit 0825B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "778659785-1056678977116286-6404426514884126712-n",
+          "caption": "Sleeping area",
+          "alt": "Sleeping area inside unit 0825B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
+          "file": "778927821-1075186081726652-7723582951317553377-n",
+          "caption": "Kitchen & storage",
+          "alt": "Kitchen and storage area inside unit 0825B"
         },
         {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
+          "file": "785058649-1598844708320038-6170489974342735358-n",
+          "caption": "Bathroom",
+          "alt": "Bathroom inside unit 0825B"
         },
         {
           "file": "pool",
@@ -1546,7 +1542,7 @@
       "unitNumber": "1633A",
       "displayName": "1633A",
       "spaceLabel": "1st Floor",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
           "file": "building",
@@ -1555,28 +1551,19 @@
           "placeholder": true
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "795643342-1560282865319622-6403598152493862999-n",
+          "caption": "Living, kitchen & dining",
+          "alt": "Living, kitchen and dining area on the 1st floor of unit 1633A"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "795766310-2155999791796652-8255999732233242909-n",
+          "caption": "Sleeping area",
+          "alt": "Sleeping area on the 1st floor of unit 1633A"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
+          "file": "796568027-1401093005481420-9104553393190373101-n",
+          "caption": "Bathroom",
+          "alt": "Bathroom on the 1st floor of unit 1633A"
         },
         {
           "file": "pool",
