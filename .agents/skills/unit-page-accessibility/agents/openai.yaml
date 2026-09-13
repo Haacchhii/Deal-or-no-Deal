@@ -1,0 +1,5 @@
+interface:
+  display_name: "Unit Page Accessibility"
+  short_description: "Audit accessible frontend interactions"
+  brand_color: "#C8AD78"
+  default_prompt: "Use $unit-page-accessibility to audit the affected Unit Page flow and fix accessibility issues."

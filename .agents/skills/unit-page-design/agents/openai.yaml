@@ -1,0 +1,5 @@
+interface:
+  display_name: "Unit Page Design"
+  short_description: "Design and refine Unit Page UI/UX"
+  brand_color: "#183C34"
+  default_prompt: "Use $unit-page-design to review and improve the Unit Page frontend experience."

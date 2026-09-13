@@ -6,8 +6,8 @@ const nearbyGroups = [
   {
     title: "Shopping & Lifestyle",
     photo: {
-      src: "units/_placeholders/nearby-shopping.webp",
-      alt: "Placeholder for nearby shopping and lifestyle locations",
+      src: "nearby/malls.webp",
+      alt: "Greenbelt shopping complex and surrounding buildings in Makati",
     },
     items: [
       "Ayala Malls: Greenbelt, Glorietta, Landmark, SM Makati",
@@ -21,8 +21,8 @@ const nearbyGroups = [
   {
     title: "Offices & Corporate Hubs",
     photo: {
-      src: "units/_placeholders/nearby-business.webp",
-      alt: "Placeholder for nearby offices and corporate hubs",
+      src: "nearby/offices.webp",
+      alt: "Makati central business district skyline at dusk",
     },
     items: [
       "Ayala Central Business District",
@@ -37,8 +37,9 @@ const nearbyGroups = [
   {
     title: "Transport Access",
     photo: {
-      src: "units/_placeholders/nearby-business.webp",
-      alt: "Placeholder for nearby transport access",
+      src: "nearby/commute.webp",
+      alt: "Commute route map connecting PITX, Pasay and Makati stops",
+      fit: "contain",
     },
     items: [
       "Ayala MRT & Buendia MRT Stations",
@@ -50,8 +51,9 @@ const nearbyGroups = [
   {
     title: "Hospitals & Clinics",
     photo: {
-      src: "units/_placeholders/nearby-business.webp",
-      alt: "Placeholder for nearby hospitals and clinics",
+      src: "nearby/makati-medical-center.webp",
+      alt: "Makati Medical Center logo",
+      fit: "contain",
     },
     items: [
       "Makati Medical Center",
@@ -62,8 +64,8 @@ const nearbyGroups = [
   {
     title: "Schools & Institutions",
     photo: {
-      src: "units/_placeholders/nearby-business.webp",
-      alt: "Placeholder for nearby schools and institutions",
+      src: "nearby/schools.webp",
+      alt: "Centro Escolar University Makati campus exterior",
     },
     items: ["CEU Makati", "FEU Makati", "STI Makati", "iAcademy"],
   },
@@ -84,8 +86,8 @@ const nearbyGroups = [
   {
     title: "Parks & Open Spaces",
     photo: {
-      src: "units/_placeholders/nearby-parks.webp",
-      alt: "Placeholder for nearby parks and open spaces",
+      src: "nearby/parks.webp",
+      alt: "Ayala Triangle Gardens surrounded by the Makati skyline",
     },
     items: [
       "Ayala Triangle Gardens",
@@ -96,5 +98,5 @@ const nearbyGroups = [
 ];
 
 export function nearbyLocationsSection() {
-  return `<section class="nearby-locations" aria-labelledby="nearby-heading"><div class="nearby-heading"><p class="eyebrow">Nearby Locations</p><h2 id="nearby-heading">Prime location,<br><em>steps away.</em></h2><p>Everything you need is within easy reach from Victoria De Makati.</p></div><div class="nearby-grid">${nearbyGroups.map((group) => `<section class="nearby-group"><img src="${group.photo.src}" alt="${group.photo.alt}" width="180" height="120" loading="lazy"><div><h3>${group.title}</h3><ul>${group.items.map((item) => `<li>${item}</li>`).join("")}</ul></div></section>`).join("")}</div></section>`;
+  return `<section class="nearby-locations" aria-labelledby="nearby-heading"><div class="nearby-heading"><p class="eyebrow">Nearby Locations</p><h2 id="nearby-heading">Prime location,<br><em>steps away.</em></h2><p>Everything you need is within easy reach from Victoria De Makati.</p></div><div class="nearby-grid">${nearbyGroups.map((group) => `<section class="nearby-group"><img class="nearby-photo${group.photo.fit === "contain" ? " nearby-photo-contain" : ""}" src="${group.photo.src}" alt="${group.photo.alt}" width="180" height="120" loading="lazy"><div><h3>${group.title}</h3><ul>${group.items.map((item) => `<li>${item}</li>`).join("")}</ul></div></section>`).join("")}</div></section>`;
 }

@@ -1,0 +1,5 @@
+interface:
+  display_name: "Unit Page Visual QA"
+  short_description: "Inspect responsive UI and browser behavior"
+  brand_color: "#183C34"
+  default_prompt: "Use $unit-page-visual-qa to inspect the Unit Page interface across representative viewports."

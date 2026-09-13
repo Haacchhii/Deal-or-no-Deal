@@ -226,7 +226,7 @@ test("unit albums show furnished move-in-ready inclusions", () => {
   assert.match(markup, /Association dues/);
   assert.match(markup, /Rental fee/);
 });
-test("unit albums show nearby locations and shared placeholders", () => {
+test("unit albums show nearby locations and supplied shared images", () => {
   const markup = nearbyLocationsSection();
   assert.match(markup, /Nearby Locations/);
   assert.match(markup, /Prime location/);
@@ -234,9 +234,14 @@ test("unit albums show nearby locations and shared placeholders", () => {
   assert.match(markup, /Ayala Central Business District/);
   assert.match(markup, /Makati Medical Center/);
   assert.match(markup, /Ayala Triangle Gardens/);
-  assert.match(markup, /Placeholder for nearby schools and institutions/);
-  assert.match(markup, /units\/_placeholders\/nearby-shopping\.webp/);
-  assert.match(markup, /units\/_placeholders\/nearby-business\.webp/);
+  assert.match(markup, /nearby\/malls\.webp/);
+  assert.match(markup, /nearby\/offices\.webp/);
+  assert.match(markup, /nearby\/commute\.webp/);
+  assert.match(markup, /nearby\/makati-medical-center\.webp/);
+  assert.match(markup, /nearby\/schools\.webp/);
+  assert.match(markup, /nearby\/parks\.webp/);
+  assert.match(markup, /Makati Medical Center logo/);
+  assert.match(markup, /nearby-photo-contain/);
   assert.match(markup, /units\/_placeholders\/nearby-parks\.webp/);
   assert.doesNotMatch(markup, /nearby-photo-grid/);
 });
