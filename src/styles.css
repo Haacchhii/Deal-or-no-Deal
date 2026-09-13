@@ -828,10 +828,10 @@ main:focus {
 @media (min-width: 1101px) {
   .gallery-feature,
   .gallery-amenity {
-    width: min(100%, 1040px);
+    width: min(100%, 1200px);
     margin-inline: auto;
     min-height: 0;
-    height: clamp(300px, 24vw, 340px);
+    height: clamp(340px, 28vw, 400px);
   }
   .gallery-feature > * {
     min-width: 0;
@@ -932,6 +932,11 @@ main:focus {
 }
 .gallery-amenity {
   grid-template-columns: minmax(260px, 0.55fr) minmax(0, 1.45fr);
+}
+@media (min-width: 1101px) {
+  .gallery-amenity .gallery-feature-photo img {
+    object-fit: contain;
+  }
 }
 .gallery-amenity .gallery-feature-copy {
   order: -1;
