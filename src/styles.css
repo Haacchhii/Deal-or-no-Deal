@@ -828,8 +828,10 @@ main:focus {
 @media (min-width: 1101px) {
   .gallery-feature,
   .gallery-amenity {
+    width: min(100%, 1040px);
+    margin-inline: auto;
     min-height: 0;
-    height: clamp(300px, 28vw, 360px);
+    height: clamp(300px, 24vw, 340px);
   }
   .gallery-feature > * {
     min-width: 0;
