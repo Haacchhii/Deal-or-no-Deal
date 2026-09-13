@@ -240,9 +240,10 @@ test("unit albums show nearby locations and supplied shared images", () => {
   assert.match(markup, /nearby\/makati-medical-center\.webp/);
   assert.match(markup, /nearby\/schools\.webp/);
   assert.match(markup, /nearby\/parks\.webp/);
-  assert.match(markup, /Makati Medical Center logo/);
+  assert.match(markup, /Makati Medical Center exterior in Makati/);
   assert.match(markup, /nearby-photo-contain/);
-  assert.match(markup, /units\/_placeholders\/nearby-parks\.webp/);
+  assert.match(markup, /nearby\/cafes\.webp/);
+  assert.match(markup, /width="640" height="360"/);
   assert.doesNotMatch(markup, /nearby-photo-grid/);
 });
 test("catalog text cannot inject markup", () =>

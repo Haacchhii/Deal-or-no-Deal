@@ -52,8 +52,7 @@ const nearbyGroups = [
     title: "Hospitals & Clinics",
     photo: {
       src: "nearby/makati-medical-center.webp",
-      alt: "Makati Medical Center logo",
-      fit: "contain",
+      alt: "Makati Medical Center exterior in Makati",
     },
     items: [
       "Makati Medical Center",
@@ -72,8 +71,8 @@ const nearbyGroups = [
   {
     title: "Cafés & Hangout Spots",
     photo: {
-      src: "units/_placeholders/nearby-parks.webp",
-      alt: "Placeholder for nearby cafés and hangout spots",
+      src: "nearby/cafes.webp",
+      alt: "Starbucks storefront with illuminated green logo and sign",
     },
     items: [
       "Commune Café + Bar",
@@ -98,5 +97,5 @@ const nearbyGroups = [
 ];
 
 export function nearbyLocationsSection() {
-  return `<section class="nearby-locations" aria-labelledby="nearby-heading"><div class="nearby-heading"><p class="eyebrow">Nearby Locations</p><h2 id="nearby-heading">Prime location,<br><em>steps away.</em></h2><p>Everything you need is within easy reach from Victoria De Makati.</p></div><div class="nearby-grid">${nearbyGroups.map((group) => `<section class="nearby-group"><img class="nearby-photo${group.photo.fit === "contain" ? " nearby-photo-contain" : ""}" src="${group.photo.src}" alt="${group.photo.alt}" width="180" height="120" loading="lazy"><div><h3>${group.title}</h3><ul>${group.items.map((item) => `<li>${item}</li>`).join("")}</ul></div></section>`).join("")}</div></section>`;
+  return `<section class="nearby-locations" aria-labelledby="nearby-heading"><div class="nearby-heading"><p class="eyebrow">Nearby Locations</p><h2 id="nearby-heading">Prime location,<br><em>steps away.</em></h2><p>Everything you need is within easy reach from Victoria De Makati.</p></div><div class="nearby-grid">${nearbyGroups.map((group) => `<section class="nearby-group"><img class="nearby-photo${group.photo.fit === "contain" ? " nearby-photo-contain" : ""}" src="${group.photo.src}" alt="${group.photo.alt}" width="640" height="360" loading="lazy"><div><h3>${group.title}</h3><ul>${group.items.map((item) => `<li>${item}</li>`).join("")}</ul></div></section>`).join("")}</div></section>`;
 }

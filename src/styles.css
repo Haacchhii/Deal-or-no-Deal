@@ -696,8 +696,9 @@ main:focus {
 }
 .nearby-group {
   display: grid;
-  grid-template-columns: minmax(12.5rem, 13.75rem) 1fr;
-  gap: clamp(1rem, 2vw, 1.5rem);
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
   align-items: start;
   padding: clamp(1.25rem, 3vw, 2rem);
   border-right: 1px solid var(--line);
@@ -706,7 +707,7 @@ main:focus {
 .nearby-photo {
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border: 1px solid var(--line);
   background: var(--paper);
@@ -1619,11 +1620,7 @@ main:focus {
     grid-template-columns: 1fr;
   }
   .nearby-group {
-    grid-template-columns: 1fr;
     gap: 1.25rem;
-  }
-  .nearby-photo {
-    aspect-ratio: 16 / 9;
   }
   .nearby-group,
   .nearby-group:nth-child(2n) {
