@@ -825,6 +825,27 @@ main:focus {
   font-size: 0.8125rem;
   line-height: 1.7;
 }
+@media (min-width: 1101px) {
+  .gallery-feature,
+  .gallery-amenity {
+    min-height: 0;
+    height: clamp(300px, 28vw, 360px);
+  }
+  .gallery-feature > * {
+    min-width: 0;
+    min-height: 0;
+  }
+  .gallery-feature-copy {
+    padding: clamp(1.5rem, 2.4vw, 2.5rem);
+    gap: 0.75rem;
+  }
+  .gallery-feature-copy h2 {
+    font-size: clamp(2.5rem, 3.2vw, 3.75rem);
+  }
+  .gallery-feature-copy > p:last-child {
+    line-height: 1.55;
+  }
+}
 .gallery-interior {
   padding: 5rem 0;
 }
