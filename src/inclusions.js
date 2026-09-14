@@ -94,8 +94,19 @@ const nearbyGroups = [
       "Legazpi Active Park",
     ],
   },
+  {
+    title: "Nearby Gyms",
+    visualLabel: "Move",
+    items: [
+      "Wellness & Fitness Gym — Amorsolo corner V.A. Rufino",
+      "Anytime Fitness Eton Tower — V.A. Rufino corner Dela Rosa Street",
+      "BeFit PNB Makati Center — 6754 Ayala Avenue",
+      "JJ Fitness Hub — Arnaiz Avenue, Pio del Pilar",
+      "ActivGym Fitness Center Makati — 7272 J. Victor, Pio del Pilar",
+    ],
+  },
 ];
 
 export function nearbyLocationsSection() {
-  return `<section class="nearby-locations" aria-labelledby="nearby-heading"><div class="nearby-heading"><h2 id="nearby-heading"><span class="visually-hidden">Nearby Locations: </span>Prime location,<br><em>steps away.</em></h2><p>Everything you need is within easy reach from Victoria De Makati.</p></div><div class="nearby-grid">${nearbyGroups.map((group) => `<section class="nearby-group"><img class="nearby-photo${group.photo.fit === "contain" ? " nearby-photo-contain" : ""}" src="${group.photo.src}" alt="${group.photo.alt}" width="640" height="360" loading="lazy"><div><h3>${group.title}</h3><ul>${group.items.map((item) => `<li>${item}</li>`).join("")}</ul></div></section>`).join("")}</div></section>`;
+  return `<section class="nearby-locations" aria-labelledby="nearby-heading"><div class="nearby-heading"><h2 id="nearby-heading"><span class="visually-hidden">Nearby Locations: </span>Prime location,<br><em>steps away.</em></h2><p>Everything you need is within easy reach from Victoria De Makati.</p></div><div class="nearby-grid">${nearbyGroups.map((group) => `<section class="nearby-group">${group.photo ? `<img class="nearby-photo${group.photo.fit === "contain" ? " nearby-photo-contain" : ""}" src="${group.photo.src}" alt="${group.photo.alt}" width="640" height="360" loading="lazy">` : `<div class="nearby-photo nearby-photo-type" aria-hidden="true"><span>${group.visualLabel}</span><small>Makati</small></div>`}<div><h3>${group.title}</h3><ul>${group.items.map((item) => `<li>${item}</li>`).join("")}</ul></div></section>`).join("")}</div></section>`;
 }

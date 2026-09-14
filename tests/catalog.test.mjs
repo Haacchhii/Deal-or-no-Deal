@@ -283,6 +283,12 @@ test("the building guide shows nearby locations and supplied shared images", () 
   assert.match(markup, /Ayala Central Business District/);
   assert.match(markup, /Makati Medical Center/);
   assert.match(markup, /Ayala Triangle Gardens/);
+  assert.match(markup, /Nearby Gyms/);
+  assert.match(markup, /Wellness & Fitness Gym/);
+  assert.match(markup, /Anytime Fitness Eton Tower/);
+  assert.match(markup, /BeFit PNB Makati Center/);
+  assert.match(markup, /JJ Fitness Hub/);
+  assert.match(markup, /ActivGym Fitness Center Makati/);
   assert.match(markup, /nearby\/malls\.webp/);
   assert.match(markup, /nearby\/offices\.webp/);
   assert.match(markup, /nearby\/commute\.webp/);
