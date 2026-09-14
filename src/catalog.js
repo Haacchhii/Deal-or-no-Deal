@@ -89,9 +89,14 @@ export function unitDisplayName(unit) {
   return unit.displayName || unit.unitNumber || unit.id;
 }
 
+export function unitDetailLabel(unit) {
+  return [unit.rentalType, unit.spaceLabel].filter(Boolean).join(" · ");
+}
+
 export function unitAlbumName(unit) {
-  return unit.spaceLabel
-    ? `${unitDisplayName(unit)} · ${unit.spaceLabel}`
+  const detail = unitDetailLabel(unit);
+  return detail
+    ? `${unitDisplayName(unit)} · ${detail}`
     : unitDisplayName(unit);
 }
 
@@ -113,6 +118,11 @@ export function validateCatalog(catalog) {
       throw new Error("Catalog location requires a Google Maps link.");
   }
   for (const unit of catalog.units) {
+    if (
+      unit.rentalType &&
+      !["Bedspace", "Bedroom"].includes(unit.rentalType)
+    )
+      throw new Error(`Invalid rental type for ${unit.id}.`);
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/i.test(unit.id))
       throw new Error(`Unsafe unit route id: ${unit.id}`);
     parseUnit(unit.unitNumber || unit.id);

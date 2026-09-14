@@ -143,6 +143,7 @@
     },
     {
       "id": "0810B",
+      "rentalType": "Bedroom",
       "sample": false,
       "photos": [
         {
@@ -298,6 +299,7 @@
     },
     {
       "id": "0925B",
+      "rentalType": "Bedspace",
       "sample": true,
       "photos": [
         {
@@ -382,6 +384,7 @@
     },
     {
       "id": "1023B",
+      "rentalType": "Bedspace",
       "sample": false,
       "photos": [
         {
@@ -420,6 +423,7 @@
     },
     {
       "id": "1101B",
+      "rentalType": "Bedspace",
       "sample": true,
       "photos": [
         {
@@ -462,6 +466,7 @@
     },
     {
       "id": "1105A",
+      "rentalType": "Bedspace",
       "sample": true,
       "photos": [
         {
@@ -743,6 +748,7 @@
     },
     {
       "id": "1231A",
+      "rentalType": "Bedspace",
       "sample": true,
       "photos": [
         {
@@ -785,6 +791,7 @@
     },
     {
       "id": "1235A",
+      "rentalType": "Bedspace",
       "photos": [
         {
           "file": "building",
@@ -864,6 +871,7 @@
     },
     {
       "id": "1412B",
+      "rentalType": "Bedspace",
       "sample": true,
       "photos": [
         {
@@ -1028,6 +1036,7 @@
     },
     {
       "id": "1507A",
+      "rentalType": "Bedspace",
       "sample": false,
       "photos": [
         {
@@ -1066,6 +1075,7 @@
     },
     {
       "id": "1508B",
+      "rentalType": "Bedspace",
       "sample": true,
       "photos": [
         {
@@ -1108,6 +1118,7 @@
     },
     {
       "id": "1510B",
+      "rentalType": "Bedspace",
       "sample": true,
       "photos": [
         {
@@ -1150,6 +1161,7 @@
     },
     {
       "id": "1514B",
+      "rentalType": "Bedspace",
       "sample": true,
       "photos": [
         {
@@ -1676,6 +1688,7 @@
     },
     {
       "id": "1730B",
+      "rentalType": "Bedspace",
       "photos": [
         {
           "file": "building",
@@ -1755,6 +1768,7 @@
     },
     {
       "id": "1821B",
+      "rentalType": "Bedspace",
       "sample": true,
       "photos": [
         {
@@ -1797,6 +1811,7 @@
     },
     {
       "id": "1910B",
+      "rentalType": "Bedspace",
       "sample": true,
       "photos": [
         {
@@ -1839,6 +1854,7 @@
     },
     {
       "id": "1911B",
+      "rentalType": "Bedspace",
       "photos": [
         {
           "file": "building",
@@ -1876,6 +1892,7 @@
     },
     {
       "id": "1912B",
+      "rentalType": "Bedspace",
       "displayName": "1912B",
       "spaceLabel": "All Girls",
       "photos": [
@@ -1958,6 +1975,7 @@
     },
     {
       "id": "2002B",
+      "rentalType": "Bedspace",
       "sample": false,
       "photos": [
         {
@@ -2038,6 +2056,7 @@
     },
     {
       "id": "2019B",
+      "rentalType": "Bedspace",
       "sample": true,
       "photos": [
         {
@@ -2122,6 +2141,7 @@
     },
     {
       "id": "2036A",
+      "rentalType": "Bedspace",
       "sample": true,
       "photos": [
         {
@@ -2164,6 +2184,7 @@
     },
     {
       "id": "2103B",
+      "rentalType": "Bedspace",
       "sample": true,
       "photos": [
         {

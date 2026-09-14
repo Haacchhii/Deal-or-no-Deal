@@ -9,6 +9,7 @@ import {
   photoPath,
   directoryCoverPhoto,
   unitAlbumName,
+  unitDetailLabel,
   unitDisplayName,
   wrapIndex,
   escapeHtml,
@@ -76,6 +77,21 @@ test("route-safe albums can share one real unit number", () => {
   assert.equal(sixteenthFloor.units[0].unitNumber, "1633A");
   assert.equal(unitDisplayName(splitUnit), "1633A");
   assert.equal(unitAlbumName(splitUnit), "1633A · 1st Floor");
+});
+test("rental type labels remain distinct from existing unit details", () => {
+  const bedspace = {
+    id: "1912B",
+    rentalType: "Bedspace",
+    spaceLabel: "All Girls",
+  };
+  assert.equal(unitDetailLabel(bedspace), "Bedspace · All Girls");
+  assert.equal(unitAlbumName(bedspace), "1912B · Bedspace · All Girls");
+  assert.throws(() =>
+    validateCatalog({
+      name: "Example",
+      units: [{ ...unit, rentalType: "Shared room" }],
+    }),
+  );
 });
 const unit = {
   id: "2103B",
