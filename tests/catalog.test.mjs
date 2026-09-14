@@ -266,7 +266,7 @@ test("five-photo albums use a guided three-interior layout", () => {
   assert.match(markup, /Inside Unit <em>1633A<\/em>/);
   assert.match(markup, /data-index="4"/);
 });
-test("unit albums show furnished move-in-ready inclusions", () => {
+test("the building guide shows furnished move-in-ready inclusions", () => {
   const markup = inclusionsSection();
   assert.match(markup, /Inclusions/);
   assert.match(markup, /All units are furnished and move-in ready/);
@@ -275,7 +275,7 @@ test("unit albums show furnished move-in-ready inclusions", () => {
   assert.match(markup, /Association dues/);
   assert.match(markup, /Rental fee/);
 });
-test("unit albums show nearby locations and supplied shared images", () => {
+test("the building guide shows nearby locations and supplied shared images", () => {
   const markup = nearbyLocationsSection();
   assert.match(markup, /Nearby Locations/);
   assert.match(markup, /Prime location/);

@@ -1,5 +1,5 @@
 export function inclusionsSection() {
-  return `<section class="unit-inclusions" aria-labelledby="inclusions-heading"><div><p class="eyebrow">Inclusions</p><h2 id="inclusions-heading">Furnished and<br><em>move-in ready.</em></h2><p>All units are furnished and move-in ready.</p></div><ul aria-label="Included with every unit"><li><span aria-hidden="true">💧</span>Water</li><li><span aria-hidden="true">⌁</span>Wifi</li><li><span aria-hidden="true">🏢</span>Association dues</li><li><span aria-hidden="true">₱</span>Rental fee</li></ul></section>`;
+  return `<section class="unit-inclusions" aria-labelledby="inclusions-heading"><div><h2 id="inclusions-heading"><span class="visually-hidden">Inclusions: </span>Furnished and<br><em>move-in ready.</em></h2><p>All units are furnished and move-in ready.</p></div><ul aria-label="Included with every unit"><li><span>Water</span><small>Included</small></li><li><span>Wifi</span><small>Included</small></li><li><span>Association dues</span><small>Included</small></li><li><span>Rental fee</span><small>Included</small></li></ul></section>`;
 }
 
 const nearbyGroups = [
@@ -97,5 +97,5 @@ const nearbyGroups = [
 ];
 
 export function nearbyLocationsSection() {
-  return `<section class="nearby-locations" aria-labelledby="nearby-heading"><div class="nearby-heading"><p class="eyebrow">Nearby Locations</p><h2 id="nearby-heading">Prime location,<br><em>steps away.</em></h2><p>Everything you need is within easy reach from Victoria De Makati.</p></div><div class="nearby-grid">${nearbyGroups.map((group) => `<section class="nearby-group"><img class="nearby-photo${group.photo.fit === "contain" ? " nearby-photo-contain" : ""}" src="${group.photo.src}" alt="${group.photo.alt}" width="640" height="360" loading="lazy"><div><h3>${group.title}</h3><ul>${group.items.map((item) => `<li>${item}</li>`).join("")}</ul></div></section>`).join("")}</div></section>`;
+  return `<section class="nearby-locations" aria-labelledby="nearby-heading"><div class="nearby-heading"><h2 id="nearby-heading"><span class="visually-hidden">Nearby Locations: </span>Prime location,<br><em>steps away.</em></h2><p>Everything you need is within easy reach from Victoria De Makati.</p></div><div class="nearby-grid">${nearbyGroups.map((group) => `<section class="nearby-group"><img class="nearby-photo${group.photo.fit === "contain" ? " nearby-photo-contain" : ""}" src="${group.photo.src}" alt="${group.photo.alt}" width="640" height="360" loading="lazy"><div><h3>${group.title}</h3><ul>${group.items.map((item) => `<li>${item}</li>`).join("")}</ul></div></section>`).join("")}</div></section>`;
 }
