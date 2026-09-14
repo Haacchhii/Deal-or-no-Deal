@@ -35,3 +35,13 @@ Compared with that baseline:
 - `1633A` has separate first-floor and second-floor albums.
 
 The combined entries are the confirmed presentation and should remain together unless the client changes that direction.
+
+## Room terminology
+
+The client uses these classifications for rooms within a unit:
+
+- `BR`: Big Room
+- `MR`: Medium Room
+- `SR`: Solo Room
+
+These room classifications are separate from the current `Bedroom` and `Bedspace` rental offering labels. A unit may contain one or more classified rooms, each with its own capacity. Room capacities and unit-to-room assignments remain pending client confirmation and must not be inferred from photographs.
