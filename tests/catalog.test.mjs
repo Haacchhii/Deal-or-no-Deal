@@ -186,9 +186,10 @@ test("four-photo albums use a selected photo display controlled by four selector
   assert.match(markup, /class="selected-photo photo-stage"/);
   assert.match(markup, /class="main-photo"/);
   assert.match(markup, /class="photo-counter">01 \/ 04/);
-  assert.match(markup, /class="current-caption" aria-live="polite">Living &amp; dining/);
-  assert.match(markup, /<b>01<\/b><span>Living &amp; dining<\/span>/);
-  assert.match(markup, /<b>04<\/b><span>Bathroom<\/span>/);
+  assert.match(markup, /class="current-caption visually-hidden" aria-live="polite">Living &amp; dining/);
+  assert.doesNotMatch(markup, /overview-card-label/);
+  assert.match(markup, /aria-label="Show Living &amp; dining"/);
+  assert.match(markup, /aria-label="Show Bathroom"/);
   assert.match(markup, /aria-pressed="true"/);
   assert.match(markup, /data-index="3"/);
   assert.doesNotMatch(markup, /walkthrough-link/);

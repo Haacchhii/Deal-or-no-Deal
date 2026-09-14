@@ -24,8 +24,8 @@ export function galleryMarkup(unit) {
           <button class="photo-arrow next" data-step="1" aria-label="Next photo">→</button>
           <div class="photo-bottom"><span class="photo-counter">01 / 04</span><button class="expand-photo">View full screen <span aria-hidden="true">↗</span></button></div>
         </div>
-        <div class="gallery-caption"><span class="current-caption" aria-live="polite">${esc(first.caption)}</span><span>Select from the photos below</span></div>
-        <div class="overview-grid">${unit.photos.map((photo, index) => `<button class="overview-card" data-index="${index}" aria-label="Show ${esc(photo.caption)}" aria-pressed="${index === 0}"><img src="${photoPath(unit, photo, "thumb")}" alt="${esc(photo.alt)}" width="640" height="427" loading="${index === 0 ? "eager" : "lazy"}"><span class="overview-card-label"><b>${String(index + 1).padStart(2, "0")}</b><span>${esc(photo.caption)}</span><i aria-hidden="true">↗</i></span></button>`).join("")}</div>
+        <span class="current-caption visually-hidden" aria-live="polite">${esc(first.caption)}</span>
+        <div class="overview-grid">${unit.photos.map((photo, index) => `<button class="overview-card" data-index="${index}" aria-label="Show ${esc(photo.caption)}" aria-pressed="${index === 0}"><img src="${photoPath(unit, photo, "thumb")}" alt="${esc(photo.alt)}" width="640" height="427" loading="${index === 0 ? "eager" : "lazy"}"></button>`).join("")}</div>
       </section>
     </section>${lightboxMarkup(unit, controls)}`;
   }
@@ -37,8 +37,8 @@ export function galleryMarkup(unit) {
       <button class="photo-arrow next" data-step="1" aria-label="Next photo" ${controls ? "" : "hidden"}>→</button>
       <div class="photo-bottom"><span class="photo-counter">01 / ${String(unit.photos.length).padStart(2, "0")}</span><button class="expand-photo">View full screen <span aria-hidden="true">↗</span></button></div>
     </div>
-    <div class="gallery-caption"><span class="current-caption" aria-live="polite">${esc(first.caption)}</span><span>Use arrows to explore</span></div>
-    <div class="thumbnails" aria-label="Choose a photograph">${unit.photos.map((photo, index) => `<button class="thumbnail" data-index="${index}" aria-label="Show ${esc(photo.caption)}" aria-pressed="${index === 0}"><img src="${photoPath(unit, photo, "thumb")}" alt="" width="640" height="427" loading="lazy"><span>${esc(photo.caption)}</span></button>`).join("")}</div>
+    <span class="current-caption visually-hidden" aria-live="polite">${esc(first.caption)}</span>
+    <div class="thumbnails" aria-label="Choose a photograph">${unit.photos.map((photo, index) => `<button class="thumbnail" data-index="${index}" aria-label="Show ${esc(photo.caption)}" aria-pressed="${index === 0}"><img src="${photoPath(unit, photo, "thumb")}" alt="" width="640" height="427" loading="lazy"></button>`).join("")}</div>
   </section>${lightboxMarkup(unit, controls)}`;
 }
 
@@ -53,7 +53,7 @@ function guidedGallery(unit, controls) {
   const feature = (photo, index, title, copy, className) => `<section class="gallery-feature ${className}"><button class="gallery-feature-photo" data-index="${index}" aria-label="View ${esc(photo.caption)} full screen"><img src="${photoPath(unit, photo)}" alt="${esc(photo.alt)}" width="1800" height="1200" loading="${index === 0 ? "eager" : "lazy"}"><span>View full screen <b aria-hidden="true">↗</b></span></button><div class="gallery-feature-copy"><p class="eyebrow">${String(index + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}</p><h2>${title}</h2><p>${copy}</p></div></section>`;
   return `<section class="gallery gallery-six ${total === 5 ? "gallery-five" : ""}" aria-label="Unit ${esc(albumName)} photographs" tabindex="0">
     ${feature(building, 0, "Building &amp;<br><em>surroundings.</em>", "Begin with the building and the area around your next home.", "gallery-arrival")}
-    <section class="gallery-interior" aria-labelledby="interior-heading"><div class="gallery-interior-heading"><p class="eyebrow">02–${String(total - 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}</p><h2 id="interior-heading">Inside Unit <em>${esc(displayName)}</em></h2><p>${detail ? `${esc(detail)} · ` : ""}${unitPhotos.length === 3 ? "Three" : "Four"} views of the spaces inside.</p></div><div class="interior-grid">${unitPhotos.map((photo, offset) => `<button class="interior-photo" data-index="${offset + 1}" aria-label="View ${esc(photo.caption)} full screen"><img src="${photoPath(unit, photo)}" alt="${esc(photo.alt)}" width="1800" height="1200" loading="lazy"><span><b>${String(offset + 2).padStart(2, "0")}</b>${esc(photo.caption)}<i aria-hidden="true">↗</i></span></button>`).join("")}</div></section>
+    <section class="gallery-interior" aria-labelledby="interior-heading"><div class="gallery-interior-heading"><p class="eyebrow">02–${String(total - 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}</p><h2 id="interior-heading">Inside Unit <em>${esc(displayName)}</em></h2><p>${detail ? `${esc(detail)} · ` : ""}${unitPhotos.length === 3 ? "Three" : "Four"} views of the spaces inside.</p></div><div class="interior-grid">${unitPhotos.map((photo, offset) => `<button class="interior-photo" data-index="${offset + 1}" aria-label="View ${esc(photo.caption)} full screen"><img src="${photoPath(unit, photo)}" alt="${esc(photo.alt)}" width="1800" height="1200" loading="lazy"></button>`).join("")}</div></section>
     ${feature(pool, total - 1, "Pool &amp;<br><em>amenities.</em>", "Finish with one of the spaces you can enjoy beyond the unit.", "gallery-amenity")}
   </section>${lightboxMarkup(unit, controls)}`;
 }
@@ -63,7 +63,7 @@ function lightboxMarkup(unit, controls) {
   return `<dialog class="lightbox" aria-label="Unit ${esc(albumName)} photo viewer">
     <div class="lightbox-top"><span>UNIT ${esc(albumName)}</span><button class="close-viewer" autofocus aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button></div>
     <div class="lightbox-image"><img alt=""><p class="viewer-error" hidden>Photo could not be loaded.</p></div>
-    <div class="lightbox-bottom"><button data-step="-1" aria-label="Previous photo" ${controls ? "" : "hidden"}>←</button><p class="viewer-caption" aria-live="polite"></p><button data-step="1" aria-label="Next photo" ${controls ? "" : "hidden"}>→</button></div>
+    <div class="lightbox-bottom"><button data-step="-1" aria-label="Previous photo" ${controls ? "" : "hidden"}>←</button><p class="viewer-caption visually-hidden" aria-live="polite"></p><button data-step="1" aria-label="Next photo" ${controls ? "" : "hidden"}>→</button></div>
   </dialog>`;
 }
 
