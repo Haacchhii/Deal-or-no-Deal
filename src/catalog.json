@@ -542,46 +542,6 @@
       ]
     },
     {
-      "id": "1214A",
-      "displayName": "1214A",
-      "spaceLabel": "All Girls",
-      "photos": [
-        {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
-        },
-        {
-          "file": "787651422-2032326114074858-6946744542320698838-n",
-          "caption": "Living, kitchen & dining",
-          "alt": "Living, kitchen and dining area inside unit 1214A"
-        },
-        {
-          "file": "787829535-1071208172318129-5552808537829224239-n",
-          "caption": "Sleeping area",
-          "alt": "Sleeping area inside unit 1214A"
-        },
-        {
-          "file": "788360857-1082527500885472-6970125150317879061-n",
-          "caption": "Kitchen & storage",
-          "alt": "Kitchen and storage area inside unit 1214A"
-        },
-        {
-          "file": "790385043-2294278734724404-6086260280874572612-n",
-          "caption": "Bathroom",
-          "alt": "Bathroom inside unit 1214A"
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
-        }
-      ],
-      "sample": false
-    },
-    {
       "id": "1216B",
       "sample": true,
       "photos": [
@@ -1638,6 +1598,33 @@
           "file": "744593850-1915914662432737-9193907383157289283-n",
           "caption": "Kitchen",
           "alt": "Kitchen with wood cabinets, refrigerator and countertop appliances inside unit 1821B"
+        }
+      ]
+    },
+    {
+      "id": "1836A",
+      "rentalType": "Bedroom",
+      "sample": false,
+      "photos": [
+        {
+          "file": "786139401-1384335643811612-534320232577103245-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside the bedroom offering at unit 1836A"
+        },
+        {
+          "file": "786176307-2321131412040228-1042586430899045573-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside the bedroom offering at unit 1836A"
+        },
+        {
+          "file": "786390516-2056410218326516-1322824793152241041-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside the bedroom offering at unit 1836A"
+        },
+        {
+          "file": "786656537-1686741509099095-4052807934124185593-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside the bedroom offering at unit 1836A"
         }
       ]
     },
