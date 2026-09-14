@@ -11,6 +11,8 @@ export function galleryMarkup(unit) {
   const first = unit.photos[0];
   const controls = unit.photos.length > 1;
   const albumName = unitAlbumName(unit);
+  if (unit.photoGroups?.length)
+    return groupedGallery(unit, controls, albumName);
   if (unit.photos.length === 5 || unit.photos.length === 6)
     return guidedGallery(unit, controls);
   if (unit.photos.length === 4) {
@@ -39,6 +41,33 @@ export function galleryMarkup(unit) {
     </div>
     <span class="current-caption visually-hidden" aria-live="polite">${esc(first.caption)}</span>
     <div class="thumbnails" aria-label="Choose a photograph">${unit.photos.map((photo, index) => `<button class="thumbnail" data-index="${index}" aria-label="Show ${esc(photo.caption)}" aria-pressed="${index === 0}"><img src="${photoPath(unit, photo, "thumb")}" alt="" width="640" height="427" loading="lazy"></button>`).join("")}</div>
+  </section>${lightboxMarkup(unit, controls)}`;
+}
+
+function groupedGallery(unit, controls, albumName) {
+  const first = unit.photos[0];
+  const groups = unit.photoGroups
+    .map((group, groupIndex) => {
+      const photos = unit.photos.slice(group.start, group.start + group.count);
+      const buttons = photos
+        .map((photo, offset) => {
+          const index = group.start + offset;
+          return `<button class="grouped-photo" data-index="${index}" aria-label="Show ${esc(group.label)} photo ${offset + 1}" aria-pressed="${index === 0}"><img src="${photoPath(unit, photo, "thumb")}" alt="" width="640" height="427" loading="${index === 0 ? "eager" : "lazy"}"></button>`;
+        })
+        .join("");
+      return `<section class="photo-group" aria-labelledby="photo-group-${groupIndex}"><div class="photo-group-heading"><h2 id="photo-group-${groupIndex}">${esc(group.label)}</h2><p>${photos.length} photos</p></div><div class="photo-group-grid">${buttons}</div></section>`;
+    })
+    .join("");
+  return `<section class="gallery grouped-gallery" aria-label="Unit ${esc(albumName)} photographs" tabindex="0">
+    <div class="selected-photo photo-stage">
+      <img class="main-photo" src="${photoPath(unit, first)}" alt="${esc(first.alt)}" width="1800" height="1200" fetchpriority="high">
+      <p class="photo-error" hidden>We couldn’t load this photo. Try another image or reload the page.</p>
+      <button class="photo-arrow previous" data-step="-1" aria-label="Previous photo">←</button>
+      <button class="photo-arrow next" data-step="1" aria-label="Next photo">→</button>
+      <div class="photo-bottom"><span class="photo-counter">01 / ${String(unit.photos.length).padStart(2, "0")}</span><button class="expand-photo">View full screen <span aria-hidden="true">↗</span></button></div>
+    </div>
+    <span class="current-caption visually-hidden" aria-live="polite">${esc(first.caption)}</span>
+    <div class="photo-groups">${groups}</div>
   </section>${lightboxMarkup(unit, controls)}`;
 }
 

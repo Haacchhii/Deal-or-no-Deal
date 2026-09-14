@@ -86,12 +86,44 @@ test("rental type labels remain distinct from existing unit details", () => {
   };
   assert.equal(unitDetailLabel(bedspace), "Bedspace · All Girls");
   assert.equal(unitAlbumName(bedspace), "1912B · Bedspace · All Girls");
+  const combined = {
+    id: "1023B",
+    rentalTypes: ["Bedroom", "Bedspace"],
+    photos: unit.photos,
+  };
+  assert.equal(unitDetailLabel(combined), "Bedroom & Bedspace");
+  assert.equal(unitAlbumName(combined), "1023B · Bedroom & Bedspace");
+  assert.doesNotThrow(() =>
+    validateCatalog({ name: "Example", units: [combined] }),
+  );
   assert.throws(() =>
     validateCatalog({
       name: "Example",
       units: [{ ...unit, rentalType: "Shared room" }],
     }),
   );
+});
+test("combined bedroom and bedspace albums show grouped photo choices", () => {
+  const groupedUnit = {
+    id: "1023B",
+    rentalTypes: ["Bedroom", "Bedspace"],
+    photos: [
+      { file: "bedroom-1", alt: "Bedroom one", caption: "Bedroom photo 1" },
+      { file: "bedroom-2", alt: "Bedroom two", caption: "Bedroom photo 2" },
+      { file: "bedspace-1", alt: "Bedspace one", caption: "Bedspace photo 1" },
+      { file: "bedspace-2", alt: "Bedspace two", caption: "Bedspace photo 2" },
+    ],
+  };
+  groupedUnit.photoGroups = [
+    { label: "Bedroom", start: 0, count: 2 },
+    { label: "Bedspace", start: 2, count: 2 },
+  ];
+  const markup = galleryMarkup(groupedUnit);
+  assert.match(markup, /class="gallery grouped-gallery"/);
+  assert.match(markup, />Bedroom<\/h2>/);
+  assert.match(markup, />Bedspace<\/h2>/);
+  assert.match(markup, /01 \/ 04/);
+  assert.equal((markup.match(/class="grouped-photo"/g) || []).length, 4);
 });
 const unit = {
   id: "2103B",

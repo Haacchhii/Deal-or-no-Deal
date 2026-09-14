@@ -352,60 +352,64 @@
       ]
     },
     {
-      "id": "1023B-bedroom",
-      "unitNumber": "1023B",
-      "displayName": "1023B",
-      "rentalType": "Bedroom",
+      "id": "1023B",
+      "rentalTypes": [
+        "Bedroom",
+        "Bedspace"
+      ],
       "sample": false,
       "photos": [
         {
           "file": "720190663-1369549315045468-265075362363444229-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside the bedroom offering at unit 1023B"
+          "caption": "Bedroom photo 1",
+          "alt": "Interior view 1 of the bedroom offering at unit 1023B"
         },
         {
           "file": "721159339-1665639174667410-3237101389547927868-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside the bedroom offering at unit 1023B"
+          "caption": "Bedroom photo 2",
+          "alt": "Interior view 2 of the bedroom offering at unit 1023B"
         },
         {
           "file": "722808534-1298906505307278-1505791403684156476-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside the bedroom offering at unit 1023B"
+          "caption": "Bedroom photo 3",
+          "alt": "Interior view 3 of the bedroom offering at unit 1023B"
         },
         {
           "file": "781161759-2486370225168737-924958196629997247-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside the bedroom offering at unit 1023B"
-        }
-      ]
-    },
-    {
-      "id": "1023B-bedspace",
-      "unitNumber": "1023B",
-      "displayName": "1023B",
-      "rentalType": "Bedspace",
-      "sample": false,
-      "photos": [
+          "caption": "Bedroom photo 4",
+          "alt": "Interior view 4 of the bedroom offering at unit 1023B"
+        },
         {
           "file": "721089205-3175899239285798-1137875652526684756-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside the bedspace offering at unit 1023B"
+          "caption": "Bedspace photo 1",
+          "alt": "Interior view 1 of the bedspace offering at unit 1023B"
         },
         {
           "file": "721462734-2119245201976805-5890683263851365943-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside the bedspace offering at unit 1023B"
+          "caption": "Bedspace photo 2",
+          "alt": "Interior view 2 of the bedspace offering at unit 1023B"
         },
         {
           "file": "722430222-2298211684261388-3015008111322698896-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside the bedspace offering at unit 1023B"
+          "caption": "Bedspace photo 3",
+          "alt": "Interior view 3 of the bedspace offering at unit 1023B"
         },
         {
           "file": "723130019-1004527165276935-8776931501913429581-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside the bedspace offering at unit 1023B"
+          "caption": "Bedspace photo 4",
+          "alt": "Interior view 4 of the bedspace offering at unit 1023B"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Bedroom",
+          "start": 0,
+          "count": 4
+        },
+        {
+          "label": "Bedspace",
+          "start": 4,
+          "count": 4
         }
       ]
     },

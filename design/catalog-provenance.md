@@ -27,11 +27,11 @@ Compared with that baseline:
 
 ## Intentional catalog modeling
 
-- `1619A` and `1620A` currently share the combined catalog entry `1619A-1620A` because the supplied photographs were grouped together.
-- `1224B` and `1225B` currently share the combined catalog entry `1224-25B` for the same reason.
+- `1619A` and `1620A` intentionally share the combined catalog entry `1619A-1620A`, as confirmed by the client.
+- `1224B` and `1225B` intentionally share the combined catalog entry `1224-25B`, as confirmed by the client.
 - `0925B` has separate first-floor and second-floor Bedspace albums.
-- `1023B` has separate Bedroom and Bedspace albums.
+- `1023B` has one combined album with separately identified Bedroom and Bedspace photo groups.
 - `1507A` has separate Bedroom and Bedspace albums.
 - `1633A` has separate first-floor and second-floor albums.
 
-The combined entries should only be separated when the client confirms which photographs belong to each individual unit number.
+The combined entries are the confirmed presentation and should remain together unless the client changes that direction.

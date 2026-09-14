@@ -90,7 +90,10 @@ export function unitDisplayName(unit) {
 }
 
 export function unitDetailLabel(unit) {
-  return [unit.rentalType, unit.spaceLabel].filter(Boolean).join(" · ");
+  const rentalLabel = unit.rentalTypes?.length
+    ? unit.rentalTypes.join(" & ")
+    : unit.rentalType;
+  return [rentalLabel, unit.spaceLabel].filter(Boolean).join(" · ");
 }
 
 export function unitAlbumName(unit) {
@@ -119,10 +122,22 @@ export function validateCatalog(catalog) {
   }
   for (const unit of catalog.units) {
     if (
+      unit.rentalTypes &&
+      (!Array.isArray(unit.rentalTypes) ||
+        unit.rentalTypes.length < 2 ||
+        unit.rentalTypes.some(
+          (type) => !["Bedspace", "Bedroom"].includes(type),
+        ) ||
+        new Set(unit.rentalTypes).size !== unit.rentalTypes.length)
+    )
+      throw new Error(`Invalid rental types for ${unit.id}.`);
+    if (
       unit.rentalType &&
       !["Bedspace", "Bedroom"].includes(unit.rentalType)
     )
       throw new Error(`Invalid rental type for ${unit.id}.`);
+    if (unit.rentalType && unit.rentalTypes)
+      throw new Error(`Use one rental type format for ${unit.id}.`);
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/i.test(unit.id))
       throw new Error(`Unsafe unit route id: ${unit.id}`);
     parseUnit(unit.unitNumber || unit.id);
@@ -130,6 +145,30 @@ export function validateCatalog(catalog) {
     seen.add(unit.id);
     if (!Array.isArray(unit.photos) || !unit.photos.length)
       throw new Error(`${unit.id} needs at least one photo.`);
+    if (unit.photoGroups) {
+      if (
+        !Array.isArray(unit.photoGroups) ||
+        !unit.photoGroups.length ||
+        unit.photoGroups.some(
+          (group) =>
+            !group.label?.trim() ||
+            !Number.isInteger(group.start) ||
+            !Number.isInteger(group.count) ||
+            group.start < 0 ||
+            group.count < 1 ||
+            group.start + group.count > unit.photos.length,
+        )
+      )
+        throw new Error(`Invalid photo groups for ${unit.id}.`);
+      const groupedIndexes = unit.photoGroups.flatMap((group) =>
+        Array.from({ length: group.count }, (_, index) => group.start + index),
+      );
+      if (
+        groupedIndexes.length !== unit.photos.length ||
+        new Set(groupedIndexes).size !== unit.photos.length
+      )
+        throw new Error(`Photo groups must cover every photo in ${unit.id}.`);
+    }
     const files = new Set();
     for (const photo of unit.photos) {
       if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(photo.file))

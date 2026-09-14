@@ -1016,6 +1016,60 @@ main:focus {
 .overview-card:hover img {
   transform: scale(1.025);
 }
+.grouped-gallery {
+  margin-top: 2.5rem;
+}
+.photo-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 5vw, 5rem);
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
+}
+.photo-group-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+.photo-group-heading h2 {
+  font-size: clamp(2rem, 3vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.photo-group-heading p {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.photo-group-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+.grouped-photo {
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--forest-dark);
+}
+.grouped-photo[aria-pressed="true"] {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px var(--gold);
+}
+.grouped-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.grouped-photo:hover img {
+  transform: scale(1.025);
+}
 .overview-card-label {
   min-height: 64px;
   padding: 1rem 1.1rem;
@@ -1729,6 +1783,14 @@ main:focus {
     font-size: 0.75rem;
   }
   .overview-grid {
+    gap: 0.75rem;
+  }
+  .photo-groups {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+  }
+  .photo-group-grid {
     gap: 0.75rem;
   }
   .overview-card img {
