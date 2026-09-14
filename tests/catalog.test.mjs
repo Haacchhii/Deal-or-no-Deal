@@ -289,6 +289,8 @@ test("the building guide shows nearby locations and supplied shared images", () 
   assert.match(markup, /BeFit PNB Makati Center/);
   assert.match(markup, /JJ Fitness Hub/);
   assert.match(markup, /ActivGym Fitness Center Makati/);
+  assert.match(markup, /nearby\/gyms\.webp/);
+  assert.match(markup, /Gym interior with weight machines/);
   assert.match(markup, /nearby\/malls\.webp/);
   assert.match(markup, /nearby\/offices\.webp/);
   assert.match(markup, /nearby\/commute\.webp/);
