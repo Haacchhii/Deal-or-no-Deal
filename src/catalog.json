@@ -101,43 +101,27 @@
     },
     {
       "id": "0806B",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "614299420-1419156013235096-1479184595519929846-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 0806B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "614352304-2380420079045317-1157356039961403130-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 0806B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "615243371-1396527051318467-3723281619978877500-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 0806B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "616808558-1384463923179204-3543140024217448618-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 0806B"
         }
       ]
     },
@@ -257,43 +241,27 @@
     },
     {
       "id": "0902B",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "554081002-1587772695924755-5848341902710144706-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 0902B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "682681398-994660519915927-9137187913535102510-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 0902B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "690563257-2459950851184690-3181892034321508467-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 0902B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "691726260-1993539827916944-6148267125975924294-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 0902B"
         }
       ]
     },
@@ -303,43 +271,27 @@
       "displayName": "0925B",
       "rentalType": "Bedspace",
       "spaceLabel": "1st Floor",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "727465010-3566127073542006-3143324589233880501-n",
+          "caption": "First-floor interior 1",
+          "alt": "First-floor interior view 1 inside unit 0925B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "727988904-2055783398348118-6599238342376931892-n",
+          "caption": "First-floor interior 2",
+          "alt": "First-floor interior view 2 inside unit 0925B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "728684345-1556937092756756-7749956234317149897-n",
+          "caption": "First-floor interior 3",
+          "alt": "First-floor interior view 3 inside unit 0925B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "730620713-1001023869567080-717079813500097944-n",
+          "caption": "First-floor interior 4",
+          "alt": "First-floor interior view 4 inside unit 0925B"
         }
       ]
     },
@@ -349,210 +301,165 @@
       "displayName": "0925B",
       "rentalType": "Bedspace",
       "spaceLabel": "2nd Floor",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "725755978-1037135532586929-6067074054437595848-n",
+          "caption": "Second-floor interior 1",
+          "alt": "Second-floor interior view 1 inside unit 0925B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "727363580-1653203429088680-3400729833310206111-n",
+          "caption": "Second-floor interior 2",
+          "alt": "Second-floor interior view 2 inside unit 0925B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "728502739-1531027298623002-7892526042630271164-n",
+          "caption": "Second-floor interior 3",
+          "alt": "Second-floor interior view 3 inside unit 0925B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "729939408-1663104678320089-3899174625190299066-n",
+          "caption": "Second-floor interior 4",
+          "alt": "Second-floor interior view 4 inside unit 0925B"
         }
       ]
     },
     {
       "id": "1004B",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "541773896-1969677087166697-2834700745185720770-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 1004B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "546449696-769694715660526-7598951781295509648-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 1004B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "664897364-890464190710338-5871993617483010326-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 1004B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "667827486-1505187854521978-7059633996444454022-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 1004B"
         }
       ]
     },
     {
-      "id": "1023B",
+      "id": "1023B-bedroom",
+      "unitNumber": "1023B",
+      "displayName": "1023B",
+      "rentalType": "Bedroom",
+      "sample": false,
+      "photos": [
+        {
+          "file": "720190663-1369549315045468-265075362363444229-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside the bedroom offering at unit 1023B"
+        },
+        {
+          "file": "721159339-1665639174667410-3237101389547927868-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside the bedroom offering at unit 1023B"
+        },
+        {
+          "file": "722808534-1298906505307278-1505791403684156476-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside the bedroom offering at unit 1023B"
+        },
+        {
+          "file": "781161759-2486370225168737-924958196629997247-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside the bedroom offering at unit 1023B"
+        }
+      ]
+    },
+    {
+      "id": "1023B-bedspace",
+      "unitNumber": "1023B",
+      "displayName": "1023B",
       "rentalType": "Bedspace",
       "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "721089205-3175899239285798-1137875652526684756-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside the bedspace offering at unit 1023B"
         },
         {
-          "file": "720190663-1369549315045468-265075362363444229-n",
-          "caption": "Staircase",
-          "alt": "Wooden staircase leading to the upper level of unit 1023B"
+          "file": "721462734-2119245201976805-5890683263851365943-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside the bedspace offering at unit 1023B"
         },
         {
-          "file": "721159339-1665639174667410-3237101389547927868-n",
-          "caption": "Bathroom",
-          "alt": "Bathroom with shower, sink and toilet inside unit 1023B"
+          "file": "722430222-2298211684261388-3015008111322698896-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside the bedspace offering at unit 1023B"
         },
         {
-          "file": "722808534-1298906505307278-1505791403684156476-n",
-          "caption": "Living & dining area",
-          "alt": "Living and dining area beside the staircase inside unit 1023B"
-        },
-        {
-          "file": "781161759-2486370225168737-924958196629997247-n",
-          "caption": "Upper sleeping area",
-          "alt": "Upper sleeping area with wood flooring inside unit 1023B"
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "723130019-1004527165276935-8776931501913429581-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside the bedspace offering at unit 1023B"
         }
       ]
     },
     {
       "id": "1101B",
       "rentalType": "Bedspace",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "689966240-35618552701121535-4958328470488655539-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 1101B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "691539010-1753842405970781-1077086505878326996-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 1101B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "693382539-1659556238708840-8353995761103510803-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 1101B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "703413319-1000852412406058-4517707975408453433-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 1101B"
         }
       ]
     },
     {
       "id": "1105A",
       "rentalType": "Bedspace",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "675203481-1667826224555425-5183764999564846756-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 1105A"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "681877639-1710090779985367-6202882735183638764-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 1105A"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "703333322-2046070055948710-6792487528608590975-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 1105A"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "745235718-1680139709916226-4346641175518806858-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 1105A"
         }
       ]
     },
@@ -718,43 +625,27 @@
     },
     {
       "id": "1218A",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "752845628-1023916530563435-4104367944017192839-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 1218A"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "757665034-1843306797078620-1979353100391353111-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 1218A"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "758180270-1909412869754928-6682474648305720002-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 1218A"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "759328747-1004448535920593-7069204596479093920-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 1218A"
         }
       ]
     },
@@ -921,85 +812,53 @@
     {
       "id": "1412B",
       "rentalType": "Bedspace",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "585841878-1516497146225934-1482722249196833258-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 1412B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "592272907-1562714348088300-3835128198413668793-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 1412B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "706558791-2723023931416502-6271856852184984043-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 1412B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "707029791-1353980159935760-1883373040214391849-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 1412B"
         }
       ]
     },
     {
       "id": "1504B",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "610297539-1181569484061952-7578392209120810132-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 1504B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "610688117-917061984182024-8197550322247204183-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 1504B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "612042054-909204995115419-2939533943660241312-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 1504B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "615345752-33409769558667327-7216087046517144645-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 1504B"
         }
       ]
     },
@@ -1084,9 +943,40 @@
       ]
     },
     {
-      "id": "1507A",
-      "rentalType": "Bedspace",
+      "id": "1507A-bedroom",
+      "unitNumber": "1507A",
+      "displayName": "1507A",
+      "rentalType": "Bedroom",
       "sample": false,
+      "photos": [
+        {
+          "file": "703952667-2494161874364802-4960073037768102969-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside the bedroom offering at unit 1507A"
+        },
+        {
+          "file": "705153853-1413025817249845-6541702825698566925-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside the bedroom offering at unit 1507A"
+        },
+        {
+          "file": "705520228-2080846342646509-4803844281660098040-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside the bedroom offering at unit 1507A"
+        },
+        {
+          "file": "782251881-2243028469787006-919435370308514781-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside the bedroom offering at unit 1507A"
+        }
+      ]
+    },
+    {
+      "id": "1507A-bedspace",
+      "unitNumber": "1507A",
+      "displayName": "1507A",
+      "rentalType": "Bedspace",
+      "sample": true,
       "photos": [
         {
           "file": "building",
@@ -1095,24 +985,28 @@
           "placeholder": true
         },
         {
-          "file": "703952667-2494161874364802-4960073037768102969-n",
-          "caption": "Kitchen",
-          "alt": "Green and white kitchen cabinets with sink and refrigerator inside unit 1507A"
+          "file": "living-kitchen-dining",
+          "caption": "Living, kitchen & dining placeholder",
+          "alt": "Placeholder image for the unit living, kitchen and dining area",
+          "placeholder": true
         },
         {
-          "file": "705153853-1413025817249845-6541702825698566925-n",
-          "caption": "Shower area",
-          "alt": "Tiled shower area with a wall-mounted water heater inside unit 1507A"
+          "file": "staircase",
+          "caption": "Staircase placeholder",
+          "alt": "Placeholder image for the unit staircase or main living area",
+          "placeholder": true
         },
         {
-          "file": "705520228-2080846342646509-4803844281660098040-n",
-          "caption": "Bathroom & storage",
-          "alt": "Sliding bathroom entrance beside built-in storage inside unit 1507A"
+          "file": "sleeping-area",
+          "caption": "Sleeping area placeholder",
+          "alt": "Placeholder image for the unit sleeping area",
+          "placeholder": true
         },
         {
-          "file": "782251881-2243028469787006-919435370308514781-n",
-          "caption": "Sleeping area",
-          "alt": "Sleeping area with a bed, window and air conditioner inside unit 1507A"
+          "file": "bathroom",
+          "caption": "Bathroom placeholder",
+          "alt": "Placeholder image for the unit bathroom",
+          "placeholder": true
         },
         {
           "file": "pool",
@@ -1125,171 +1019,97 @@
     {
       "id": "1508B",
       "rentalType": "Bedspace",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "738206301-1004546015525198-2017917625233847054-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 1508B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "739335226-1031007812848143-1957265154580687095-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 1508B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "740533393-2109260489652933-5409950567528624219-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 1508B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "740787826-971405502529196-252688802025125062-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 1508B"
         }
       ]
     },
     {
       "id": "1510B",
       "rentalType": "Bedspace",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "656855202-1892293608095032-6252732103964081656-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 1510B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "663958406-1202470285296361-2456969161080966347-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 1510B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "665028801-980084647788830-4329326627625301488-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 1510B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "665067999-2051143365463517-3481491299039264741-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 1510B"
         }
       ]
     },
     {
       "id": "1514B",
       "rentalType": "Bedspace",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "728473677-3312140562298316-8075901867287563842-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 1514B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "729374184-905090552636696-523344666106599028-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 1514B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "730503033-1541962344607512-8343155694970534077-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 1514B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "730570075-1228917119260235-6830002504865627618-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 1514B"
         }
       ]
     },
     {
       "id": "1516B",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "582270975-1438914820910532-688989882057238679-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 1516B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
-        },
-        {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
-        },
-        {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "735981356-1959302648057219-534390180923828534-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 1516B"
         }
       ]
     },
@@ -1534,43 +1354,27 @@
     },
     {
       "id": "1623A",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "610464137-2043452169558700-6287130108045598310-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 1623A"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "624953478-867498309431138-4801451546759146464-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 1623A"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "626487034-25869948479288565-6509230623912677178-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 1623A"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "680238731-1021533020331812-7819986077123510388-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 1623A"
         }
       ]
     },
@@ -2042,86 +1846,59 @@
     },
     {
       "id": "2018B",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "643412148-916457831090362-8876097044888074057-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 2018B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "643469257-1442075920741129-6435782154931739095-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 2018B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "645235094-679608508573941-1556325559752678708-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 2018B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
+          "file": "645242727-1226763012940601-1885653283104425639-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 2018B"
         },
         {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
+          "file": "645486331-1659846908525872-333094938930346692-n",
+          "caption": "Interior 5",
+          "alt": "Interior view 5 inside unit 2018B"
         },
         {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "646866315-895166293308763-7124897568375932902-n",
+          "caption": "Interior 6",
+          "alt": "Interior view 6 inside unit 2018B"
         }
       ]
     },
     {
       "id": "2019B",
       "rentalType": "Bedspace",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "667708746-3987547774876432-6695004137444275102-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 2019B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "668222258-957635653514419-951619914721945769-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 2019B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
-        },
-        {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "670147658-976087978334484-346138419933517969-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 2019B"
         }
       ]
     },
@@ -2170,170 +1947,106 @@
     {
       "id": "2036A",
       "rentalType": "Bedspace",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "727940000-2105376223527173-4874843177773316994-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 2036A"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "728984076-3355203111355897-4865351636316974842-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 2036A"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "730808635-3543763565777740-3119271075777250298-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 2036A"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "732769394-1955410885170610-5910828387636772962-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 2036A"
         }
       ]
     },
     {
       "id": "2103B",
       "rentalType": "Bedspace",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "722244806-1019397483834702-4614623323448406929-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 2103B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "723653617-1542909000509373-8607290683287997886-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 2103B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "725291242-987760824046275-4574258865489996396-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 2103B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "732116374-1552161673178377-8670551697792978490-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 2103B"
         }
       ]
     },
     {
       "id": "2116B",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "589128260-1422192039528789-7098176473180112017-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 2116B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "589635742-4502744230012148-8544116867301045625-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 2116B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "597501315-1375224167534551-8570240495344268490-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 2116B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "599609520-1197827578987631-8398077245441524242-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 2116B"
         }
       ]
     },
     {
       "id": "2132B",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "building",
-          "caption": "Building exterior placeholder",
-          "alt": "Placeholder image for the Victoria De Makati building exterior",
-          "placeholder": true
+          "file": "634141784-889970020316646-1065071846973517631-n",
+          "caption": "Interior 1",
+          "alt": "Interior view 1 inside unit 2132B"
         },
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "636689801-2072676009973227-4666832307305952612-n",
+          "caption": "Interior 2",
+          "alt": "Interior view 2 inside unit 2132B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "638088501-925101040008778-1013401577472516792-n",
+          "caption": "Interior 3",
+          "alt": "Interior view 3 inside unit 2132B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
-        },
-        {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
-        },
-        {
-          "file": "pool",
-          "caption": "Pool placeholder",
-          "alt": "Placeholder image for the Victoria De Makati pool area",
-          "placeholder": true
+          "file": "663557723-1573763950380096-1699125769742415231-n",
+          "caption": "Interior 4",
+          "alt": "Interior view 4 inside unit 2132B"
         }
       ]
     }
