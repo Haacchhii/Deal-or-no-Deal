@@ -1181,6 +1181,7 @@
     },
     {
       "id": "1527B",
+      "rentalType": "Bedspace",
       "sample": false,
       "photos": [
         {
@@ -1203,10 +1204,9 @@
         },
         {
           "file": "622299604-5229803983910634-7828557818858540799-n",
-          "folder": "bedroom",
+          "folder": "bedspace",
           "caption": "Bunk-bed area",
-          "alt": "Bunk-bed area inside unit 1527B",
-          "classificationReview": true
+          "alt": "Bunk-bed area inside unit 1527B"
         }
       ],
       "photoGroups": [
@@ -1216,7 +1216,7 @@
           "count": 3
         },
         {
-          "label": "Bedroom",
+          "label": "Bedspace",
           "start": 3,
           "count": 1
         }
