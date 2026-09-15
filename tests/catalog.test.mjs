@@ -218,7 +218,8 @@ test("four-photo albums use a selected photo display controlled by four selector
   assert.match(markup, /class="selected-photo photo-stage"/);
   assert.match(markup, /class="main-photo"/);
   assert.match(markup, /class="photo-counter">01 \/ 04/);
-  assert.match(markup, /class="current-caption visually-hidden" aria-live="polite">Living &amp; dining/);
+  assert.match(markup, /class="current-caption" aria-live="polite">Living &amp; dining/);
+  assert.match(markup, /class="viewer-caption" aria-live="polite"/);
   assert.doesNotMatch(markup, /overview-card-label/);
   assert.match(markup, /aria-label="Show Living &amp; dining"/);
   assert.match(markup, /aria-label="Show Bathroom"/);
@@ -311,4 +312,7 @@ test("catalog text cannot inject markup", () =>
 test("app code does not shadow browser location used by hash routing", () => {
   const mainSource = readFileSync(new URL("../src/main.js", import.meta.url), "utf8");
   assert.doesNotMatch(mainSource, /\bconst\s+location\s*=/);
+  assert.match(mainSource, /class="floor-index"/);
+  assert.match(mainSource, /class="album-sequence"/);
+  assert.match(mainSource, /floor=\$\{details\.floor\}/);
 });

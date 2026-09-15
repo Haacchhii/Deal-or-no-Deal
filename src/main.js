@@ -34,7 +34,7 @@ const siteLocation = catalog.location || {
 };
 
 function header(active) {
-  return `<header class="site-header">${brand}<nav aria-label="Main navigation"><a href="#/" ${active === "home" ? 'aria-current="page"' : ""}>Home</a><a href="#/about" ${active === "about" ? 'aria-current="page"' : ""}>About</a><a href="#/units?tower=A" ${active === "units" ? 'aria-current="page"' : ""}>Our units</a><a class="button header-cta" href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a></nav></header>`;
+  return `<header class="site-header">${brand}<nav aria-label="Main navigation"><a href="#/" ${active === "home" ? 'aria-current="page"' : ""}>Home</a><a href="#/about" ${active === "about" ? 'aria-current="page"' : ""}>About</a><a href="#/units?tower=A" ${active === "units" ? 'aria-current="page"' : ""}>Our units</a>${active === "home" ? "" : '<a class="button header-cta" href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a>'}</nav></header>`;
 }
 function footer() {
   return `<footer class="site-footer"><span>${esc(catalog.name)}</span><p>${esc(buildingName)} · ${catalog.preview ? "Placeholder albums are labeled" : "A closer look at your next home."}</p><a href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a></footer>`;
@@ -47,8 +47,7 @@ function home() {
     <img class="hero-photo" src="${esc(catalog.hero.src)}" alt="${esc(catalog.hero.alt)}" width="${catalog.hero.width || 1800}" height="${catalog.hero.height || 1200}" fetchpriority="high">
     <div class="hero-shade"></div><div class="hero-content"><p class="eyebrow">${esc(buildingName)}</p><h1 id="home-heading">A closer look at<br>your next <em>home.</em></h1><p class="hero-intro">Explore JPP Rental Homestay units before your personal viewing.</p><a class="button button-light" href="#/units?tower=A">Browse unit photos <span aria-hidden="true">↗</span></a></div>
     <span class="hero-note">${catalog.preview ? `${esc(buildingName)} · Photo gallery preview` : `Discover ${esc(buildingName)}`}</span>
-    <a class="hero-scroll" href="#/units?tower=A" aria-label="Explore our unit collection">Explore <span aria-hidden="true">↓</span></a>
-  </section><section class="tower-intro" aria-labelledby="towers-heading"><p class="eyebrow"><span class="fine-line"></span>${esc(buildingName)}</p><h2 id="towers-heading">Two towers.<br><em>Your point of view.</em></h2><div class="tower-links"><a href="#/units?tower=A"><span>Tower A</span><span aria-hidden="true">↗</span></a><a href="#/units?tower=B"><span>Tower B</span><span aria-hidden="true">↗</span></a><a href="#/about"><span>About the building</span><span aria-hidden="true">↗</span></a></div></section></main>${footer()}`;
+  </section><section class="tower-intro" aria-labelledby="towers-heading"><p class="eyebrow"><span class="fine-line"></span>${esc(buildingName)}</p><h2 id="towers-heading">Two towers.<br><em>Your point of view.</em></h2><div class="tower-links" aria-label="Direct tower shortcuts"><a href="#/units?tower=A"><span>Tower A</span><span aria-hidden="true">↗</span></a><a href="#/units?tower=B"><span>Tower B</span><span aria-hidden="true">↗</span></a><a href="#/about"><span>About the building</span><span aria-hidden="true">↗</span></a></div></section></main>${footer()}`;
 }
 
 function about() {
@@ -59,19 +58,35 @@ function directory(tower) {
   const groups = groupUnits(catalog.units, tower);
   return `${header("units")}<main class="directory page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/">Home</a><span>/</span><span>Our units</span></div><div class="directory-heading"><div><p class="eyebrow">${esc(buildingName)}</p><h1>Find your <em>space.</em></h1><p class="intro">Choose a tower. Take a look inside.</p></div><p class="collection-note">${catalog.preview ? "Explore unit photos and placeholders.<br>Placeholder albums are labeled." : "Explore the photographs<br>before your personal viewing."}</p></div>
     <nav class="tower-tabs" aria-label="Choose a tower">${["A", "B"].map((t) => `<a href="#/units?tower=${t}" ${t === tower ? 'aria-current="page"' : ""}>Tower ${t}<span aria-hidden="true">↗</span></a>`).join("")}</nav>
+    ${groups.length ? `<nav class="floor-index" aria-label="Jump to a floor"><span>Floor index</span><div>${groups.map((group) => `<a href="#/units?tower=${tower}&floor=${group.floor}">${String(group.floor).padStart(2, "0")}</a>`).join("")}</div></nav>` : ""}
   <div class="floor-list">${groups.length ? groups.map((group) => `<section class="floor-row" id="floor-${group.floor}" aria-labelledby="floor-heading-${group.floor}"><div class="floor-label"><p class="eyebrow">Tower ${tower}</p><h2 id="floor-heading-${group.floor}">${ordinal(group.floor)} floor</h2><p>${group.units.length} ${group.units.length === 1 ? "album" : "albums"}</p></div><div class="unit-grid">${group.units.map((unit) => {
     const cover = directoryCoverPhoto(unit);
     const detail = unitDetailLabel(unit);
-    return `<a class="unit-album" href="#/units/${unit.id}" aria-label="View ${esc(unitAlbumName(unit))} photo album"><div class="unit-cover"><img src="${photoPath(unit, cover, "thumb")}" alt="${esc(cover.alt)}" width="640" height="427" loading="lazy">${unit.sample ? `<span class="sample-tag">${isPlaceholderAlbum(unit) ? "Placeholder photos" : "Sample interiors"}</span>` : ""}<span class="cover-arrow" aria-hidden="true">↗</span></div><div class="unit-title"><h3>${esc(unitDisplayName(unit))}</h3><span>${detail ? `${esc(detail)} · ` : ""}${unit.photos.length} photos <span aria-hidden="true">↗</span></span></div></a>`;
+    const identity = parseUnit(unit.unitNumber || unit.id);
+    return `<a class="unit-album" href="#/units/${unit.id}" aria-label="View ${esc(unitAlbumName(unit))} photo album"><div class="unit-cover"><img src="${photoPath(unit, cover, "thumb")}" alt="${esc(cover.alt)}" width="640" height="427" loading="lazy"><span class="unit-index-mark" aria-hidden="true">T${identity.tower} / F${String(identity.floor).padStart(2, "0")}</span>${unit.sample ? `<span class="sample-tag">${isPlaceholderAlbum(unit) ? "Placeholder photos" : "Sample interiors"}</span>` : ""}<span class="cover-arrow" aria-hidden="true">↗</span></div><div class="unit-title"><h3>${esc(unitDisplayName(unit))}</h3><span>${detail ? `${esc(detail)} · ` : ""}${unit.photos.length} photos <span aria-hidden="true">↗</span></span></div></a>`;
   }).join("")}</div></section>`).join("") : '<div class="empty-state"><h2>More spaces, soon.</h2><p>Photo albums for this tower have not been added yet.</p></div>'}</div>
     <p class="directory-footnote">Photos are for viewing reference. Please confirm current availability with the office.</p></main>${footer()}`;
+}
+
+function albumSequence(unit, details) {
+  const units = groupUnits(catalog.units, details.tower).flatMap(
+    (group) => group.units,
+  );
+  const index = units.findIndex((candidate) => candidate.id === unit.id);
+  const previous = index > 0 ? units[index - 1] : null;
+  const next = index < units.length - 1 ? units[index + 1] : null;
+  const link = (candidate, direction) =>
+    candidate
+      ? `<a href="#/units/${candidate.id}"><small>${direction} unit</small><strong>${esc(unitDisplayName(candidate))}</strong><span aria-hidden="true">${direction === "Previous" ? "←" : "→"}</span></a>`
+      : `<span class="album-sequence-end"><small>${direction} unit</small><strong>End of Tower ${details.tower}</strong></span>`;
+  return `<nav class="album-sequence" aria-label="Browse neighboring units">${link(previous, "Previous")}${link(next, "Next")}</nav>`;
 }
 
 function album(unit) {
   const details = parseUnit(unit.unitNumber || unit.id);
   const albumName = unitAlbumName(unit);
   const detail = unitDetailLabel(unit);
-  return `${header("units")}<main class="album page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/units?tower=${details.tower}">Our units</a><span>/</span><span>${esc(buildingName)}</span><span>/</span><a href="#/units?tower=${details.tower}">Tower ${details.tower}</a><span>/</span><span>${ordinal(details.floor)} floor</span>${detail ? `<span>/</span><span>${esc(detail)}</span>` : ""}</div><div class="album-heading"><div><h1>Unit <em>${esc(unitDisplayName(unit))}</em></h1><p class="intro">${esc(buildingName)} <span aria-hidden="true">·</span> Tower ${details.tower} <span aria-hidden="true">·</span> ${ordinal(details.floor)} floor${detail ? ` <span aria-hidden="true">·</span> ${esc(detail)}` : ""}</p></div><a class="back-link" href="#/units?tower=${details.tower}">← Back to units</a></div>${unit.sample ? `<p class="sample-notice">${isPlaceholderAlbum(unit) ? `Placeholder photos · Replace these images when ${esc(albumName)} photos are available.` : "Sample interiors · These images illustrate the gallery and are not photographs of this unit."}</p>` : ""}${galleryMarkup(unit)}<section class="album-about-bridge" aria-labelledby="album-about-heading"><div><h2 id="album-about-heading">About the building</h2><p>See what is included, find ${esc(siteLocation.name)}, and explore nearby locations.</p></div><a class="text-link" href="#/about">Explore the building guide <span aria-hidden="true">↗</span></a></section></main>${footer()}`;
+  return `${header("units")}<main class="album page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/units?tower=${details.tower}">Our units</a><span>/</span><span>${esc(buildingName)}</span><span>/</span><a href="#/units?tower=${details.tower}&floor=${details.floor}">Tower ${details.tower}</a><span>/</span><span>${ordinal(details.floor)} floor</span>${detail ? `<span>/</span><span>${esc(detail)}</span>` : ""}</div><div class="album-heading"><div class="album-identity"><span class="album-index-mark" aria-hidden="true"><b>${details.tower}</b><small>Tower</small><b>${String(details.floor).padStart(2, "0")}</b><small>Floor</small></span><div><h1>Unit <em>${esc(unitDisplayName(unit))}</em></h1><p class="intro">${esc(buildingName)}${detail ? ` <span aria-hidden="true">·</span> ${esc(detail)}` : ""}</p></div></div><a class="back-link" href="#/units?tower=${details.tower}&floor=${details.floor}">← Back to ${ordinal(details.floor)} floor</a></div>${unit.sample ? `<p class="sample-notice">${isPlaceholderAlbum(unit) ? `Placeholder photos · Replace these images when ${esc(albumName)} photos are available.` : "Sample interiors · These images illustrate the gallery and are not photographs of this unit."}</p>` : ""}${galleryMarkup(unit)}${albumSequence(unit, details)}<section class="album-about-bridge" aria-labelledby="album-about-heading"><div><h2 id="album-about-heading">About the building</h2><p>See what is included, find ${esc(siteLocation.name)}, and explore nearby locations.</p></div><a class="text-link" href="#/about">Explore the building guide <span aria-hidden="true">↗</span></a></section></main>${footer()}`;
 }
 
 function getRoute() {
@@ -82,6 +97,7 @@ function getRoute() {
     return {
       type: "directory",
       tower: new URLSearchParams(query).get("tower") === "B" ? "B" : "A",
+      floor: Number(new URLSearchParams(query).get("floor")) || null,
     };
   const match = /^\/units\/([A-Za-z0-9-]+)$/.exec(path);
   const unit = match && catalog.units.find((unit) => unit.id === match[1]);
@@ -117,7 +133,16 @@ function render({ initial = false } = {}) {
     if (!initial)
       document.querySelector("#main").focus({ preventScroll: true });
     window.scrollTo({
-      top: returning ? directoryPositions.get(route.tower) || 0 : 0,
+      top:
+        route.type === "directory" && route.floor
+          ? Math.max(
+              0,
+              (document.querySelector(`#floor-${route.floor}`)?.offsetTop || 0) -
+                24,
+            )
+          : returning
+            ? directoryPositions.get(route.tower) || 0
+            : 0,
       behavior: "instant",
     });
   });

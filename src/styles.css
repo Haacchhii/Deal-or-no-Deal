@@ -248,20 +248,6 @@ main:focus {
   font-size: 0.75rem;
   color: #e2e7df;
 }
-.hero-scroll {
-  position: absolute;
-  bottom: 1.5rem;
-  right: 5%;
-  font-size: 0.75rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.13em;
-}
-.hero-scroll span {
-  font-size: 1.5rem;
-}
 .tower-intro {
   padding: 4rem 5%;
   display: grid;
@@ -504,6 +490,47 @@ main:focus {
 .tower-tabs a[aria-current] > span {
   opacity: 1;
 }
+.floor-index {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.floor-index > span {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.floor-index > div {
+  display: flex;
+  gap: 0.45rem;
+  overflow-x: auto;
+  padding: 0.25rem;
+  scrollbar-width: thin;
+}
+.floor-index a {
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  color: var(--forest);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-variant-numeric: tabular-nums;
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    color 0.2s;
+}
+.floor-index a:hover {
+  border-color: var(--forest);
+  background: var(--forest);
+  color: var(--paper);
+}
 .floor-row {
   display: grid;
   grid-template-columns: 190px 1fr;
@@ -539,6 +566,17 @@ main:focus {
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s;
+}
+.unit-index-mark {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.38rem 0.55rem;
+  background: rgba(16, 43, 37, 0.9);
+  color: var(--paper);
+  font-size: 0.625rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.12em;
 }
 .unit-album:hover img {
   transform: scale(1.04);
@@ -605,6 +643,34 @@ main:focus {
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
+}
+.album-identity {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+}
+.album-index-mark {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: baseline;
+  gap: 0.1rem 0.55rem;
+  min-width: 102px;
+  padding: 1rem;
+  background: var(--forest);
+  color: var(--paper);
+}
+.album-index-mark b {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 0.9;
+  font-variant-numeric: tabular-nums;
+}
+.album-index-mark small {
+  color: #cad7ca;
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 .album h1 {
   font-size: clamp(3.5rem, 5vw, 5rem);
@@ -696,6 +762,58 @@ main:focus {
   color: var(--muted);
   line-height: 1.7;
 }
+.album-sequence {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: clamp(3.5rem, 7vw, 6rem);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.album-sequence > * {
+  min-height: 132px;
+  padding: 1.5rem 0;
+}
+.album-sequence > *:nth-child(2) {
+  padding-left: clamp(1.5rem, 4vw, 4rem);
+  border-left: 1px solid var(--line);
+}
+.album-sequence a,
+.album-sequence-end {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-content: center;
+  gap: 0.35rem 1rem;
+}
+.album-sequence small {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.album-sequence strong {
+  font-family: var(--serif);
+  color: var(--forest);
+  font-size: clamp(2rem, 3vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1;
+}
+.album-sequence a > span {
+  align-self: center;
+  color: var(--forest);
+  font-size: 1.4rem;
+  transition: transform 0.2s;
+}
+.album-sequence a:hover > span {
+  transform: translateX(4px);
+}
+.album-sequence a:first-child:hover > span {
+  transform: translateX(-4px);
+}
+.album-sequence-end strong {
+  color: var(--muted);
+  font-size: 1.6rem;
+}
 .about-next {
   margin-top: clamp(4rem, 8vw, 7rem);
   padding: clamp(3rem, 7vw, 6rem);
@@ -734,6 +852,13 @@ main:focus {
 }
 .gallery {
   margin-top: 1.5rem;
+}
+.current-caption {
+  margin: 0;
+  padding: 0.85rem 0 0.25rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
 }
 .unit-inclusions {
   display: grid;
@@ -1484,8 +1609,10 @@ main:focus {
   font-size: 1.5rem;
 }
 .viewer-caption {
+  max-width: min(70vw, 720px);
   font-size: 0.875rem;
   text-align: center;
+  line-height: 1.5;
 }
 .viewer-open {
   overflow: hidden;
@@ -1599,6 +1726,23 @@ main:focus {
     aspect-ratio: 4 / 3;
   }
 }
+@media (max-width: 900px) {
+  .floor-row {
+    grid-template-columns: 1fr;
+  }
+  .floor-label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .floor-label .eyebrow {
+    display: none;
+  }
+  .floor-label > p:last-child {
+    margin-top: 0;
+  }
+}
 @media (max-width: 700px) {
   .site-header {
     min-height: 80px;
@@ -1654,9 +1798,6 @@ main:focus {
   .hero-note {
     font-size: 0.6875rem;
   }
-  .hero-scroll {
-    display: none;
-  }
   .tower-intro {
     padding: 2.5rem 6%;
     grid-template-columns: 1fr;
@@ -1666,11 +1807,10 @@ main:focus {
     font-size: 3rem;
   }
   .tower-links {
-    flex-direction: row;
-    gap: 2rem;
+    gap: 0.75rem;
   }
   .tower-links a {
-    flex: 1;
+    min-height: 44px;
   }
   .location-section {
     padding: 0 6% 3rem;
@@ -1739,6 +1879,17 @@ main:focus {
   .album-about-bridge .text-link {
     margin-top: 1.25rem;
   }
+  .album-sequence {
+    grid-template-columns: 1fr;
+  }
+  .album-sequence > * {
+    min-height: 112px;
+  }
+  .album-sequence > *:nth-child(2) {
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
   .about-next {
     margin-top: 3.5rem;
     padding: 2.5rem 1.5rem;
@@ -1782,6 +1933,15 @@ main:focus {
     font-size: 1.7rem;
     gap: 1.5rem;
   }
+  .floor-index {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.9rem 0;
+  }
+  .floor-index > div {
+    width: 100%;
+  }
   .floor-row {
     grid-template-columns: 1fr;
     gap: 1.25rem;
@@ -1803,15 +1963,15 @@ main:focus {
     margin: 0;
   }
   .unit-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   .unit-title {
-    display: block;
+    display: flex;
   }
   .unit-title > span {
-    display: block;
-    margin-top: 0.25rem;
+    display: inline;
+    margin-top: 0;
   }
   .sample-tag {
     font-size: 0.625rem;
@@ -1823,6 +1983,20 @@ main:focus {
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 1rem;
+  }
+  .album-identity {
+    align-items: flex-start;
+    width: 100%;
+  }
+  .album-index-mark {
+    min-width: 80px;
+    padding: 0.8rem;
+  }
+  .album-index-mark b {
+    font-size: 1.55rem;
+  }
+  .album-index-mark small {
+    font-size: 0.55rem;
   }
   .album h1 {
     font-size: 3.7rem;

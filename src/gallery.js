@@ -26,7 +26,7 @@ export function galleryMarkup(unit) {
           <button class="photo-arrow next" data-step="1" aria-label="Next photo">→</button>
           <div class="photo-bottom"><span class="photo-counter">01 / 04</span><button class="expand-photo">View full screen <span aria-hidden="true">↗</span></button></div>
         </div>
-        <span class="current-caption visually-hidden" aria-live="polite">${esc(first.caption)}</span>
+        <p class="current-caption" aria-live="polite">${esc(first.caption)}</p>
         <div class="overview-grid">${unit.photos.map((photo, index) => `<button class="overview-card" data-index="${index}" aria-label="Show ${esc(photo.caption)}" aria-pressed="${index === 0}"><img src="${photoPath(unit, photo, "thumb")}" alt="${esc(photo.alt)}" width="640" height="427" loading="${index === 0 ? "eager" : "lazy"}"></button>`).join("")}</div>
       </section>
     </section>${lightboxMarkup(unit, controls)}`;
@@ -39,7 +39,7 @@ export function galleryMarkup(unit) {
       <button class="photo-arrow next" data-step="1" aria-label="Next photo" ${controls ? "" : "hidden"}>→</button>
       <div class="photo-bottom"><span class="photo-counter">01 / ${String(unit.photos.length).padStart(2, "0")}</span><button class="expand-photo">View full screen <span aria-hidden="true">↗</span></button></div>
     </div>
-    <span class="current-caption visually-hidden" aria-live="polite">${esc(first.caption)}</span>
+    <p class="current-caption" aria-live="polite">${esc(first.caption)}</p>
     <div class="thumbnails" aria-label="Choose a photograph">${unit.photos.map((photo, index) => `<button class="thumbnail" data-index="${index}" aria-label="Show ${esc(photo.caption)}" aria-pressed="${index === 0}"><img src="${photoPath(unit, photo, "thumb")}" alt="" width="640" height="427" loading="lazy"></button>`).join("")}</div>
   </section>${lightboxMarkup(unit, controls)}`;
 }
@@ -66,7 +66,7 @@ function groupedGallery(unit, controls, albumName) {
       <button class="photo-arrow next" data-step="1" aria-label="Next photo">→</button>
       <div class="photo-bottom"><span class="photo-counter">01 / ${String(unit.photos.length).padStart(2, "0")}</span><button class="expand-photo">View full screen <span aria-hidden="true">↗</span></button></div>
     </div>
-    <span class="current-caption visually-hidden" aria-live="polite">${esc(first.caption)}</span>
+    <p class="current-caption" aria-live="polite">${esc(first.caption)}</p>
     <div class="photo-groups">${groups}</div>
   </section>${lightboxMarkup(unit, controls)}`;
 }
@@ -92,7 +92,7 @@ function lightboxMarkup(unit, controls) {
   return `<dialog class="lightbox" aria-label="Unit ${esc(albumName)} photo viewer">
     <div class="lightbox-top"><span>UNIT ${esc(albumName)}</span><button class="close-viewer" autofocus aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button></div>
     <div class="lightbox-image"><img alt=""><p class="viewer-error" hidden>Photo could not be loaded.</p></div>
-    <div class="lightbox-bottom"><button data-step="-1" aria-label="Previous photo" ${controls ? "" : "hidden"}>←</button><p class="viewer-caption visually-hidden" aria-live="polite"></p><button data-step="1" aria-label="Next photo" ${controls ? "" : "hidden"}>→</button></div>
+    <div class="lightbox-bottom"><button data-step="-1" aria-label="Previous photo" ${controls ? "" : "hidden"}>←</button><p class="viewer-caption" aria-live="polite"></p><button data-step="1" aria-label="Next photo" ${controls ? "" : "hidden"}>→</button></div>
   </dialog>`;
 }
 
