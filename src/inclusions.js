@@ -2,6 +2,22 @@ export function inclusionsSection() {
   return `<section class="unit-inclusions" aria-labelledby="inclusions-heading"><div><h2 id="inclusions-heading"><span class="visually-hidden">Inclusions: </span>Furnished and<br><em>move-in ready.</em></h2><p>All units are furnished and move-in ready.</p></div><ul aria-label="Included with every unit"><li><span>Water</span><small>Included</small></li><li><span>Wifi</span><small>Included</small></li><li><span>Association dues</span><small>Included</small></li><li><span>Rental fee</span><small>Included</small></li></ul></section>`;
 }
 
+export function sharedSpacesSection() {
+  const spaces = [
+    {
+      src: "units/_placeholders/building.webp",
+      alt: "Placeholder image representing the Victoria De Makati building exterior",
+      title: "Building exterior",
+    },
+    {
+      src: "units/_placeholders/pool.webp",
+      alt: "Placeholder image representing the Victoria De Makati pool area",
+      title: "Pool area",
+    },
+  ];
+  return `<section class="shared-spaces" aria-labelledby="shared-spaces-heading"><div class="shared-spaces-heading"><h2 id="shared-spaces-heading">Building &amp;<br><em>shared spaces.</em></h2><p>These reference images belong to the building guide rather than any individual unit album.</p></div><div class="shared-spaces-grid">${spaces.map((space) => `<figure><img src="${space.src}" alt="${space.alt}" width="1200" height="800" loading="lazy"><figcaption><span>${space.title}</span><small>Placeholder image</small></figcaption></figure>`).join("")}</div></section>`;
+}
+
 const nearbyGroups = [
   {
     title: "Shopping & Lifestyle",

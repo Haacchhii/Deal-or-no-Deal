@@ -104,7 +104,7 @@ export function unitAlbumName(unit) {
 }
 
 export function directoryCoverPhoto(unit) {
-  return unit.photos.length >= 6 ? unit.photos[1] : unit.photos[0];
+  return unit.photos[0];
 }
 
 export function validateCatalog(catalog) {

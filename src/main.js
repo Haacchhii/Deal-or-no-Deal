@@ -12,7 +12,11 @@ import {
   validateCatalog,
 } from "./catalog.js";
 import { galleryMarkup, mountGallery } from "./gallery.js";
-import { inclusionsSection, nearbyLocationsSection } from "./inclusions.js";
+import {
+  inclusionsSection,
+  nearbyLocationsSection,
+  sharedSpacesSection,
+} from "./inclusions.js";
 import "./styles.css";
 
 validateCatalog(catalog);
@@ -51,7 +55,7 @@ function home() {
 }
 
 function about() {
-  return `${header("about")}<main class="about page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/">Home</a><span>/</span><span>About</span></div><section class="about-intro" aria-labelledby="about-heading"><div class="about-copy"><h1 id="about-heading">About <em>${esc(buildingName)}.</em></h1><p>Get oriented before exploring the unit photographs—from what is included to the places nearby.</p><a class="text-link" href="#/units?tower=A">Browse the unit collection <span aria-hidden="true">↗</span></a></div><figure class="about-portrait"><img src="${esc(catalog.hero.src)}" alt="${esc(catalog.hero.alt)}" width="${catalog.hero.width || 1800}" height="${catalog.hero.height || 1200}"><figcaption>${esc(siteLocation.name)} · Makati</figcaption></figure></section>${inclusionsSection()}${locationSection()}${nearbyLocationsSection()}<section class="about-next" aria-labelledby="about-next-heading"><h2 id="about-next-heading">Ready to look <em>inside?</em></h2><p>Browse the photographs by tower, floor, and unit.</p><div><a class="button" href="#/units?tower=A">Explore Tower A <span aria-hidden="true">↗</span></a><a class="text-link" href="#/units?tower=B">Explore Tower B <span aria-hidden="true">↗</span></a></div></section></main>${footer()}`;
+  return `${header("about")}<main class="about page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/">Home</a><span>/</span><span>About</span></div><section class="about-intro" aria-labelledby="about-heading"><div class="about-copy"><h1 id="about-heading">About <em>${esc(buildingName)}.</em></h1><p>Get oriented before exploring the unit photographs—from what is included to the places nearby.</p><a class="text-link" href="#/units?tower=A">Browse the unit collection <span aria-hidden="true">↗</span></a></div><figure class="about-portrait"><img src="${esc(catalog.hero.src)}" alt="${esc(catalog.hero.alt)}" width="${catalog.hero.width || 1800}" height="${catalog.hero.height || 1200}"><figcaption>${esc(siteLocation.name)} · Makati</figcaption></figure></section>${sharedSpacesSection()}${inclusionsSection()}${locationSection()}${nearbyLocationsSection()}<section class="about-next" aria-labelledby="about-next-heading"><h2 id="about-next-heading">Ready to look <em>inside?</em></h2><p>Browse the photographs by tower, floor, and unit.</p><div><a class="button" href="#/units?tower=A">Explore Tower A <span aria-hidden="true">↗</span></a><a class="text-link" href="#/units?tower=B">Explore Tower B <span aria-hidden="true">↗</span></a></div></section></main>${footer()}`;
 }
 
 function directory(tower) {

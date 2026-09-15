@@ -742,6 +742,58 @@ main:focus {
   padding: clamp(4rem, 8vw, 7rem) 0;
   border-top: 1px solid var(--line);
 }
+.shared-spaces {
+  margin-top: clamp(3rem, 7vw, 6rem);
+  padding-top: clamp(2rem, 5vw, 4rem);
+  border-top: 1px solid var(--line);
+}
+.shared-spaces-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.35fr);
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.shared-spaces-heading h2 {
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+}
+.shared-spaces-heading p {
+  max-width: 320px;
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+.shared-spaces-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+.shared-spaces-grid figure {
+  margin: 0;
+}
+.shared-spaces-grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  background: var(--white);
+}
+.shared-spaces-grid figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  color: var(--ink);
+  font-size: 0.8125rem;
+}
+.shared-spaces-grid small {
+  color: var(--muted);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
 .album-about-bridge {
   display: flex;
   align-items: end;
@@ -2078,6 +2130,23 @@ main:focus {
   .unit-inclusions li {
     padding: 0.85rem;
     font-size: 0.875rem;
+  }
+  .shared-spaces-heading {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .shared-spaces-heading h2 {
+    font-size: 3.5rem;
+  }
+  .shared-spaces-heading p {
+    font-size: 0.75rem;
+  }
+  .shared-spaces-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .shared-spaces-grid figcaption {
+    font-size: 0.75rem;
   }
   .nearby-heading {
     grid-template-columns: 1fr;

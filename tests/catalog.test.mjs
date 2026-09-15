@@ -15,7 +15,15 @@ import {
   escapeHtml,
 } from "../src/catalog.js";
 import { galleryMarkup } from "../src/gallery.js";
-import { inclusionsSection, nearbyLocationsSection } from "../src/inclusions.js";
+import {
+  inclusionsSection,
+  nearbyLocationsSection,
+  sharedSpacesSection,
+} from "../src/inclusions.js";
+
+const catalog = JSON.parse(
+  readFileSync(new URL("../src/catalog.json", import.meta.url), "utf8"),
+);
 
 test("real identifiers preserve the unit component and derive tower and floor", () => {
   assert.deepEqual(parseUnit("2103B"), {
@@ -185,7 +193,7 @@ test("gallery wraps both directions, including single-photo albums", () => {
   assert.equal(wrapIndex(3, 3), 0);
   assert.equal(wrapIndex(-1, 1), 0);
 });
-test("directory cards use the main living room photo for six-photo albums", () => {
+test("directory cards use the first unit photo at every album size", () => {
   const sixPhotoUnit = {
     id: "1210B",
     photos: [
@@ -197,7 +205,7 @@ test("directory cards use the main living room photo for six-photo albums", () =
       { file: "pool", alt: "Pool", caption: "Pool area" },
     ],
   };
-  assert.equal(directoryCoverPhoto(sixPhotoUnit).file, "living");
+  assert.equal(directoryCoverPhoto(sixPhotoUnit).file, "building");
   assert.equal(
     directoryCoverPhoto({ ...sixPhotoUnit, photos: sixPhotoUnit.photos.slice(0, 4) }).file,
     "building",
@@ -256,6 +264,21 @@ test("the building guide shows furnished move-in-ready inclusions", () => {
   assert.match(markup, /Wifi/);
   assert.match(markup, /Association dues/);
   assert.match(markup, /Rental fee/);
+});
+test("shared building placeholders live in the building guide, not unit albums", () => {
+  const markup = sharedSpacesSection();
+  assert.match(markup, /Building &amp;/);
+  assert.match(markup, /units\/_placeholders\/building\.webp/);
+  assert.match(markup, /units\/_placeholders\/pool\.webp/);
+  assert.equal((markup.match(/Placeholder image/g) || []).length, 4);
+  for (const unit of catalog.units) {
+    assert.equal(
+      unit.photos.filter((photo) =>
+        /^(?:Building exterior|Pool) placeholder$/.test(photo.caption),
+      ).length,
+      0,
+    );
+  }
 });
 test("the building guide shows nearby locations and supplied shared images", () => {
   const markup = nearbyLocationsSection();
