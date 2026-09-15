@@ -30,7 +30,7 @@ Compared with that baseline:
 - `1619A` and `1620A` intentionally share the combined catalog entry `1619A-1620A`, as confirmed by the client.
 - `1224B` and `1225B` intentionally share the combined catalog entry `1224-25B`, as confirmed by the client.
 - `0925B` has separate first-floor and second-floor Bedspace albums.
-- `1023B` has one combined album with separately identified Bedroom and Bedspace photo groups.
+- `1023B` has one combined album with separately identified Common area, Bedroom, and Bedspace photo groups. Shared rooms appear once instead of being repeated under both rental options.
 - `1507A` has separate Bedroom and Bedspace albums.
 - `1633A` has separate first-floor and second-floor albums.
 
@@ -38,10 +38,4 @@ The combined entries are the confirmed presentation and should remain together u
 
 ## Room terminology
 
-The client uses these classifications for rooms within a unit:
-
-- `BR`: Big Room
-- `MR`: Medium Room
-- `SR`: Solo Room
-
-These room classifications are separate from the current `Bedroom` and `Bedspace` rental offering labels. A unit may contain one or more classified rooms, each with its own capacity. Room capacities and unit-to-room assignments remain pending client confirmation and must not be inferred from photographs.
+The current client-approved distinctions are `Common area`, `Bedroom`, and `Bedspace`. The earlier `BR`, `MR`, and `SR` room classifications are deferred and should not be shown or inferred from photographs.

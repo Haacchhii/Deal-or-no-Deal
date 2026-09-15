@@ -938,6 +938,9 @@ main:focus {
   gap: clamp(2rem, 5vw, 4rem);
   margin-top: 1.25rem;
 }
+.thumbnail-group {
+  min-width: 0;
+}
 .thumbnail-group-heading {
   display: flex;
   align-items: baseline;

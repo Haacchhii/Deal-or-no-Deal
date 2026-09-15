@@ -111,27 +111,29 @@ test("rental type labels remain distinct from existing unit details", () => {
     }),
   );
 });
-test("combined bedroom and bedspace albums show grouped photo choices", () => {
+test("combined albums separate common areas from bedroom and bedspace photos", () => {
   const groupedUnit = {
     id: "1023B",
     rentalTypes: ["Bedroom", "Bedspace"],
     photos: [
+      { file: "kitchen", folder: "common-area", alt: "Kitchen", caption: "Shared kitchen" },
       { file: "bedroom-1", alt: "Bedroom one", caption: "Bedroom photo 1" },
-      { file: "bedroom-2", alt: "Bedroom two", caption: "Bedroom photo 2" },
       { file: "bedspace-1", alt: "Bedspace one", caption: "Bedspace photo 1" },
-      { file: "bedspace-2", alt: "Bedspace two", caption: "Bedspace photo 2" },
     ],
   };
   groupedUnit.photoGroups = [
-    { label: "Bedroom", start: 0, count: 2 },
-    { label: "Bedspace", start: 2, count: 2 },
+    { label: "Common area", start: 0, count: 1 },
+    { label: "Bedroom", start: 1, count: 1 },
+    { label: "Bedspace", start: 2, count: 1 },
   ];
   const markup = galleryMarkup(groupedUnit);
   assert.match(markup, /class="gallery unified-gallery"/);
+  assert.match(markup, />Common area<\/h3>/);
   assert.match(markup, />Bedroom<\/h3>/);
   assert.match(markup, />Bedspace<\/h3>/);
-  assert.match(markup, /01 \/ 04/);
-  assert.equal((markup.match(/class="thumbnail"/g) || []).length, 4);
+  assert.match(markup, /01 \/ 03/);
+  assert.equal((markup.match(/class="thumbnail"/g) || []).length, 3);
+  assert.match(markup, /units\/1023B\/common-area\/kitchen-thumb.webp/);
 });
 const unit = {
   id: "2103B",
@@ -182,6 +184,10 @@ test("catalog rejects duplicates, empty albums and unsafe paths before building"
   assert.equal(
     photoPath(unit, unit.photos[0], "thumb"),
     "units/2103B/living-room-thumb.webp",
+  );
+  assert.equal(
+    photoPath(unit, { file: "kitchen", folder: "common-area" }, "thumb"),
+    "units/2103B/common-area/kitchen-thumb.webp",
   );
   assert.equal(
     photoPath(unit, { file: "building", placeholder: true }, "thumb"),

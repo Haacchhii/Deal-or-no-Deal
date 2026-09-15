@@ -34,7 +34,7 @@ function groupedThumbnails(unit) {
   return `<div class="thumbnail-groups">${unit.photoGroups
     .map((group, groupIndex) => {
       const photos = unit.photos.slice(group.start, group.start + group.count);
-      return `<section class="thumbnail-group" aria-labelledby="photo-group-${groupIndex}"><div class="thumbnail-group-heading"><h3 id="photo-group-${groupIndex}">${esc(group.label)}</h3><p>${photos.length} photos</p></div><div class="thumbnails">${photos.map((photo, offset) => thumbnail(unit, photo, group.start + offset)).join("")}</div></section>`;
+      return `<section class="thumbnail-group" aria-labelledby="photo-group-${groupIndex}"><div class="thumbnail-group-heading"><h3 id="photo-group-${groupIndex}">${esc(group.label)}</h3><p>${photos.length} ${photos.length === 1 ? "photo" : "photos"}</p></div><div class="thumbnails">${photos.map((photo, offset) => thumbnail(unit, photo, group.start + offset)).join("")}</div></section>`;
     })
     .join("")}</div>`;
 }

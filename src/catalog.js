@@ -82,7 +82,8 @@ export function groupUnits(units, tower) {
 
 export function photoPath(unit, photo, size = "full") {
   const folder = photo.placeholder ? "_placeholders" : unit.id;
-  return `units/${folder}/${photo.file}${size === "thumb" ? "-thumb" : ""}.webp`;
+  const category = !photo.placeholder && photo.folder ? `${photo.folder}/` : "";
+  return `units/${folder}/${category}${photo.file}${size === "thumb" ? "-thumb" : ""}.webp`;
 }
 
 export function unitDisplayName(unit) {
@@ -171,6 +172,8 @@ export function validateCatalog(catalog) {
     }
     const files = new Set();
     for (const photo of unit.photos) {
+      if (photo.folder && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(photo.folder))
+        throw new Error(`Unsafe photo folder in ${unit.id}`);
       if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(photo.file))
         throw new Error(`Unsafe photo filename in ${unit.id}`);
       if (!photo.alt?.trim() || !photo.caption?.trim())
