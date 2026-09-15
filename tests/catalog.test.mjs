@@ -119,11 +119,11 @@ test("combined bedroom and bedspace albums show grouped photo choices", () => {
     { label: "Bedspace", start: 2, count: 2 },
   ];
   const markup = galleryMarkup(groupedUnit);
-  assert.match(markup, /class="gallery grouped-gallery"/);
-  assert.match(markup, />Bedroom<\/h2>/);
-  assert.match(markup, />Bedspace<\/h2>/);
+  assert.match(markup, /class="gallery unified-gallery"/);
+  assert.match(markup, />Bedroom<\/h3>/);
+  assert.match(markup, />Bedspace<\/h3>/);
   assert.match(markup, /01 \/ 04/);
-  assert.equal((markup.match(/class="grouped-photo"/g) || []).length, 4);
+  assert.equal((markup.match(/class="thumbnail"/g) || []).length, 4);
 });
 const unit = {
   id: "2103B",
@@ -203,8 +203,35 @@ test("directory cards use the main living room photo for six-photo albums", () =
     "building",
   );
 });
-test("four-photo albums use a selected photo display controlled by four selectors", () => {
-  const fourPhotoUnit = {
+test("every album size uses the same main-photo gallery system", () => {
+  const photos = [
+    { file: "building", alt: "Building exterior", caption: "The building" },
+    { file: "living", alt: "Living room", caption: "Living & dining" },
+    { file: "stairs", alt: "Staircase", caption: "Staircase" },
+    { file: "sleep", alt: "Bedroom", caption: "Sleeping area" },
+    { file: "bath", alt: "Bathroom", caption: "Bathroom" },
+    { file: "pool", alt: "Pool", caption: "Pool area" },
+  ];
+  for (const count of [1, 4, 5, 6]) {
+    const variableUnit = {
+      id: "1210B",
+      photos: photos.slice(0, count),
+    };
+    const markup = galleryMarkup(variableUnit);
+    assert.match(markup, /class="gallery unified-gallery"/);
+    assert.match(markup, /class="photo-stage"/);
+    assert.match(markup, /class="main-photo"/);
+    assert.match(
+      markup,
+      new RegExp(`class="photo-counter">01 \/ ${String(count).padStart(2, "0")}`),
+    );
+    assert.equal((markup.match(/class="thumbnail"/g) || []).length, count);
+    assert.match(markup, /class="viewer-caption" aria-live="polite"/);
+    assert.doesNotMatch(markup, /gallery-five|gallery-six|gallery-walkthrough/);
+  }
+});
+test("gallery selectors expose existing captions without requiring a fixed count", () => {
+  const variableUnit = {
     id: "1210B",
     photos: [
       { file: "living", alt: "Living room", caption: "Living & dining" },
@@ -213,59 +240,13 @@ test("four-photo albums use a selected photo display controlled by four selector
       { file: "bath", alt: "Bathroom", caption: "Bathroom" },
     ],
   };
-  const markup = galleryMarkup(fourPhotoUnit);
-  assert.match(markup, /See every <em>space/);
-  assert.match(markup, /class="selected-photo photo-stage"/);
-  assert.match(markup, /class="main-photo"/);
+  const markup = galleryMarkup(variableUnit);
   assert.match(markup, /class="photo-counter">01 \/ 04/);
   assert.match(markup, /class="current-caption" aria-live="polite">Living &amp; dining/);
-  assert.match(markup, /class="viewer-caption" aria-live="polite"/);
-  assert.doesNotMatch(markup, /overview-card-label/);
   assert.match(markup, /aria-label="Show Living &amp; dining"/);
   assert.match(markup, /aria-label="Show Bathroom"/);
   assert.match(markup, /aria-pressed="true"/);
   assert.match(markup, /data-index="3"/);
-  assert.doesNotMatch(markup, /walkthrough-link/);
-  assert.doesNotMatch(markup, /id="walkthrough"/);
-});
-test("six-photo albums use building and pool as the first and last visual anchors", () => {
-  const sixPhotoUnit = {
-    id: "1210B",
-    photos: [
-      { file: "building", alt: "Building exterior", caption: "The building" },
-      { file: "living", alt: "Living room", caption: "Living & dining" },
-      { file: "stairs", alt: "Staircase", caption: "Staircase" },
-      { file: "sleep", alt: "Bedroom", caption: "Sleeping area" },
-      { file: "bath", alt: "Bathroom", caption: "Bathroom" },
-      { file: "pool", alt: "Pool", caption: "Pool area" },
-    ],
-  };
-  const markup = galleryMarkup(sixPhotoUnit);
-  assert.match(markup, /Building &amp;<br><em>surroundings/);
-  assert.match(markup, /Inside Unit <em>1210B<\/em>/);
-  assert.match(markup, /Pool &amp;<br><em>amenities/);
-  assert.match(markup, /data-index="0"/);
-  assert.match(markup, /data-index="5"/);
-});
-test("five-photo albums use a guided three-interior layout", () => {
-  const fivePhotoUnit = {
-    id: "1633A-1st-floor",
-    unitNumber: "1633A",
-    spaceLabel: "1st Floor",
-    photos: [
-      { file: "building", alt: "Building exterior", caption: "The building" },
-      { file: "living", alt: "Living room", caption: "Living & dining" },
-      { file: "sleep", alt: "Bedroom", caption: "Sleeping area" },
-      { file: "bath", alt: "Bathroom", caption: "Bathroom" },
-      { file: "pool", alt: "Pool", caption: "Pool area" },
-    ],
-  };
-  const markup = galleryMarkup(fivePhotoUnit);
-  assert.match(markup, /gallery-five/);
-  assert.match(markup, /02–04 \/ 05/);
-  assert.match(markup, /1st Floor · Three views of the spaces inside/);
-  assert.match(markup, /Inside Unit <em>1633A<\/em>/);
-  assert.match(markup, /data-index="4"/);
 });
 test("the building guide shows furnished move-in-ready inclusions", () => {
   const markup = inclusionsSection();
