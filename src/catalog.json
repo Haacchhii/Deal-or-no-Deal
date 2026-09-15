@@ -81,23 +81,39 @@
       "photos": [
         {
           "file": "614299420-1419156013235096-1479184595519929846-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 0806B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 0806B",
+          "folder": "common-area"
         },
         {
           "file": "614352304-2380420079045317-1157356039961403130-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 0806B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 0806B",
+          "folder": "common-area"
         },
         {
           "file": "615243371-1396527051318467-3723281619978877500-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 0806B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 0806B",
+          "folder": "common-area"
         },
         {
           "file": "616808558-1384463923179204-3543140024217448618-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 0806B"
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 0806B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -107,24 +123,40 @@
       "sample": false,
       "photos": [
         {
-          "file": "649680720-1649615459500539-78196110248910651-n",
-          "caption": "Sleeping area",
-          "alt": "Sleeping area with a bed, wardrobe, window and air conditioner inside unit 0810B"
-        },
-        {
           "file": "666452219-1936263057020102-2513178224068029545-n",
-          "caption": "Kitchenette & refrigerator",
-          "alt": "Kitchenette cabinets, counter and refrigerator inside unit 0810B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 0810B",
+          "folder": "common-area"
         },
         {
           "file": "667796201-4299469650338169-2809954574246840081-n",
-          "caption": "Kitchen counter",
-          "alt": "Blue and white kitchen counter with storage cabinets inside unit 0810B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 0810B",
+          "folder": "common-area"
         },
         {
           "file": "669190793-27000816392849929-2558784172204682722-n",
-          "caption": "Bathroom",
-          "alt": "Bathroom shower enclosure and tiled wall inside unit 0810B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 0810B",
+          "folder": "common-area"
+        },
+        {
+          "file": "649680720-1649615459500539-78196110248910651-n",
+          "caption": "Bedroom 1",
+          "alt": "Bedroom view 1 inside unit 0810B",
+          "folder": "bedroom"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedroom",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -133,23 +165,39 @@
       "photos": [
         {
           "file": "2",
-          "caption": "Unit photo 2",
-          "alt": "Unit 0818B photo 2"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 0818B",
+          "folder": "common-area"
         },
         {
           "file": "3",
-          "caption": "Unit photo 3",
-          "alt": "Unit 0818B photo 3"
-        },
-        {
-          "file": "4",
-          "caption": "Unit photo 4",
-          "alt": "Unit 0818B photo 4"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 0818B",
+          "folder": "common-area"
         },
         {
           "file": "5",
-          "caption": "Unit photo 5",
-          "alt": "Unit 0818B photo 5"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 0818B",
+          "folder": "common-area"
+        },
+        {
+          "file": "4",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 0818B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -159,23 +207,44 @@
       "photos": [
         {
           "file": "776383083-1808313153917734-2605470082082727187-n",
-          "caption": "Living, kitchen & dining",
-          "alt": "Living, kitchen and dining area inside unit 0825B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 0825B",
+          "folder": "common-area"
         },
         {
           "file": "778659785-1056678977116286-6404426514884126712-n",
-          "caption": "Sleeping area",
-          "alt": "Sleeping area inside unit 0825B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 0825B",
+          "folder": "common-area"
         },
         {
           "file": "778927821-1075186081726652-7723582951317553377-n",
-          "caption": "Kitchen & storage",
-          "alt": "Kitchen and storage area inside unit 0825B"
+          "caption": "Bedroom 1",
+          "alt": "Bedroom view 1 inside unit 0825B",
+          "folder": "bedroom"
         },
         {
           "file": "785058649-1598844708320038-6170489974342735358-n",
-          "caption": "Bathroom",
-          "alt": "Bathroom inside unit 0825B"
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 0825B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 2
+        },
+        {
+          "label": "Bedroom",
+          "start": 2,
+          "count": 1
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -185,23 +254,39 @@
       "photos": [
         {
           "file": "554081002-1587772695924755-5848341902710144706-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 0902B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 0902B",
+          "folder": "common-area"
         },
         {
           "file": "682681398-994660519915927-9137187913535102510-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 0902B"
-        },
-        {
-          "file": "690563257-2459950851184690-3181892034321508467-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 0902B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 0902B",
+          "folder": "common-area"
         },
         {
           "file": "691726260-1993539827916944-6148267125975924294-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 0902B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 0902B",
+          "folder": "common-area"
+        },
+        {
+          "file": "690563257-2459950851184690-3181892034321508467-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 0902B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -303,23 +388,39 @@
       "photos": [
         {
           "file": "541773896-1969677087166697-2834700745185720770-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 1004B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1004B",
+          "folder": "common-area"
         },
         {
           "file": "546449696-769694715660526-7598951781295509648-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 1004B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1004B",
+          "folder": "common-area"
         },
         {
           "file": "664897364-890464190710338-5871993617483010326-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 1004B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1004B",
+          "folder": "common-area"
         },
         {
           "file": "667827486-1505187854521978-7059633996444454022-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 1004B"
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1004B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -435,23 +536,39 @@
       "photos": [
         {
           "file": "689966240-35618552701121535-4958328470488655539-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 1101B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1101B",
+          "folder": "common-area"
         },
         {
           "file": "691539010-1753842405970781-1077086505878326996-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 1101B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1101B",
+          "folder": "common-area"
         },
         {
           "file": "693382539-1659556238708840-8353995761103510803-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 1101B"
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1101B",
+          "folder": "bedspace"
         },
         {
           "file": "703413319-1000852412406058-4517707975408453433-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 1101B"
+          "caption": "Bedspace 2",
+          "alt": "Bedspace view 2 inside unit 1101B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 2
+        },
+        {
+          "label": "Bedspace",
+          "start": 2,
+          "count": 2
         }
       ]
     },
@@ -462,23 +579,39 @@
       "photos": [
         {
           "file": "675203481-1667826224555425-5183764999564846756-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 1105A"
-        },
-        {
-          "file": "681877639-1710090779985367-6202882735183638764-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 1105A"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1105A",
+          "folder": "common-area"
         },
         {
           "file": "703333322-2046070055948710-6792487528608590975-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 1105A"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1105A",
+          "folder": "common-area"
         },
         {
           "file": "745235718-1680139709916226-4346641175518806858-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 1105A"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1105A",
+          "folder": "common-area"
+        },
+        {
+          "file": "681877639-1710090779985367-6202882735183638764-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1105A",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -518,23 +651,39 @@
       "photos": [
         {
           "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining",
-          "alt": "Unit 1210B living area with a sofa, coffee table and dining table beside the kitchen"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1210B",
+          "folder": "common-area"
         },
         {
           "file": "staircase",
-          "caption": "Staircase & main living area",
-          "alt": "Wooden staircase with a handrail beside the living, dining and kitchen area of Unit 1210B"
-        },
-        {
-          "file": "sleeping-area",
-          "caption": "Sleeping area",
-          "alt": "Unit 1210B sleeping area with two metal bunk beds, a curtained window and wall-mounted air conditioner"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1210B",
+          "folder": "common-area"
         },
         {
           "file": "bathroom",
-          "caption": "Bathroom",
-          "alt": "Unit 1210B bathroom with a shower, pedestal sink and toilet"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1210B",
+          "folder": "common-area"
+        },
+        {
+          "file": "sleeping-area",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1210B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -573,24 +722,40 @@
       "sample": false,
       "photos": [
         {
-          "file": "752845628-1023916530563435-4104367944017192839-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 1218A"
-        },
-        {
           "file": "757665034-1843306797078620-1979353100391353111-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 1218A"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1218A",
+          "folder": "common-area"
         },
         {
           "file": "758180270-1909412869754928-6682474648305720002-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 1218A"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1218A",
+          "folder": "common-area"
         },
         {
           "file": "759328747-1004448535920593-7069204596479093920-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 1218A"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1218A",
+          "folder": "common-area"
+        },
+        {
+          "file": "752845628-1023916530563435-4104367944017192839-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1218A",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -704,23 +869,39 @@
       "photos": [
         {
           "file": "2",
-          "caption": "Unit photo 2",
-          "alt": "Unit 1235A photo 2"
-        },
-        {
-          "file": "3",
-          "caption": "Unit photo 3",
-          "alt": "Unit 1235A photo 3"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1235A",
+          "folder": "common-area"
         },
         {
           "file": "4",
-          "caption": "Unit photo 4",
-          "alt": "Unit 1235A photo 4"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1235A",
+          "folder": "common-area"
         },
         {
           "file": "5",
-          "caption": "Unit photo 5",
-          "alt": "Unit 1235A photo 5"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1235A",
+          "folder": "common-area"
+        },
+        {
+          "file": "3",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1235A",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -761,23 +942,39 @@
       "photos": [
         {
           "file": "585841878-1516497146225934-1482722249196833258-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 1412B"
-        },
-        {
-          "file": "592272907-1562714348088300-3835128198413668793-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 1412B"
-        },
-        {
-          "file": "706558791-2723023931416502-6271856852184984043-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 1412B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1412B",
+          "folder": "common-area"
         },
         {
           "file": "707029791-1353980159935760-1883373040214391849-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 1412B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1412B",
+          "folder": "common-area"
+        },
+        {
+          "file": "592272907-1562714348088300-3835128198413668793-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1412B",
+          "folder": "bedspace"
+        },
+        {
+          "file": "706558791-2723023931416502-6271856852184984043-n",
+          "caption": "Bedspace 2",
+          "alt": "Bedspace view 2 inside unit 1412B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 2
+        },
+        {
+          "label": "Bedspace",
+          "start": 2,
+          "count": 2
         }
       ]
     },
@@ -787,23 +984,39 @@
       "photos": [
         {
           "file": "610297539-1181569484061952-7578392209120810132-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 1504B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1504B",
+          "folder": "common-area"
         },
         {
           "file": "610688117-917061984182024-8197550322247204183-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 1504B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1504B",
+          "folder": "common-area"
         },
         {
           "file": "612042054-909204995115419-2939533943660241312-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 1504B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1504B",
+          "folder": "common-area"
         },
         {
           "file": "615345752-33409769558667327-7216087046517144645-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 1504B"
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1504B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -962,23 +1175,39 @@
       "photos": [
         {
           "file": "703952667-2494161874364802-4960073037768102969-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside the bedroom offering at unit 1507A"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1507A",
+          "folder": "common-area"
         },
         {
           "file": "705153853-1413025817249845-6541702825698566925-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside the bedroom offering at unit 1507A"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1507A",
+          "folder": "common-area"
         },
         {
           "file": "705520228-2080846342646509-4803844281660098040-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside the bedroom offering at unit 1507A"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1507A",
+          "folder": "common-area"
         },
         {
           "file": "782251881-2243028469787006-919435370308514781-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside the bedroom offering at unit 1507A"
+          "caption": "Bedroom 1",
+          "alt": "Bedroom view 1 inside unit 1507A",
+          "folder": "bedroom"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedroom",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -1022,23 +1251,39 @@
       "photos": [
         {
           "file": "738206301-1004546015525198-2017917625233847054-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 1508B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1508B",
+          "folder": "common-area"
         },
         {
           "file": "739335226-1031007812848143-1957265154580687095-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 1508B"
-        },
-        {
-          "file": "740533393-2109260489652933-5409950567528624219-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 1508B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1508B",
+          "folder": "common-area"
         },
         {
           "file": "740787826-971405502529196-252688802025125062-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 1508B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1508B",
+          "folder": "common-area"
+        },
+        {
+          "file": "740533393-2109260489652933-5409950567528624219-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1508B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -1049,23 +1294,39 @@
       "photos": [
         {
           "file": "656855202-1892293608095032-6252732103964081656-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 1510B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1510B",
+          "folder": "common-area"
         },
         {
           "file": "663958406-1202470285296361-2456969161080966347-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 1510B"
-        },
-        {
-          "file": "665028801-980084647788830-4329326627625301488-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 1510B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1510B",
+          "folder": "common-area"
         },
         {
           "file": "665067999-2051143365463517-3481491299039264741-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 1510B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1510B",
+          "folder": "common-area"
+        },
+        {
+          "file": "665028801-980084647788830-4329326627625301488-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1510B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -1075,24 +1336,40 @@
       "sample": false,
       "photos": [
         {
-          "file": "728473677-3312140562298316-8075901867287563842-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 1514B"
-        },
-        {
           "file": "729374184-905090552636696-523344666106599028-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 1514B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1514B",
+          "folder": "common-area"
         },
         {
           "file": "730503033-1541962344607512-8343155694970534077-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 1514B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1514B",
+          "folder": "common-area"
         },
         {
           "file": "730570075-1228917119260235-6830002504865627618-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 1514B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1514B",
+          "folder": "common-area"
+        },
+        {
+          "file": "728473677-3312140562298316-8075901867287563842-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1514B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -1102,13 +1379,27 @@
       "photos": [
         {
           "file": "582270975-1438914820910532-688989882057238679-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 1516B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1516B",
+          "folder": "common-area"
         },
         {
           "file": "735981356-1959302648057219-534390180923828534-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 1516B"
+          "caption": "Bedroom 1",
+          "alt": "Bedroom view 1 inside unit 1516B",
+          "folder": "bedroom"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 1
+        },
+        {
+          "label": "Bedroom",
+          "start": 1,
+          "count": 1
         }
       ]
     },
@@ -1165,23 +1456,39 @@
       "photos": [
         {
           "file": "2",
-          "caption": "Unit photo 2",
-          "alt": "Unit 1521A photo 2"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1521A",
+          "folder": "common-area"
         },
         {
           "file": "3",
-          "caption": "Unit photo 3",
-          "alt": "Unit 1521A photo 3"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1521A",
+          "folder": "common-area"
         },
         {
           "file": "4",
-          "caption": "Unit photo 4",
-          "alt": "Unit 1521A photo 4"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1521A",
+          "folder": "common-area"
         },
         {
           "file": "5",
-          "caption": "Unit photo 5",
-          "alt": "Unit 1521A photo 5"
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1521A",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -1190,24 +1497,40 @@
       "sample": false,
       "photos": [
         {
-          "file": "763943672-1039685562295827-6030585369531008405-n",
-          "caption": "Sleeping area",
-          "alt": "Sleeping area with a metal bunk bed and air conditioner inside unit 1526B"
-        },
-        {
           "file": "764035773-1610178647484651-4612272563416682236-n",
-          "caption": "Bathroom",
-          "alt": "Bathroom with shower, sink, toilet and shelving inside unit 1526B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1526B",
+          "folder": "common-area"
         },
         {
           "file": "764363941-1361670132823440-2845567132006320351-n",
-          "caption": "Kitchen & dining",
-          "alt": "Kitchen and dining area with wood cabinets inside unit 1526B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1526B",
+          "folder": "common-area"
         },
         {
           "file": "771983202-1095659316222605-347218390452951439-n",
-          "caption": "Entryway",
-          "alt": "Entryway and interior doors inside unit 1526B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1526B",
+          "folder": "common-area"
+        },
+        {
+          "file": "763943672-1039685562295827-6030585369531008405-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1526B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -1290,23 +1613,39 @@
       "photos": [
         {
           "file": "774287587-1325781389357541-5999437176231794134-n",
-          "caption": "Living area",
-          "alt": "Living area with a sofa and water dispenser inside units 1619A-1620A"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1619A-1620A",
+          "folder": "common-area"
         },
         {
           "file": "775106339-2506581089806125-1164237927751616149-n",
-          "caption": "Kitchen & laundry",
-          "alt": "Kitchen with wood cabinets, refrigerator and washing machine inside units 1619A-1620A"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1619A-1620A",
+          "folder": "common-area"
         },
         {
           "file": "775940935-1086840453875911-4438184299443364305-n",
-          "caption": "Bathroom",
-          "alt": "Bathroom with glass shower enclosure, sink and toilet inside units 1619A-1620A"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1619A-1620A",
+          "folder": "common-area"
         },
         {
           "file": "777915023-1322297899982935-7334198524198247521-n",
-          "caption": "Sleeping area",
-          "alt": "Sleeping area furnished with wooden bunk beds inside units 1619A-1620A"
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1619A-1620A",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -1316,23 +1655,39 @@
       "photos": [
         {
           "file": "610464137-2043452169558700-6287130108045598310-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 1623A"
-        },
-        {
-          "file": "624953478-867498309431138-4801451546759146464-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 1623A"
-        },
-        {
-          "file": "626487034-25869948479288565-6509230623912677178-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 1623A"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1623A",
+          "folder": "common-area"
         },
         {
           "file": "680238731-1021533020331812-7819986077123510388-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 1623A"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1623A",
+          "folder": "common-area"
+        },
+        {
+          "file": "624953478-867498309431138-4801451546759146464-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1623A",
+          "folder": "bedspace"
+        },
+        {
+          "file": "626487034-25869948479288565-6509230623912677178-n",
+          "caption": "Bedspace 2",
+          "alt": "Bedspace view 2 inside unit 1623A",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 2
+        },
+        {
+          "label": "Bedspace",
+          "start": 2,
+          "count": 2
         }
       ]
     },
@@ -1344,19 +1699,34 @@
       "sample": false,
       "photos": [
         {
-          "file": "795643342-1560282865319622-6403598152493862999-n",
-          "caption": "Living, kitchen & dining",
-          "alt": "Living, kitchen and dining area on the 1st floor of unit 1633A"
-        },
-        {
           "file": "795766310-2155999791796652-8255999732233242909-n",
-          "caption": "Sleeping area",
-          "alt": "Sleeping area on the 1st floor of unit 1633A"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1633A",
+          "folder": "common-area"
         },
         {
           "file": "796568027-1401093005481420-9104553393190373101-n",
-          "caption": "Bathroom",
-          "alt": "Bathroom on the 1st floor of unit 1633A"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1633A",
+          "folder": "common-area"
+        },
+        {
+          "file": "795643342-1560282865319622-6403598152493862999-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1633A",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 2
+        },
+        {
+          "label": "Bedspace",
+          "start": 2,
+          "count": 1
         }
       ]
     },
@@ -1368,24 +1738,40 @@
       "sample": false,
       "photos": [
         {
-          "file": "799262952-2512457065828124-3877957857420076965-n",
-          "caption": "Living, kitchen & dining",
-          "alt": "Living, kitchen and dining area on the 2nd floor of unit 1633A"
-        },
-        {
           "file": "800468489-1076779375208738-8692176496499424949-n",
-          "caption": "Sleeping area",
-          "alt": "Sleeping area on the 2nd floor of unit 1633A"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1633A",
+          "folder": "common-area"
         },
         {
           "file": "801962495-1995356351116499-7709999162849197209-n-1",
-          "caption": "Kitchen & storage",
-          "alt": "Kitchen and storage area on the 2nd floor of unit 1633A"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1633A",
+          "folder": "common-area"
         },
         {
           "file": "801962495-1995356351116499-7709999162849197209-n",
-          "caption": "Bathroom",
-          "alt": "Bathroom on the 2nd floor of unit 1633A"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1633A",
+          "folder": "common-area"
+        },
+        {
+          "file": "799262952-2512457065828124-3877957857420076965-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1633A",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -1466,24 +1852,40 @@
       "rentalType": "Bedspace",
       "photos": [
         {
-          "file": "2",
-          "caption": "Unit photo 2",
-          "alt": "Unit 1730B photo 2"
-        },
-        {
-          "file": "3",
-          "caption": "Unit photo 3",
-          "alt": "Unit 1730B photo 3"
-        },
-        {
           "file": "4",
-          "caption": "Unit photo 4",
-          "alt": "Unit 1730B photo 4"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1730B",
+          "folder": "common-area"
         },
         {
           "file": "5",
-          "caption": "Unit photo 5",
-          "alt": "Unit 1730B photo 5"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1730B",
+          "folder": "common-area"
+        },
+        {
+          "file": "2",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1730B",
+          "folder": "bedspace"
+        },
+        {
+          "file": "3",
+          "caption": "Bedspace 2",
+          "alt": "Bedspace view 2 inside unit 1730B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 2
+        },
+        {
+          "label": "Bedspace",
+          "start": 2,
+          "count": 2
         }
       ]
     },
@@ -1524,18 +1926,28 @@
       "photos": [
         {
           "file": "549067147-1742983383022941-6100145182484756160-n",
-          "caption": "Living, kitchen & dining",
-          "alt": "Living, kitchen and dining area beside the staircase inside unit 1821B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1821B",
+          "folder": "common-area"
         },
         {
           "file": "549787440-1145734817440359-8144162407595838784-n",
-          "caption": "Living & dining area",
-          "alt": "Living and dining area with a television and window inside unit 1821B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1821B",
+          "folder": "common-area"
         },
         {
           "file": "744593850-1915914662432737-9193907383157289283-n",
-          "caption": "Kitchen",
-          "alt": "Kitchen with wood cabinets, refrigerator and countertop appliances inside unit 1821B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1821B",
+          "folder": "common-area"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
         }
       ]
     },
@@ -1546,23 +1958,39 @@
       "photos": [
         {
           "file": "786139401-1384335643811612-534320232577103245-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside the bedroom offering at unit 1836A"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1836A",
+          "folder": "common-area"
         },
         {
           "file": "786176307-2321131412040228-1042586430899045573-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside the bedroom offering at unit 1836A"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1836A",
+          "folder": "common-area"
         },
         {
           "file": "786390516-2056410218326516-1322824793152241041-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside the bedroom offering at unit 1836A"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1836A",
+          "folder": "common-area"
         },
         {
           "file": "786656537-1686741509099095-4052807934124185593-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside the bedroom offering at unit 1836A"
+          "caption": "Bedroom 1",
+          "alt": "Bedroom view 1 inside unit 1836A",
+          "folder": "bedroom"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedroom",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -1614,24 +2042,40 @@
       "rentalType": "Bedspace",
       "photos": [
         {
-          "file": "2",
-          "caption": "Unit photo 2",
-          "alt": "Unit 1911B photo 2"
-        },
-        {
           "file": "3",
-          "caption": "Unit photo 3",
-          "alt": "Unit 1911B photo 3"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1911B",
+          "folder": "common-area"
         },
         {
           "file": "4",
-          "caption": "Unit photo 4",
-          "alt": "Unit 1911B photo 4"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1911B",
+          "folder": "common-area"
         },
         {
           "file": "5",
-          "caption": "Unit photo 5",
-          "alt": "Unit 1911B photo 5"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1911B",
+          "folder": "common-area"
+        },
+        {
+          "file": "2",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1911B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -1643,26 +2087,42 @@
       "photos": [
         {
           "file": "795696859-1741174383844511-7810768114618937946-n",
-          "caption": "Living, kitchen & dining",
-          "alt": "Living, kitchen and dining area inside unit 1912B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 1912B",
+          "folder": "common-area"
         },
         {
           "file": "797624515-1739236237303170-7004479232089993777-n",
-          "caption": "Sleeping area",
-          "alt": "Sleeping area inside unit 1912B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 1912B",
+          "folder": "common-area"
         },
         {
           "file": "801578052-1374296301563870-6056253364905561405-n",
-          "caption": "Kitchen & storage",
-          "alt": "Kitchen and storage area inside unit 1912B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 1912B",
+          "folder": "common-area"
         },
         {
           "file": "803100259-1833797267626661-8416286476513500404-n",
-          "caption": "Bathroom",
-          "alt": "Bathroom inside unit 1912B"
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 1912B",
+          "folder": "bedspace"
         }
       ],
-      "sample": false
+      "sample": false,
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
+        }
+      ]
     },
     {
       "id": "1932B",
@@ -1719,23 +2179,39 @@
       "photos": [
         {
           "file": "742799101-835639869484112-4286425792572362665-n",
-          "caption": "Wardrobe & hallway",
-          "alt": "Built-in wardrobe and wood-finished hallway inside unit 2002B"
-        },
-        {
-          "file": "744854316-1526840878318249-5920671626331077096-n",
-          "caption": "Sleeping area",
-          "alt": "Sleeping area with a metal bunk bed beside the hallway inside unit 2002B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 2002B",
+          "folder": "common-area"
         },
         {
           "file": "745332009-1719963255876384-3087844698863963611-n",
-          "caption": "Living area",
-          "alt": "Living area with a sofa, window and air conditioner inside unit 2002B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 2002B",
+          "folder": "common-area"
         },
         {
           "file": "745810333-1059069063458982-5166213310896063714-n",
-          "caption": "Kitchen & dining",
-          "alt": "Kitchen and dining area with wood-finished cabinets inside unit 2002B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 2002B",
+          "folder": "common-area"
+        },
+        {
+          "file": "744854316-1526840878318249-5920671626331077096-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 2002B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -1745,33 +2221,51 @@
       "photos": [
         {
           "file": "643412148-916457831090362-8876097044888074057-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 2018B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 2018B",
+          "folder": "common-area"
         },
         {
           "file": "643469257-1442075920741129-6435782154931739095-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 2018B"
-        },
-        {
-          "file": "645235094-679608508573941-1556325559752678708-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 2018B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 2018B",
+          "folder": "common-area"
         },
         {
           "file": "645242727-1226763012940601-1885653283104425639-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 2018B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 2018B",
+          "folder": "common-area"
         },
         {
           "file": "645486331-1659846908525872-333094938930346692-n",
-          "caption": "Interior 5",
-          "alt": "Interior view 5 inside unit 2018B"
+          "caption": "Common area 4",
+          "alt": "Common area view 4 inside unit 2018B",
+          "folder": "common-area"
+        },
+        {
+          "file": "645235094-679608508573941-1556325559752678708-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 2018B",
+          "folder": "bedspace"
         },
         {
           "file": "646866315-895166293308763-7124897568375932902-n",
-          "caption": "Interior 6",
-          "alt": "Interior view 6 inside unit 2018B"
+          "caption": "Bedspace 2",
+          "alt": "Bedspace view 2 inside unit 2018B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 4
+        },
+        {
+          "label": "Bedspace",
+          "start": 4,
+          "count": 2
         }
       ]
     },
@@ -1782,18 +2276,33 @@
       "photos": [
         {
           "file": "667708746-3987547774876432-6695004137444275102-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 2019B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 2019B",
+          "folder": "common-area"
         },
         {
           "file": "668222258-957635653514419-951619914721945769-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 2019B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 2019B",
+          "folder": "common-area"
         },
         {
           "file": "670147658-976087978334484-346138419933517969-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 2019B"
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 2019B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 2
+        },
+        {
+          "label": "Bedspace",
+          "start": 2,
+          "count": 1
         }
       ]
     },
@@ -1869,24 +2378,40 @@
       "sample": false,
       "photos": [
         {
-          "file": "727940000-2105376223527173-4874843177773316994-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 2036A"
-        },
-        {
-          "file": "728984076-3355203111355897-4865351636316974842-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 2036A"
-        },
-        {
           "file": "730808635-3543763565777740-3119271075777250298-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 2036A"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 2036A",
+          "folder": "common-area"
         },
         {
           "file": "732769394-1955410885170610-5910828387636772962-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 2036A"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 2036A",
+          "folder": "common-area"
+        },
+        {
+          "file": "727940000-2105376223527173-4874843177773316994-n",
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 2036A",
+          "folder": "bedspace"
+        },
+        {
+          "file": "728984076-3355203111355897-4865351636316974842-n",
+          "caption": "Bedspace 2",
+          "alt": "Bedspace view 2 inside unit 2036A",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 2
+        },
+        {
+          "label": "Bedspace",
+          "start": 2,
+          "count": 2
         }
       ]
     },
@@ -1897,23 +2422,39 @@
       "photos": [
         {
           "file": "722244806-1019397483834702-4614623323448406929-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 2103B"
+          "caption": "Common area 1",
+          "alt": "Common area view 1 inside unit 2103B",
+          "folder": "common-area"
         },
         {
           "file": "723653617-1542909000509373-8607290683287997886-n",
-          "caption": "Interior 2",
-          "alt": "Interior view 2 inside unit 2103B"
+          "caption": "Common area 2",
+          "alt": "Common area view 2 inside unit 2103B",
+          "folder": "common-area"
         },
         {
           "file": "725291242-987760824046275-4574258865489996396-n",
-          "caption": "Interior 3",
-          "alt": "Interior view 3 inside unit 2103B"
+          "caption": "Common area 3",
+          "alt": "Common area view 3 inside unit 2103B",
+          "folder": "common-area"
         },
         {
           "file": "732116374-1552161673178377-8670551697792978490-n",
-          "caption": "Interior 4",
-          "alt": "Interior view 4 inside unit 2103B"
+          "caption": "Bedspace 1",
+          "alt": "Bedspace view 1 inside unit 2103B",
+          "folder": "bedspace"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
