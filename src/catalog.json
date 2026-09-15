@@ -786,6 +786,18 @@
           "alt": "Common-area view 1 inside unit 1505B"
         },
         {
+          "file": "754659636-1727929851670413-133970253677970367-n",
+          "folder": "common-area",
+          "caption": "Kitchen",
+          "alt": "Kitchen inside unit 1505B"
+        },
+        {
+          "file": "802535665-1728776588178723-280692402590639412-n",
+          "folder": "common-area",
+          "caption": "Entry & staircase",
+          "alt": "Entry and staircase area inside unit 1505B"
+        },
+        {
           "file": "658205788-825339360646838-2363058331142207191-n",
           "folder": "bedroom",
           "caption": "Bedroom 1",
@@ -816,18 +828,30 @@
           "folder": "bedroom",
           "caption": "Bedroom 6",
           "alt": "Bedroom view 6 inside unit 1505B"
+        },
+        {
+          "file": "802595322-1435533855112318-3423843851907351787-n",
+          "folder": "bedroom",
+          "caption": "Bedroom storage",
+          "alt": "Bedroom and storage area inside unit 1505B"
+        },
+        {
+          "file": "804532368-1114965154303303-3999983953895564575-n",
+          "folder": "bedroom",
+          "caption": "Bedroom",
+          "alt": "Bedroom with a window and storage inside unit 1505B"
         }
       ],
       "photoGroups": [
         {
           "label": "Common area",
           "start": 0,
-          "count": 1
+          "count": 3
         },
         {
           "label": "Bedroom",
-          "start": 1,
-          "count": 5
+          "start": 3,
+          "count": 7
         }
       ]
     },
@@ -1157,31 +1181,44 @@
     },
     {
       "id": "1527B",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "653048570-750236924690063-4869026405668659007-n",
+          "folder": "common-area",
+          "caption": "Living, kitchen & dining",
+          "alt": "Living, kitchen and dining area inside unit 1527B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "653868339-1665458467790202-409018428740907154-n",
+          "folder": "common-area",
+          "caption": "Bathroom",
+          "alt": "Bathroom inside unit 1527B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
+          "file": "656889479-952630747183071-4925376186001334306-n",
+          "folder": "common-area",
+          "caption": "Dining & staircase",
+          "alt": "Dining area and staircase inside unit 1527B"
         },
         {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
+          "file": "622299604-5229803983910634-7828557818858540799-n",
+          "folder": "bedroom",
+          "caption": "Bunk-bed area",
+          "alt": "Bunk-bed area inside unit 1527B",
+          "classificationReview": true
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedroom",
+          "start": 3,
+          "count": 1
         }
       ]
     },
@@ -1322,31 +1359,43 @@
     },
     {
       "id": "1634A",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "533743478-1054194463262747-3334725815470630730-n",
+          "folder": "common-area",
+          "caption": "Kitchen & dining",
+          "alt": "Kitchen and dining area inside unit 1634A"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "791129266-1081785084207412-6965905548598377524-n",
+          "folder": "bedroom",
+          "caption": "Bedroom",
+          "alt": "Bedroom with an air conditioner inside unit 1634A"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
+          "file": "791142639-2645153112609202-7198046314256019285-n",
+          "folder": "bedroom",
+          "caption": "Bedroom wardrobe",
+          "alt": "Built-in wardrobe inside the bedroom of unit 1634A"
         },
         {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
+          "file": "792205794-4085679391733461-6130479867092101086-n",
+          "folder": "bedroom",
+          "caption": "Bedroom storage",
+          "alt": "Bedroom entry and built-in storage inside unit 1634A"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 1
+        },
+        {
+          "label": "Bedroom",
+          "start": 1,
+          "count": 3
         }
       ]
     },
@@ -1488,31 +1537,43 @@
     {
       "id": "1910B",
       "rentalType": "Bedspace",
-      "sample": true,
+      "sample": false,
       "photos": [
         {
-          "file": "living-kitchen-dining",
-          "caption": "Living, kitchen & dining placeholder",
-          "alt": "Placeholder image for the unit living, kitchen and dining area",
-          "placeholder": true
+          "file": "664483160-1574095513664970-3009219703235637864-n",
+          "folder": "common-area",
+          "caption": "Bathroom",
+          "alt": "Bathroom inside unit 1910B"
         },
         {
-          "file": "staircase",
-          "caption": "Staircase placeholder",
-          "alt": "Placeholder image for the unit staircase or main living area",
-          "placeholder": true
+          "file": "666908326-1198348758902736-5417043152401105310-n",
+          "folder": "common-area",
+          "caption": "Dining area",
+          "alt": "Dining area inside unit 1910B"
         },
         {
-          "file": "sleeping-area",
-          "caption": "Sleeping area placeholder",
-          "alt": "Placeholder image for the unit sleeping area",
-          "placeholder": true
+          "file": "668447055-984264914603875-2974034461619473331-n",
+          "folder": "common-area",
+          "caption": "Kitchen & dining",
+          "alt": "Kitchen and dining area inside unit 1910B"
         },
         {
-          "file": "bathroom",
-          "caption": "Bathroom placeholder",
-          "alt": "Placeholder image for the unit bathroom",
-          "placeholder": true
+          "file": "665028801-980084647788830-4329326627625301488-n",
+          "folder": "bedspace",
+          "caption": "Bedspace",
+          "alt": "Bunk-bed sleeping area inside unit 1910B"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
