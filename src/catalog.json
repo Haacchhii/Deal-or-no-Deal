@@ -330,6 +330,30 @@
           "alt": "Alternate view of the shared bathroom inside unit 1023B"
         },
         {
+          "file": "720467282-1020161700494237-6052457619109946466-n",
+          "folder": "common-area",
+          "caption": "Common area 1",
+          "alt": "Common-area view 1 inside unit 1023B"
+        },
+        {
+          "file": "722808534-1298906505307278-1505791403684156476-n",
+          "folder": "common-area",
+          "caption": "Common area 2",
+          "alt": "Common-area view 2 inside unit 1023B"
+        },
+        {
+          "file": "723103106-1670551274060155-1312429278009172795-n",
+          "folder": "common-area",
+          "caption": "Common area 3",
+          "alt": "Common-area view 3 inside unit 1023B"
+        },
+        {
+          "file": "723143929-3085888951605928-5735445070760100912-n",
+          "folder": "common-area",
+          "caption": "Common area 4",
+          "alt": "Common-area view 4 inside unit 1023B"
+        },
+        {
           "file": "720199814-834273222838899-3894952705081661761-n",
           "folder": "bedroom",
           "caption": "Bedroom 1",
@@ -340,30 +364,6 @@
           "folder": "bedroom",
           "caption": "Bedroom 2",
           "alt": "Bedroom view 2 inside unit 1023B"
-        },
-        {
-          "file": "720467282-1020161700494237-6052457619109946466-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 3",
-          "alt": "Bedroom view 3 inside unit 1023B"
-        },
-        {
-          "file": "722808534-1298906505307278-1505791403684156476-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 4",
-          "alt": "Bedroom view 4 inside unit 1023B"
-        },
-        {
-          "file": "723103106-1670551274060155-1312429278009172795-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 5",
-          "alt": "Bedroom view 5 inside unit 1023B"
-        },
-        {
-          "file": "723143929-3085888951605928-5735445070760100912-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 6",
-          "alt": "Bedroom view 6 inside unit 1023B"
         },
         {
           "folder": "bedroom",
@@ -382,12 +382,12 @@
         {
           "label": "Common area",
           "start": 0,
-          "count": 5
+          "count": 9
         },
         {
           "label": "Bedroom",
-          "start": 5,
-          "count": 7
+          "start": 9,
+          "count": 3
         },
         {
           "label": "Bedspace",
@@ -590,22 +590,23 @@
           "folder": "common-area"
         },
         {
-          "file": "597597055-3024648407736946-4505632385356430239-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 1",
-          "alt": "Bedroom view 1 inside unit 1224-25B"
-        },
-        {
           "file": "598036465-902521652106778-7237474431502300948-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 2",
-          "alt": "Bedroom view 2 inside unit 1224-25B"
+          "folder": "common-area",
+          "caption": "Common area 1",
+          "alt": "Common-area view 1 inside unit 1224-25B"
         },
         {
           "file": "598938701-1400334511603238-8262434588089601600-n",
+          "folder": "common-area",
+          "caption": "Common area 2",
+          "alt": "Common-area view 2 inside unit 1224-25B"
+        },
+        {
+          "file": "597597055-3024648407736946-4505632385356430239-n",
           "folder": "bedroom",
-          "caption": "Bedroom 3",
-          "alt": "Bedroom view 3 inside unit 1224-25B"
+          "caption": "Bedroom 1",
+          "alt": "Bedroom view 1 inside unit 1224-25B",
+          "classificationReview": true
         },
         {
           "file": "733062825-1007853731849796-1329363972826453118-n",
@@ -625,12 +626,12 @@
         {
           "label": "Common area",
           "start": 0,
-          "count": 4
+          "count": 6
         },
         {
           "label": "Bedroom",
-          "start": 4,
-          "count": 5
+          "start": 6,
+          "count": 3
         }
       ]
     },
@@ -779,16 +780,17 @@
       "sample": false,
       "photos": [
         {
+          "file": "677902164-2000434147528213-8831026043689631745-n",
+          "folder": "common-area",
+          "caption": "Common area 1",
+          "alt": "Common-area view 1 inside unit 1505B"
+        },
+        {
           "file": "658205788-825339360646838-2363058331142207191-n",
           "folder": "bedroom",
           "caption": "Bedroom 1",
-          "alt": "Bedroom view 1 inside unit 1505B"
-        },
-        {
-          "file": "677902164-2000434147528213-8831026043689631745-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 2",
-          "alt": "Bedroom view 2 inside unit 1505B"
+          "alt": "Bedroom view 1 inside unit 1505B",
+          "classificationReview": true
         },
         {
           "file": "680485533-1525676832258648-1967197297198970819-n",
@@ -806,7 +808,8 @@
           "file": "683769916-974743588810865-1547931724909784430-n",
           "folder": "bedroom",
           "caption": "Bedroom 5",
-          "alt": "Bedroom view 5 inside unit 1505B"
+          "alt": "Bedroom view 5 inside unit 1505B",
+          "classificationReview": true
         },
         {
           "file": "688917313-994043083084392-1691367160712320561-n",
@@ -817,9 +820,14 @@
       ],
       "photoGroups": [
         {
-          "label": "Bedroom",
+          "label": "Common area",
           "start": 0,
-          "count": 6
+          "count": 1
+        },
+        {
+          "label": "Bedroom",
+          "start": 1,
+          "count": 5
         }
       ]
     },
@@ -853,21 +861,21 @@
         },
         {
           "file": "664343531-830519509671589-5161393969378804795-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 1",
-          "alt": "Bedroom view 1 inside unit 1506A"
+          "folder": "common-area",
+          "caption": "Common area 1",
+          "alt": "Common-area view 1 inside unit 1506A"
+        },
+        {
+          "file": "685066922-899959156398111-7256726273751163163-n",
+          "folder": "common-area",
+          "caption": "Common area 2",
+          "alt": "Common-area view 2 inside unit 1506A"
         },
         {
           "file": "680232759-996708846143314-5384220621524307746-n",
           "folder": "bedroom",
           "caption": "Bedroom 2",
           "alt": "Bedroom view 2 inside unit 1506A"
-        },
-        {
-          "file": "685066922-899959156398111-7256726273751163163-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 3",
-          "alt": "Bedroom view 3 inside unit 1506A"
         },
         {
           "file": "686191678-1489238245975162-6628654873214641538-n",
@@ -880,12 +888,12 @@
         {
           "label": "Common area",
           "start": 0,
-          "count": 4
+          "count": 6
         },
         {
           "label": "Bedroom",
-          "start": 4,
-          "count": 4
+          "start": 6,
+          "count": 2
         }
       ]
     },
@@ -1054,9 +1062,15 @@
       "photos": [
         {
           "file": "671152911-2047558642775827-6847051507721057929-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 1",
-          "alt": "Bedroom view 1 inside unit 1517A"
+          "folder": "common-area",
+          "caption": "Common area 1",
+          "alt": "Common-area view 1 inside unit 1517A"
+        },
+        {
+          "file": "688925051-809651831971576-9068036557164770928-n",
+          "folder": "common-area",
+          "caption": "Common area 2",
+          "alt": "Common-area view 2 inside unit 1517A"
         },
         {
           "file": "681935614-1269137941912814-3679360017973067111-n",
@@ -1071,12 +1085,6 @@
           "alt": "Bedroom view 3 inside unit 1517A"
         },
         {
-          "file": "688925051-809651831971576-9068036557164770928-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 4",
-          "alt": "Bedroom view 4 inside unit 1517A"
-        },
-        {
           "file": "690820691-950821544447369-4261917808050835700-n",
           "folder": "bedroom",
           "caption": "Bedroom 5",
@@ -1085,9 +1093,14 @@
       ],
       "photoGroups": [
         {
-          "label": "Bedroom",
+          "label": "Common area",
           "start": 0,
-          "count": 5
+          "count": 2
+        },
+        {
+          "label": "Bedroom",
+          "start": 2,
+          "count": 3
         }
       ]
     },
@@ -1563,6 +1576,24 @@
       "sample": false,
       "photos": [
         {
+          "file": "714650329-2538992866547353-9025816361696002804-n",
+          "folder": "common-area",
+          "caption": "Common area 1",
+          "alt": "Common-area view 1 inside unit 1932B"
+        },
+        {
+          "file": "714828992-1464694109033668-7866673427868021970-n",
+          "folder": "common-area",
+          "caption": "Common area 2",
+          "alt": "Common-area view 2 inside unit 1932B"
+        },
+        {
+          "file": "714881225-1512943010497575-6745662487932649401-n",
+          "folder": "common-area",
+          "caption": "Common area 3",
+          "alt": "Common-area view 3 inside unit 1932B"
+        },
+        {
           "file": "712098655-994465589897443-7984925603560149536-n",
           "folder": "bedroom",
           "caption": "Bedroom 1",
@@ -1573,31 +1604,18 @@
           "folder": "bedroom",
           "caption": "Bedroom 2",
           "alt": "Bedroom view 2 inside unit 1932B"
-        },
-        {
-          "file": "714650329-2538992866547353-9025816361696002804-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 3",
-          "alt": "Bedroom view 3 inside unit 1932B"
-        },
-        {
-          "file": "714828992-1464694109033668-7866673427868021970-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 4",
-          "alt": "Bedroom view 4 inside unit 1932B"
-        },
-        {
-          "file": "714881225-1512943010497575-6745662487932649401-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 5",
-          "alt": "Bedroom view 5 inside unit 1932B"
         }
       ],
       "photoGroups": [
         {
-          "label": "Bedroom",
+          "label": "Common area",
           "start": 0,
-          "count": 5
+          "count": 3
+        },
+        {
+          "label": "Bedroom",
+          "start": 3,
+          "count": 2
         }
       ]
     },
@@ -1692,58 +1710,63 @@
       "photos": [
         {
           "file": "670137095-1969260607021765-7854039655751452847-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 1",
-          "alt": "Bedroom view 1 inside unit 2023A"
+          "folder": "common-area",
+          "caption": "Common area 1",
+          "alt": "Common-area view 1 inside unit 2023A"
         },
         {
           "file": "682267705-26958812123780272-6921112698753080178-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 2",
-          "alt": "Bedroom view 2 inside unit 2023A"
+          "folder": "common-area",
+          "caption": "Common area 2",
+          "alt": "Common-area view 2 inside unit 2023A"
         },
         {
           "file": "686186574-1007225681812637-4366288886914194781-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 3",
-          "alt": "Bedroom view 3 inside unit 2023A"
+          "folder": "common-area",
+          "caption": "Common area 3",
+          "alt": "Common-area view 3 inside unit 2023A"
         },
         {
           "file": "714303133-1049455354614725-4392658203579314444-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 4",
-          "alt": "Bedroom view 4 inside unit 2023A"
+          "folder": "common-area",
+          "caption": "Common area 4",
+          "alt": "Common-area view 4 inside unit 2023A"
+        },
+        {
+          "file": "717115051-1528930135287264-8393034339373221433-n",
+          "folder": "common-area",
+          "caption": "Common area 5",
+          "alt": "Common-area view 5 inside unit 2023A"
+        },
+        {
+          "file": "717264381-1091968333398848-4623579032203447441-n",
+          "folder": "common-area",
+          "caption": "Common area 6",
+          "alt": "Common-area view 6 inside unit 2023A"
+        },
+        {
+          "file": "720397740-1679357376735821-8077523774159174713-n",
+          "folder": "common-area",
+          "caption": "Common area 7",
+          "alt": "Common-area view 7 inside unit 2023A"
         },
         {
           "file": "716429971-1683569849579683-8076589526526786305-n",
           "folder": "bedroom",
           "caption": "Bedroom 5",
           "alt": "Bedroom view 5 inside unit 2023A"
-        },
-        {
-          "file": "717115051-1528930135287264-8393034339373221433-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 6",
-          "alt": "Bedroom view 6 inside unit 2023A"
-        },
-        {
-          "file": "717264381-1091968333398848-4623579032203447441-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 7",
-          "alt": "Bedroom view 7 inside unit 2023A"
-        },
-        {
-          "file": "720397740-1679357376735821-8077523774159174713-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 8",
-          "alt": "Bedroom view 8 inside unit 2023A"
         }
       ],
       "photoGroups": [
         {
-          "label": "Bedroom",
+          "label": "Common area",
           "start": 0,
-          "count": 8
+          "count": 7
+        },
+        {
+          "label": "Bedroom",
+          "start": 7,
+          "count": 1
         }
       ]
     },
@@ -1830,6 +1853,24 @@
           "folder": "common-area"
         },
         {
+          "file": "598526753-874938238344318-6350492926849806561-n",
+          "folder": "common-area",
+          "caption": "Common area 1",
+          "alt": "Common-area view 1 inside unit 2116B"
+        },
+        {
+          "file": "599680615-1216388623961532-29187778449278890-n",
+          "folder": "common-area",
+          "caption": "Common area 2",
+          "alt": "Common-area view 2 inside unit 2116B"
+        },
+        {
+          "file": "607826618-2702539033427831-2666840249578596558-n",
+          "folder": "common-area",
+          "caption": "Common area 3",
+          "alt": "Common-area view 3 inside unit 2116B"
+        },
+        {
           "file": "598098864-1433911558092912-6225556499105560033-n",
           "folder": "bedroom",
           "caption": "Bedroom 1",
@@ -1840,36 +1881,18 @@
           "folder": "bedroom",
           "caption": "Bedroom 2",
           "alt": "Bedroom view 2 inside unit 2116B"
-        },
-        {
-          "file": "598526753-874938238344318-6350492926849806561-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 3",
-          "alt": "Bedroom view 3 inside unit 2116B"
-        },
-        {
-          "file": "599680615-1216388623961532-29187778449278890-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 4",
-          "alt": "Bedroom view 4 inside unit 2116B"
-        },
-        {
-          "file": "607826618-2702539033427831-2666840249578596558-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 5",
-          "alt": "Bedroom view 5 inside unit 2116B"
         }
       ],
       "photoGroups": [
         {
           "label": "Common area",
           "start": 0,
-          "count": 4
+          "count": 7
         },
         {
           "label": "Bedroom",
-          "start": 4,
-          "count": 5
+          "start": 7,
+          "count": 2
         }
       ]
     },
@@ -1903,9 +1926,9 @@
         },
         {
           "file": "623550392-1984816659130091-8814876254672647251-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 1",
-          "alt": "Bedroom view 1 inside unit 2132B"
+          "folder": "common-area",
+          "caption": "Common area 1",
+          "alt": "Common-area view 1 inside unit 2132B"
         },
         {
           "file": "633227757-1897951747757180-1434861476250710584-n",
@@ -1924,12 +1947,12 @@
         {
           "label": "Common area",
           "start": 0,
-          "count": 4
+          "count": 5
         },
         {
           "label": "Bedroom",
-          "start": 4,
-          "count": 3
+          "start": 5,
+          "count": 2
         }
       ]
     }
