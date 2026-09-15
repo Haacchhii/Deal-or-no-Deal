@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600&display=swap");
-
 :root {
   --forest: #183c34;
   --forest-dark: #102b25;
@@ -9,8 +7,8 @@
   --line: #d0d5ce;
   --white: #fff;
   --gold: #c8ad78;
-  --serif: "Cormorant Garamond", Georgia, serif;
-  --sans: "Manrope", Arial, sans-serif;
+  --serif: "Newsreader Variable", "Iowan Old Style", Georgia, serif;
+  --sans: "Source Sans 3 Variable", "Helvetica Neue", Arial, sans-serif;
   font-family: var(--sans);
   color: var(--ink);
   background: var(--paper);
@@ -71,6 +69,12 @@ h3 {
 em {
   font-weight: 400;
 }
+h1 em,
+h2 em {
+  display: inline-block;
+  padding-bottom: 0.08em;
+  line-height: 1.08;
+}
 a,
 button {
   touch-action: manipulation;
@@ -78,8 +82,8 @@ button {
 a:focus-visible,
 button:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 5px;
+  outline: 3px solid var(--forest);
+  outline-offset: 4px;
 }
 main:focus {
   outline: 0;
@@ -531,6 +535,67 @@ main:focus {
   background: var(--forest);
   color: var(--paper);
 }
+.unit-search {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.3fr) minmax(320px, 0.7fr);
+  gap: 0.5rem 2rem;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.unit-search > label {
+  color: var(--forest);
+  font-family: var(--serif);
+  font-size: 1.45rem;
+}
+.unit-search > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+.unit-search input {
+  width: 100%;
+  min-height: 50px;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--line);
+  border-right: 0;
+  border-radius: 0;
+  background: var(--white);
+  color: var(--ink);
+  font: 600 1rem var(--sans);
+  text-transform: uppercase;
+}
+.unit-search input::placeholder {
+  color: #626b67;
+  font-weight: 400;
+  text-transform: none;
+}
+.unit-search input:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 3px solid var(--forest);
+  outline-offset: 1px;
+}
+.unit-search input[aria-invalid="true"] {
+  border-color: #8a2e24;
+}
+.unit-search button {
+  min-height: 50px;
+  padding: 0.75rem 1.25rem;
+  background: var(--forest);
+  color: var(--paper);
+  font-weight: 650;
+}
+.unit-search button:active {
+  transform: translateY(1px);
+}
+.unit-search-status {
+  grid-column: 2;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+.unit-search:has(input[aria-invalid="true"]) .unit-search-status {
+  color: #8a2e24;
+}
 .floor-row {
   display: grid;
   grid-template-columns: 190px 1fr;
@@ -738,6 +803,46 @@ main:focus {
   color: var(--muted);
   font-size: 0.75rem;
 }
+.about-index {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 calc(-1 * clamp(1rem, 5vw, 5rem));
+  padding: 0.75rem clamp(1rem, 5vw, 5rem);
+  overflow-x: auto;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(247, 247, 242, 0.96);
+  scrollbar-width: thin;
+}
+.about-index > span {
+  flex: 0 0 auto;
+  margin-right: 0.75rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+.about-index button {
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: var(--ink);
+}
+.about-index button:hover,
+.about-index button[aria-current] {
+  border-color: var(--forest);
+  color: var(--forest);
+}
+.shared-spaces,
+.unit-inclusions,
+.about .location-section,
+.nearby-locations {
+  scroll-margin-top: 84px;
+}
 .about .location-section {
   padding: clamp(4rem, 8vw, 7rem) 0;
   border-top: 1px solid var(--line);
@@ -931,6 +1036,28 @@ main:focus {
   letter-spacing: 0.08em;
   text-align: right;
   text-transform: uppercase;
+}
+.gallery-heading-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.present-album {
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--forest);
+  background: transparent;
+  color: var(--forest);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.present-album:hover {
+  background: var(--forest);
+  color: var(--paper);
+}
+.present-album:active {
+  transform: translateY(1px);
 }
 .thumbnail-groups {
   display: grid;
@@ -1670,9 +1797,23 @@ main:focus {
   gap: 1rem;
   flex-shrink: 0;
 }
-.lightbox-top > span {
-  font-size: 0.875rem;
-  letter-spacing: 0.12em;
+.viewer-identity {
+  display: grid;
+  gap: 0.1rem;
+}
+.viewer-identity > span {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.viewer-identity strong {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  font-weight: 450;
+}
+.viewer-identity small {
+  color: #cbd7d1;
+  font-size: 0.75rem;
 }
 .lightbox button {
   background: transparent;
@@ -1719,6 +1860,72 @@ main:focus {
 }
 .viewer-open {
   overflow: hidden;
+}
+.presentation-mode {
+  padding: 1.5rem 2.25rem;
+  background: #0b1713;
+}
+.presentation-mode::backdrop {
+  background: #0b1713;
+}
+.presentation-mode .viewer-identity > span {
+  color: #cbd7d1;
+  font-size: clamp(0.8rem, 1vw, 1rem);
+}
+.presentation-mode .viewer-identity strong {
+  font-size: clamp(2rem, 3vw, 3.5rem);
+  line-height: 1;
+}
+.presentation-mode .viewer-identity small {
+  font-size: clamp(0.85rem, 1.1vw, 1.1rem);
+}
+.presentation-mode .lightbox-image {
+  padding: 1.25rem 0 0.75rem;
+}
+.presentation-mode .viewer-caption {
+  font-size: clamp(1rem, 1.45vw, 1.4rem);
+}
+.presentation-mode .lightbox-bottom > button {
+  min-width: 64px;
+  min-height: 64px;
+  border: 1px solid rgba(247, 247, 242, 0.45);
+  font-size: 2rem;
+}
+.presentation-controls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-height: 54px;
+  padding-top: 0.5rem;
+  overflow: hidden;
+}
+.presentation-controls button {
+  min-width: 150px;
+  border: 1px solid rgba(247, 247, 242, 0.45);
+  font-weight: 650;
+}
+.presentation-controls > span {
+  color: #cbd7d1;
+  font-size: 0.8125rem;
+}
+.presentation-progress {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: var(--paper);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.presentation-mode[data-playing] .presentation-progress {
+  animation: presentation-progress 6s linear forwards;
+}
+@keyframes presentation-progress {
+  to {
+    transform: scaleX(1);
+  }
 }
 .photo-error,
 .viewer-error {
@@ -2036,6 +2243,28 @@ main:focus {
     font-size: 1.7rem;
     gap: 1.5rem;
   }
+  .unit-search {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .unit-search > label {
+    font-size: 1.3rem;
+  }
+  .unit-search > div {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .unit-search input {
+    min-width: 0;
+    padding-inline: 0.8rem;
+    font-size: 0.9375rem;
+  }
+  .unit-search button {
+    padding-inline: 0.9rem;
+  }
+  .unit-search-status {
+    grid-column: 1;
+    font-size: 0.75rem;
+  }
   .floor-index {
     align-items: flex-start;
     flex-direction: column;
@@ -2117,6 +2346,12 @@ main:focus {
   }
   .gallery-heading p {
     text-align: left;
+  }
+  .gallery-heading-meta {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
   }
   .thumbnail-groups {
     grid-template-columns: 1fr;
@@ -2309,8 +2544,8 @@ main:focus {
     margin-right: 0;
   }
   .photo-arrow {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
   }
   .previous {
     left: 0.6rem;
@@ -2336,9 +2571,28 @@ main:focus {
   .lightbox {
     padding: 1rem;
   }
-  .lightbox-top > span,
+  .viewer-identity > span,
   .viewer-caption {
     font-size: 0.75rem;
+  }
+  .viewer-identity strong {
+    font-size: 1.15rem;
+  }
+  .presentation-mode {
+    padding: 1rem;
+  }
+  .presentation-mode .viewer-identity strong {
+    font-size: 1.75rem;
+  }
+  .presentation-mode .lightbox-bottom > button {
+    min-width: 52px;
+    min-height: 52px;
+  }
+  .presentation-controls {
+    justify-content: center;
+  }
+  .presentation-controls > span {
+    display: none;
   }
   .directory-footnote {
     font-size: 0.6875rem;

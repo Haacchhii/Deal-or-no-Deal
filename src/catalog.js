@@ -108,6 +108,15 @@ export function directoryCoverPhoto(unit) {
   return unit.photos[0];
 }
 
+export function findUnitsByExactLabel(units, input) {
+  const query = String(input).trim().toLowerCase();
+  return units.filter((unit) =>
+    [unit.id, unit.unitNumber, unit.displayName]
+      .filter(Boolean)
+      .some((value) => value.toLowerCase() === query),
+  );
+}
+
 export function validateCatalog(catalog) {
   const seen = new Set();
   if (!catalog.name || !Array.isArray(catalog.units))

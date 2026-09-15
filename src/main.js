@@ -1,7 +1,11 @@
 import catalog from "./catalog.json";
+import "@fontsource-variable/newsreader/wght.css";
+import "@fontsource-variable/newsreader/wght-italic.css";
+import "@fontsource-variable/source-sans-3/wght.css";
 import {
   escapeHtml as esc,
   directoryCoverPhoto,
+  findUnitsByExactLabel,
   groupUnits,
   parseUnit,
   ordinal,
@@ -44,7 +48,7 @@ function footer() {
   return `<footer class="site-footer"><span>${esc(catalog.name)}</span><p>${esc(buildingName)} · ${catalog.preview ? "Placeholder albums are labeled" : "A closer look at your next home."}</p><a href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a></footer>`;
 }
 function locationSection() {
-  return `<section class="location-section" aria-labelledby="location-heading"><div class="location-copy"><p class="eyebrow"><span class="fine-line"></span>Location</p><h2 id="location-heading">Find us at<br><em>${esc(siteLocation.name)}</em></h2><p>${esc(siteLocation.address)}</p><a class="button" href="${esc(siteLocation.mapsUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Maps <span aria-hidden="true">↗</span></a></div><div class="map-card"><iframe title="${esc(siteLocation.name)} map" src="${esc(siteLocation.embedUrl)}" width="900" height="520" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a class="map-overlay" href="${esc(siteLocation.mapsUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(siteLocation.name)} on Google Maps"><span>${esc(siteLocation.name)}</span><small>${esc(siteLocation.address)}</small><b aria-hidden="true">↗</b></a></div></section>`;
+  return `<section class="location-section" id="about-location" aria-labelledby="location-heading"><div class="location-copy"><p class="eyebrow"><span class="fine-line"></span>Location</p><h2 id="location-heading">Find us at<br><em>${esc(siteLocation.name)}</em></h2><p>${esc(siteLocation.address)}</p><a class="button" href="${esc(siteLocation.mapsUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Maps <span aria-hidden="true">↗</span></a></div><div class="map-card"><iframe title="${esc(siteLocation.name)} map" src="${esc(siteLocation.embedUrl)}" width="900" height="520" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a class="map-overlay" href="${esc(siteLocation.mapsUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(siteLocation.name)} on Google Maps"><span>${esc(siteLocation.name)}</span><small>${esc(siteLocation.address)}</small><b aria-hidden="true">↗</b></a></div></section>`;
 }
 function home() {
   return `${header("home")}<main id="main" tabindex="-1"><section class="hero" aria-labelledby="home-heading">
@@ -55,13 +59,20 @@ function home() {
 }
 
 function about() {
-  return `${header("about")}<main class="about page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/">Home</a><span>/</span><span>About</span></div><section class="about-intro" aria-labelledby="about-heading"><div class="about-copy"><h1 id="about-heading">About <em>${esc(buildingName)}.</em></h1><p>Get oriented before exploring the unit photographs—from what is included to the places nearby.</p><a class="text-link" href="#/units?tower=A">Browse the unit collection <span aria-hidden="true">↗</span></a></div><figure class="about-portrait"><img src="${esc(catalog.hero.src)}" alt="${esc(catalog.hero.alt)}" width="${catalog.hero.width || 1800}" height="${catalog.hero.height || 1200}"><figcaption>${esc(siteLocation.name)} · Makati</figcaption></figure></section>${sharedSpacesSection()}${inclusionsSection()}${locationSection()}${nearbyLocationsSection()}<section class="about-next" aria-labelledby="about-next-heading"><h2 id="about-next-heading">Ready to look <em>inside?</em></h2><p>Browse the photographs by tower, floor, and unit.</p><div><a class="button" href="#/units?tower=A">Explore Tower A <span aria-hidden="true">↗</span></a><a class="text-link" href="#/units?tower=B">Explore Tower B <span aria-hidden="true">↗</span></a></div></section></main>${footer()}`;
+  return `${header("about")}<main class="about page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/">Home</a><span>/</span><span>About</span></div><section class="about-intro" aria-labelledby="about-heading"><div class="about-copy"><h1 id="about-heading">About <em>${esc(buildingName)}.</em></h1><p>Get oriented before exploring the unit photographs, from what is included to the places nearby.</p><a class="text-link" href="#/units?tower=A">Browse the unit collection <span aria-hidden="true">↗</span></a></div><figure class="about-portrait"><img src="${esc(catalog.hero.src)}" alt="${esc(catalog.hero.alt)}" width="${catalog.hero.width || 1800}" height="${catalog.hero.height || 1200}"><figcaption>${esc(siteLocation.name)} · Makati</figcaption></figure></section><nav class="about-index" aria-label="About page sections"><span>On this page</span><button type="button" data-section="about-shared">Shared spaces</button><button type="button" data-section="about-included">Included</button><button type="button" data-section="about-location">Location</button><button type="button" data-section="about-nearby">Nearby</button></nav>${sharedSpacesSection()}${inclusionsSection()}${locationSection()}${nearbyLocationsSection()}<section class="about-next" aria-labelledby="about-next-heading"><h2 id="about-next-heading">Ready to look <em>inside?</em></h2><p>Browse the photographs by tower, floor, and unit.</p><div><a class="button" href="#/units?tower=A">Explore Tower A <span aria-hidden="true">↗</span></a><a class="text-link" href="#/units?tower=B">Explore Tower B <span aria-hidden="true">↗</span></a></div></section></main>${footer()}`;
+}
+
+function unitSearch() {
+  const options = catalog.units
+    .map((unit) => `<option value="${esc(unit.id)}">${esc(unitAlbumName(unit))}</option>`)
+    .join("");
+  return `<form class="unit-search" novalidate><label for="unit-search-input">Open a unit directly</label><div><input id="unit-search-input" name="unit" list="unit-search-options" autocomplete="off" spellcheck="false" placeholder="Type a unit, e.g. 1023B"><button type="submit">Open unit</button></div><datalist id="unit-search-options">${options}</datalist><p class="unit-search-status" aria-live="polite">Enter an exact unit number or choose a suggestion.</p></form>`;
 }
 
 function directory(tower) {
   const groups = groupUnits(catalog.units, tower);
-  return `${header("units")}<main class="directory page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/">Home</a><span>/</span><span>Our units</span></div><div class="directory-heading"><div><p class="eyebrow">${esc(buildingName)}</p><h1>Find your <em>space.</em></h1><p class="intro">Choose a tower. Take a look inside.</p></div><p class="collection-note">${catalog.preview ? "Explore unit photos and placeholders.<br>Placeholder albums are labeled." : "Explore the photographs<br>before your personal viewing."}</p></div>
-    <nav class="tower-tabs" aria-label="Choose a tower">${["A", "B"].map((t) => `<a href="#/units?tower=${t}" ${t === tower ? 'aria-current="page"' : ""}>Tower ${t}<span aria-hidden="true">↗</span></a>`).join("")}</nav>
+  return `${header("units")}<main class="directory page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/">Home</a><span>/</span><span>Our units</span></div><div class="directory-heading"><div><p class="eyebrow">${esc(buildingName)}</p><h1>Find your <em>space.</em></h1><p class="intro">Choose a tower. Take a look inside.</p></div><p class="collection-note">${catalog.preview ? "Explore unit photos and placeholders.<br> Placeholder albums are labeled." : "Explore the photographs<br> before your personal viewing."}</p></div>
+    <nav class="tower-tabs" aria-label="Choose a tower">${["A", "B"].map((t) => `<a href="#/units?tower=${t}" ${t === tower ? 'aria-current="page"' : ""}>Tower ${t}<span aria-hidden="true">↗</span></a>`).join("")}</nav>${unitSearch()}
     ${groups.length ? `<nav class="floor-index" aria-label="Jump to a floor"><span>Floor index</span><div>${groups.map((group) => `<a href="#/units?tower=${tower}&floor=${group.floor}">${String(group.floor).padStart(2, "0")}</a>`).join("")}</div></nav>` : ""}
   <div class="floor-list">${groups.length ? groups.map((group) => `<section class="floor-row" id="floor-${group.floor}" aria-labelledby="floor-heading-${group.floor}"><div class="floor-label"><p class="eyebrow">Tower ${tower}</p><h2 id="floor-heading-${group.floor}">${ordinal(group.floor)} floor</h2><p>${group.units.length} ${group.units.length === 1 ? "album" : "albums"}</p></div><div class="unit-grid">${group.units.map((unit) => {
     const cover = directoryCoverPhoto(unit);
@@ -107,6 +118,77 @@ function getRoute() {
   const unit = match && catalog.units.find((unit) => unit.id === match[1]);
   return unit ? { type: "album", unit } : { type: "missing" };
 }
+
+function mountDirectorySearch() {
+  const form = document.querySelector(".unit-search");
+  if (!form) return () => {};
+  const input = form.querySelector("input");
+  const status = form.querySelector(".unit-search-status");
+  const submit = (event) => {
+    event.preventDefault();
+    const matches = findUnitsByExactLabel(catalog.units, input.value);
+    if (matches.length === 1) {
+      location.hash = `/units/${matches[0].id}`;
+      return;
+    }
+    status.textContent = matches.length
+      ? "More than one album uses that unit number. Choose a specific suggestion."
+      : "That unit is not in the current collection. Check the number and try again.";
+    input.setAttribute("aria-invalid", "true");
+    input.focus();
+  };
+  const clearError = () => {
+    input.removeAttribute("aria-invalid");
+    status.textContent = "Enter an exact unit number or choose a suggestion.";
+  };
+  form.addEventListener("submit", submit);
+  input.addEventListener("input", clearError);
+  return () => {
+    form.removeEventListener("submit", submit);
+    input.removeEventListener("input", clearError);
+  };
+}
+
+function mountAboutIndex() {
+  const buttons = [...document.querySelectorAll(".about-index [data-section]")];
+  if (!buttons.length) return () => {};
+  const sections = buttons.map((button) =>
+    document.querySelector(`#${button.dataset.section}`),
+  );
+  const clickHandlers = buttons.map((button, index) => () =>
+    sections[index]?.scrollIntoView({
+      behavior: matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
+      block: "start",
+    }),
+  );
+  buttons.forEach((button, index) =>
+    button.addEventListener("click", clickHandlers[index]),
+  );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      buttons.forEach((button) =>
+        button.toggleAttribute(
+          "aria-current",
+          button.dataset.section === visible.target.id,
+        ),
+      );
+    },
+    { rootMargin: "-20% 0px -65%", threshold: [0, 0.25, 0.6] },
+  );
+  sections.filter(Boolean).forEach((section) => observer.observe(section));
+  return () => {
+    observer.disconnect();
+    buttons.forEach((button, index) =>
+      button.removeEventListener("click", clickHandlers[index]),
+    );
+  };
+}
 function render({ initial = false } = {}) {
   if (previousRoute?.type === "directory")
     directoryPositions.set(previousRoute.tower, window.scrollY);
@@ -125,7 +207,14 @@ function render({ initial = false } = {}) {
           ? album(route.unit)
           : `${header("units")}<main id="main" class="page-shell empty-state" tabindex="-1"><p class="eyebrow">Our collection</p><h1>That album isn’t here.</h1><p>The unit may not have photos yet, or the link may be incorrect.</p><a class="button" href="#/units?tower=A">Back to the units ↗</a></main>${footer()}`;
   document.title = `${route.type === "album" ? `Unit ${unitAlbumName(route.unit)}` : route.type === "directory" ? `Tower ${route.tower} · ${buildingName}` : route.type === "about" ? `About ${buildingName}` : route.type === "missing" ? "Album not found" : buildingName} | ${catalog.name}`;
-  cleanup = route.type === "album" ? mountGallery(route.unit) : () => {};
+  cleanup =
+    route.type === "album"
+      ? mountGallery(route.unit)
+      : route.type === "directory"
+        ? mountDirectorySearch()
+        : route.type === "about"
+          ? mountAboutIndex()
+          : () => {};
   document
     .querySelectorAll(".unit-cover img, .hero-photo")
     .forEach((img) =>

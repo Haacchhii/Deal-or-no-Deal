@@ -13,6 +13,7 @@ import {
   unitDisplayName,
   wrapIndex,
   escapeHtml,
+  findUnitsByExactLabel,
 } from "../src/catalog.js";
 import { galleryMarkup } from "../src/gallery.js";
 import {
@@ -217,6 +218,17 @@ test("directory cards use the first unit photo at every album size", () => {
     "building",
   );
 });
+test("exact unit lookup preserves route ids and surfaces ambiguous display numbers", () => {
+  const units = [
+    { id: "1023B" },
+    { id: "1633A-1st-floor", unitNumber: "1633A", displayName: "1633A" },
+    { id: "1633A-2nd-floor", unitNumber: "1633A", displayName: "1633A" },
+  ];
+  assert.deepEqual(findUnitsByExactLabel(units, " 1023b "), [units[0]]);
+  assert.equal(findUnitsByExactLabel(units, "1633A").length, 2);
+  assert.deepEqual(findUnitsByExactLabel(units, "1633A-1st-floor"), [units[1]]);
+  assert.deepEqual(findUnitsByExactLabel(units, "9999A"), []);
+});
 test("every album size uses the same main-photo gallery system", () => {
   const photos = [
     { file: "building", alt: "Building exterior", caption: "The building" },
@@ -241,6 +253,8 @@ test("every album size uses the same main-photo gallery system", () => {
     );
     assert.equal((markup.match(/class="thumbnail"/g) || []).length, count);
     assert.match(markup, /class="viewer-caption" aria-live="polite"/);
+    assert.match(markup, /class="present-album"/);
+    assert.match(markup, /class="presentation-controls" hidden/);
     assert.doesNotMatch(markup, /gallery-five|gallery-six|gallery-walkthrough/);
   }
 });
@@ -264,6 +278,7 @@ test("gallery selectors expose existing captions without requiring a fixed count
 });
 test("the building guide shows furnished move-in-ready inclusions", () => {
   const markup = inclusionsSection();
+  assert.match(markup, /id="about-included"/);
   assert.match(markup, /Inclusions/);
   assert.match(markup, /All units are furnished and move-in ready/);
   assert.match(markup, /Water/);
@@ -273,6 +288,7 @@ test("the building guide shows furnished move-in-ready inclusions", () => {
 });
 test("shared building placeholders live in the building guide, not unit albums", () => {
   const markup = sharedSpacesSection();
+  assert.match(markup, /id="about-shared"/);
   assert.match(markup, /Building &amp;/);
   assert.match(markup, /units\/_placeholders\/building\.webp/);
   assert.match(markup, /units\/_placeholders\/pool\.webp/);
@@ -288,6 +304,7 @@ test("shared building placeholders live in the building guide, not unit albums",
 });
 test("the building guide shows nearby locations and supplied shared images", () => {
   const markup = nearbyLocationsSection();
+  assert.match(markup, /id="about-nearby"/);
   assert.match(markup, /Nearby Locations/);
   assert.match(markup, /Prime location/);
   assert.match(markup, /Ayala Malls/);
@@ -323,6 +340,8 @@ test("app code does not shadow browser location used by hash routing", () => {
   const mainSource = readFileSync(new URL("../src/main.js", import.meta.url), "utf8");
   assert.doesNotMatch(mainSource, /\bconst\s+location\s*=/);
   assert.match(mainSource, /class="floor-index"/);
+  assert.match(mainSource, /class="unit-search"/);
+  assert.match(mainSource, /class="about-index"/);
   assert.match(mainSource, /class="album-sequence"/);
   assert.match(mainSource, /floor=\$\{details\.floor\}/);
 });

@@ -1,5 +1,5 @@
 export function inclusionsSection() {
-  return `<section class="unit-inclusions" aria-labelledby="inclusions-heading"><div><h2 id="inclusions-heading"><span class="visually-hidden">Inclusions: </span>Furnished and<br><em>move-in ready.</em></h2><p>All units are furnished and move-in ready.</p></div><ul aria-label="Included with every unit"><li><span>Water</span><small>Included</small></li><li><span>Wifi</span><small>Included</small></li><li><span>Association dues</span><small>Included</small></li><li><span>Rental fee</span><small>Included</small></li></ul></section>`;
+  return `<section class="unit-inclusions" id="about-included" aria-labelledby="inclusions-heading"><div><h2 id="inclusions-heading"><span class="visually-hidden">Inclusions: </span>Furnished and<br><em>move-in ready.</em></h2><p>All units are furnished and move-in ready.</p></div><ul aria-label="Included with every unit"><li><span>Water</span><small>Included</small></li><li><span>Wifi</span><small>Included</small></li><li><span>Association dues</span><small>Included</small></li><li><span>Rental fee</span><small>Included</small></li></ul></section>`;
 }
 
 export function sharedSpacesSection() {
@@ -15,7 +15,7 @@ export function sharedSpacesSection() {
       title: "Pool area",
     },
   ];
-  return `<section class="shared-spaces" aria-labelledby="shared-spaces-heading"><div class="shared-spaces-heading"><h2 id="shared-spaces-heading">Building &amp;<br><em>shared spaces.</em></h2><p>These reference images belong to the building guide rather than any individual unit album.</p></div><div class="shared-spaces-grid">${spaces.map((space) => `<figure><img src="${space.src}" alt="${space.alt}" width="1200" height="800" loading="lazy"><figcaption><span>${space.title}</span><small>Placeholder image</small></figcaption></figure>`).join("")}</div></section>`;
+  return `<section class="shared-spaces" id="about-shared" aria-labelledby="shared-spaces-heading"><div class="shared-spaces-heading"><h2 id="shared-spaces-heading">Building &amp;<br><em>shared spaces.</em></h2><p>These reference images belong to the building guide rather than any individual unit album.</p></div><div class="shared-spaces-grid">${spaces.map((space) => `<figure><img src="${space.src}" alt="${space.alt}" width="1200" height="800" loading="lazy"><figcaption><span>${space.title}</span><small>Placeholder image</small></figcaption></figure>`).join("")}</div></section>`;
 }
 
 const nearbyGroups = [
@@ -117,15 +117,15 @@ const nearbyGroups = [
       alt: "Gym interior with weight machines, benches and rows of dumbbells",
     },
     items: [
-      "Wellness & Fitness Gym — Amorsolo corner V.A. Rufino",
-      "Anytime Fitness Eton Tower — V.A. Rufino corner Dela Rosa Street",
-      "BeFit PNB Makati Center — 6754 Ayala Avenue",
-      "JJ Fitness Hub — Arnaiz Avenue, Pio del Pilar",
-      "ActivGym Fitness Center Makati — 7272 J. Victor, Pio del Pilar",
+      "Wellness & Fitness Gym - Amorsolo corner V.A. Rufino",
+      "Anytime Fitness Eton Tower - V.A. Rufino corner Dela Rosa Street",
+      "BeFit PNB Makati Center - 6754 Ayala Avenue",
+      "JJ Fitness Hub - Arnaiz Avenue, Pio del Pilar",
+      "ActivGym Fitness Center Makati - 7272 J. Victor, Pio del Pilar",
     ],
   },
 ];
 
 export function nearbyLocationsSection() {
-  return `<section class="nearby-locations" aria-labelledby="nearby-heading"><div class="nearby-heading"><h2 id="nearby-heading"><span class="visually-hidden">Nearby Locations: </span>Prime location,<br><em>steps away.</em></h2><p>Everything you need is within easy reach from Victoria De Makati.</p></div><div class="nearby-grid">${nearbyGroups.map((group) => `<section class="nearby-group"><img class="nearby-photo${group.photo.fit === "contain" ? " nearby-photo-contain" : ""}" src="${group.photo.src}" alt="${group.photo.alt}" width="640" height="360" loading="lazy"><div><h3>${group.title}</h3><ul>${group.items.map((item) => `<li>${item}</li>`).join("")}</ul></div></section>`).join("")}</div></section>`;
+  return `<section class="nearby-locations" id="about-nearby" aria-labelledby="nearby-heading"><div class="nearby-heading"><h2 id="nearby-heading"><span class="visually-hidden">Nearby Locations: </span>Prime location,<br><em>steps away.</em></h2><p>Everything you need is within easy reach from Victoria De Makati.</p></div><div class="nearby-grid">${nearbyGroups.map((group) => `<section class="nearby-group"><img class="nearby-photo${group.photo.fit === "contain" ? " nearby-photo-contain" : ""}" src="${group.photo.src}" alt="${group.photo.alt}" width="640" height="360" loading="lazy"><div><h3>${group.title}</h3><ul>${group.items.map((item) => `<li>${item}</li>`).join("")}</ul></div></section>`).join("")}</div></section>`;
 }
