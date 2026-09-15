@@ -214,24 +214,40 @@
       "sample": false,
       "photos": [
         {
-          "file": "727465010-3566127073542006-3143324589233880501-n",
-          "caption": "First-floor interior 1",
-          "alt": "First-floor interior view 1 inside unit 0925B"
+          "file": "802094609-1066159276272585-6965638321766565010-n",
+          "folder": "common-area",
+          "caption": "Entry & kitchenette",
+          "alt": "First-floor entry and kitchenette inside unit 0925B"
         },
         {
-          "file": "727988904-2055783398348118-6599238342376931892-n",
-          "caption": "First-floor interior 2",
-          "alt": "First-floor interior view 2 inside unit 0925B"
+          "file": "802455346-1826861941636298-3705153181650789383-n",
+          "folder": "common-area",
+          "caption": "Kitchenette & bathroom",
+          "alt": "First-floor kitchenette and bathroom entrance inside unit 0925B"
         },
         {
-          "file": "728684345-1556937092756756-7749956234317149897-n",
-          "caption": "First-floor interior 3",
-          "alt": "First-floor interior view 3 inside unit 0925B"
+          "file": "802069114-2408702519660981-5375696070596092193-n",
+          "folder": "bedspace",
+          "caption": "Bedspace",
+          "alt": "First-floor bunk-bed sleeping area inside unit 0925B"
         },
         {
-          "file": "730620713-1001023869567080-717079813500097944-n",
-          "caption": "First-floor interior 4",
-          "alt": "First-floor interior view 4 inside unit 0925B"
+          "file": "803634179-2093563488033813-3485331168767110242-n",
+          "folder": "bedspace",
+          "caption": "Bedspace & storage",
+          "alt": "First-floor bunk-bed area with storage inside unit 0925B"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 2
+        },
+        {
+          "label": "Bedspace",
+          "start": 2,
+          "count": 2
         }
       ]
     },
@@ -244,24 +260,40 @@
       "sample": false,
       "photos": [
         {
-          "file": "725755978-1037135532586929-6067074054437595848-n",
-          "caption": "Second-floor interior 1",
-          "alt": "Second-floor interior view 1 inside unit 0925B"
+          "file": "802455344-1101241522245181-1671229235764215344-n",
+          "folder": "common-area",
+          "caption": "Kitchenette",
+          "alt": "Second-floor kitchenette inside unit 0925B"
         },
         {
-          "file": "727363580-1653203429088680-3400729833310206111-n",
-          "caption": "Second-floor interior 2",
-          "alt": "Second-floor interior view 2 inside unit 0925B"
+          "file": "802595320-1447769510731973-5192245171690225130-n",
+          "folder": "common-area",
+          "caption": "Bathroom",
+          "alt": "Second-floor bathroom inside unit 0925B"
         },
         {
-          "file": "728502739-1531027298623002-7892526042630271164-n",
-          "caption": "Second-floor interior 3",
-          "alt": "Second-floor interior view 3 inside unit 0925B"
+          "file": "803824511-1265175975735096-4930830449954706008-n",
+          "folder": "common-area",
+          "caption": "Hallway & dining",
+          "alt": "Second-floor hallway and dining area inside unit 0925B"
         },
         {
-          "file": "729939408-1663104678320089-3899174625190299066-n",
-          "caption": "Second-floor interior 4",
-          "alt": "Second-floor interior view 4 inside unit 0925B"
+          "file": "801199435-1684993589826117-6200672290624718978-n",
+          "folder": "bedspace",
+          "caption": "Bedspace",
+          "alt": "Second-floor bunk-bed sleeping area inside unit 0925B"
+        }
+      ],
+      "photoGroups": [
+        {
+          "label": "Common area",
+          "start": 0,
+          "count": 3
+        },
+        {
+          "label": "Bedspace",
+          "start": 3,
+          "count": 1
         }
       ]
     },
