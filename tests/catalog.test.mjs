@@ -192,6 +192,26 @@ test("catalog rejects duplicates, empty albums and unsafe paths before building"
   assert.throws(() =>
     validateCatalog({ name: "Example", units: [unit, unit] }),
   );
+  assert.doesNotThrow(() =>
+    validateCatalog({
+      name: "Example",
+      contact: {
+        phone: "0947 580 7622",
+        facebookUrl: "https://www.facebook.com/profile.php?id=123",
+      },
+      units: [unit],
+    }),
+  );
+  assert.throws(() =>
+    validateCatalog({
+      name: "Example",
+      contact: {
+        phone: "0947 580 7622",
+        facebookUrl: "javascript:alert(1)",
+      },
+      units: [unit],
+    }),
+  );
   assert.throws(() =>
     validateCatalog({ name: "Example", units: [{ ...unit, photos: [] }] }),
   );

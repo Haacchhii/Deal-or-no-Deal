@@ -138,6 +138,15 @@ export function validateCatalog(catalog) {
     )
       throw new Error("Catalog location requires a Google Maps link.");
   }
+  if (catalog.contact) {
+    if (
+      !/^09\d{2} ?\d{3} ?\d{4}$/.test(catalog.contact.phone || "") ||
+      !/^https:\/\/(?:www\.)?facebook\.com\//.test(
+        catalog.contact.facebookUrl || "",
+      )
+    )
+      throw new Error("Catalog contact requires a Philippine mobile number and Facebook link.");
+  }
   for (const unit of catalog.units) {
     if (
       unit.rentalTypes &&
