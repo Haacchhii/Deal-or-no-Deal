@@ -53,15 +53,33 @@ function locationSection() {
   return `<section class="location-section" id="about-location" aria-labelledby="location-heading"><div class="location-copy"><p class="eyebrow"><span class="fine-line"></span>Location</p><h2 id="location-heading">Find us at<br><em>${esc(siteLocation.name)}</em></h2><p>${esc(siteLocation.address)}</p><a class="button" href="${esc(siteLocation.mapsUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Maps <span aria-hidden="true">↗</span></a></div><div class="map-card"><iframe title="${esc(siteLocation.name)} map" src="${esc(siteLocation.embedUrl)}" width="900" height="520" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a class="map-overlay" href="${esc(siteLocation.mapsUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(siteLocation.name)} on Google Maps"><span>${esc(siteLocation.name)}</span><small>${esc(siteLocation.address)}</small><b aria-hidden="true">↗</b></a></div></section>`;
 }
 function home() {
+  const featuredUnit = (type) => {
+    const configuredId = catalog.homeFeatures?.[type.toLowerCase()];
+    return catalog.units.find((unit) => unit.id === configuredId);
+  };
+  const featuredPhoto = (unit, type) => {
+    const configuredIndex = catalog.homeFeatures?.[`${type.toLowerCase()}Photo`];
+    if (Number.isInteger(configuredIndex) && unit?.photos[configuredIndex])
+      return unit.photos[configuredIndex];
+    const group = unit?.photoGroups?.find((item) => item.label === type);
+    return unit?.photos[group?.start ?? 0];
+  };
+  const featureCard = (type) => {
+    const unit = featuredUnit(type);
+    if (!unit) return "";
+    const photo = featuredPhoto(unit, type);
+    const details = parseUnit(unit.unitNumber || unit.id);
+    return `<article class="home-feature"><a class="home-feature-image" href="#/units/${esc(unit.id)}"><img src="${photoPath(unit, photo)}" alt="${esc(photo.alt)}" width="1800" height="1200" loading="lazy"><span>View featured unit <b aria-hidden="true">↗</b></span></a><div class="home-feature-copy"><p class="eyebrow">${esc(type)} collection</p><h3>${esc(unitDisplayName(unit))}</h3><p>See this real unit album, or browse every ${type.toLowerCase()} currently in the collection.</p><a class="text-link" href="#/units?tower=${details.tower}&type=${encodeURIComponent(type)}">Browse all ${type.toLowerCase()}s <span aria-hidden="true">↗</span></a></div></article>`;
+  };
   return `${header("home")}<main id="main" tabindex="-1"><section class="hero" aria-labelledby="home-heading">
     <img class="hero-photo" src="${esc(catalog.hero.src)}" alt="${esc(catalog.hero.alt)}" width="${catalog.hero.width || 1800}" height="${catalog.hero.height || 1200}" fetchpriority="high">
     <div class="hero-shade"></div><div class="hero-content"><p class="eyebrow">${esc(buildingName)}</p><h1 id="home-heading">A closer look at<br>your next <em>home.</em></h1><p class="hero-intro">Explore JPP Rental Homestay units before your personal viewing.</p><a class="button button-light" href="#/units?tower=A">Browse unit photos <span aria-hidden="true">↗</span></a></div>
     <span class="hero-note">${catalog.preview ? `${esc(buildingName)} · Photo gallery preview` : `Discover ${esc(buildingName)}`}</span>
-  </section><section class="tower-intro" aria-labelledby="towers-heading"><p class="eyebrow"><span class="fine-line"></span>${esc(buildingName)}</p><h2 id="towers-heading">Two towers.<br><em>Your point of view.</em></h2><div class="tower-links" aria-label="Direct tower shortcuts"><a href="#/units?tower=A"><span>Tower A</span><span aria-hidden="true">↗</span></a><a href="#/units?tower=B"><span>Tower B</span><span aria-hidden="true">↗</span></a><a href="#/about"><span>About the building</span><span aria-hidden="true">↗</span></a></div></section></main>${footer()}`;
+  </section><section class="home-collections" aria-labelledby="collections-heading"><div class="home-collections-heading"><p class="eyebrow"><span class="fine-line"></span>Choose how you want to live</p><h2 id="collections-heading">Start with the space<br>that <em>fits.</em></h2><p>Browse actual unit photos by rental type before arranging a personal viewing.</p></div><div class="home-feature-grid">${featureCard("Bedroom")}${featureCard("Bedspace")}</div></section><section class="tower-intro" aria-labelledby="towers-heading"><p class="eyebrow"><span class="fine-line"></span>${esc(buildingName)}</p><h2 id="towers-heading">Two towers.<br><em>Your point of view.</em></h2><div class="tower-links" aria-label="Direct tower shortcuts"><a href="#/units?tower=A"><span>Tower A</span><span aria-hidden="true">↗</span></a><a href="#/units?tower=B"><span>Tower B</span><span aria-hidden="true">↗</span></a><a href="#/about"><span>Complete building guide</span><span aria-hidden="true">↗</span></a></div></section></main>${footer()}`;
 }
 
 function about() {
-  return `${header("about")}<main class="about page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/">Home</a><span>/</span><span>About</span></div><section class="about-intro" aria-labelledby="about-heading"><div class="about-copy"><h1 id="about-heading">About <em>${esc(buildingName)}.</em></h1><p>Get oriented before exploring the unit photographs, from what is included to the places nearby.</p><a class="text-link" href="#/units?tower=A">Browse the unit collection <span aria-hidden="true">↗</span></a></div><figure class="about-portrait"><img src="${esc(catalog.hero.src)}" alt="${esc(catalog.hero.alt)}" width="${catalog.hero.width || 1800}" height="${catalog.hero.height || 1200}"><figcaption>${esc(siteLocation.name)} · Makati</figcaption></figure></section><nav class="about-index" aria-label="About page sections"><span>On this page</span><button type="button" data-section="about-shared">Shared spaces</button><button type="button" data-section="about-included">Included</button><button type="button" data-section="about-location">Location</button><button type="button" data-section="about-nearby">Nearby</button></nav>${sharedSpacesSection()}${inclusionsSection()}${locationSection()}${nearbyLocationsSection()}<section class="about-next" aria-labelledby="about-next-heading"><h2 id="about-next-heading">Ready to look <em>inside?</em></h2><p>Browse the photographs by tower, floor, and unit.</p><div><a class="button" href="#/units?tower=A">Explore Tower A <span aria-hidden="true">↗</span></a><a class="text-link" href="#/units?tower=B">Explore Tower B <span aria-hidden="true">↗</span></a></div></section></main>${footer()}`;
+  return `${header("about")}<main class="about page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/">Home</a><span>/</span><span>About</span></div><section class="about-intro" aria-labelledby="about-heading"><div class="about-copy"><p class="eyebrow">The complete building guide</p><h1 id="about-heading">About <em>${esc(buildingName)}.</em></h1><p>Everything essential in one place: shared spaces, what is included, the exact location, and useful places nearby.</p><a class="text-link" href="#/units?tower=A">Browse the unit collection <span aria-hidden="true">↗</span></a></div><figure class="about-portrait"><img src="${esc(catalog.hero.src)}" alt="${esc(catalog.hero.alt)}" width="${catalog.hero.width || 1800}" height="${catalog.hero.height || 1200}"><figcaption>${esc(siteLocation.name)} · Makati</figcaption></figure></section><nav class="about-index" aria-label="About page sections"><span>Explore the guide</span><button type="button" data-section="about-shared">Building & shared spaces</button><button type="button" data-section="about-included">What is included</button><button type="button" data-section="about-location">Address & map</button><button type="button" data-section="about-nearby">Nearby essentials</button></nav>${sharedSpacesSection()}${inclusionsSection()}${locationSection()}${nearbyLocationsSection()}<section class="about-next" aria-labelledby="about-next-heading"><h2 id="about-next-heading">Ready to look <em>inside?</em></h2><p>Browse every unit photo by tower, floor, and unit.</p><div><a class="button" href="#/units?tower=A">Explore Tower A <span aria-hidden="true">↗</span></a><a class="text-link" href="#/units?tower=B">Explore Tower B <span aria-hidden="true">↗</span></a></div></section></main>${footer()}`;
 }
 
 function unitSearch() {
@@ -117,6 +135,13 @@ function albumSequence(unit, details) {
   return `<nav class="album-sequence" aria-label="Browse neighboring units">${link(previous, "Previous")}${link(next, "Next")}</nav>`;
 }
 
+function inquirySection(unit) {
+  const phone = catalog.contact?.phone?.trim();
+  const facebookUrl = catalog.contact?.facebookUrl?.trim();
+  if (!phone || !facebookUrl) return "";
+  return `<section class="unit-inquiry" aria-labelledby="unit-inquiry-heading"><div><p class="eyebrow">Interested in this unit?</p><h2 id="unit-inquiry-heading">Ask about <em>Unit ${esc(unitDisplayName(unit))}.</em></h2><p>Call <a href="tel:${esc(phone.replace(/[^+\d]/g, ""))}">${esc(phone)}</a>, or send JPP Rental Homestay a message on Facebook. Mention this unit number so we can help you with the right album.</p></div><a class="button" href="${esc(facebookUrl)}" target="_blank" rel="noopener noreferrer">Ask about this unit <span aria-hidden="true">↗</span></a></section>`;
+}
+
 function album(unit, rentalType) {
   const details = parseUnit(unit.unitNumber || unit.id);
   const albumName = unitAlbumName(unit);
@@ -124,7 +149,8 @@ function album(unit, rentalType) {
   const filterQuery = rentalType
     ? `&type=${encodeURIComponent(rentalType)}`
     : "";
-  return `${header("units")}<main class="album page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/units?tower=${details.tower}${filterQuery}">Our units</a><span>/</span><span>${esc(buildingName)}</span><span>/</span><a href="#/units?tower=${details.tower}&floor=${details.floor}${filterQuery}">Tower ${details.tower}</a><span>/</span><span>${ordinal(details.floor)} floor</span>${detail ? `<span>/</span><span>${esc(detail)}</span>` : ""}</div><div class="album-heading"><div class="album-identity"><span class="album-index-mark" aria-hidden="true"><b>${details.tower}</b><small>Tower</small><b>${String(details.floor).padStart(2, "0")}</b><small>Floor</small></span><div><h1>Unit <em>${esc(unitDisplayName(unit))}</em></h1><p class="intro">${esc(buildingName)}${detail ? ` <span aria-hidden="true">·</span> ${esc(detail)}` : ""}</p></div></div><div class="album-heading-actions"><button class="share-unit" type="button" data-unit-id="${esc(unit.id)}">Share this unit</button><a class="back-link" href="#/units?tower=${details.tower}&floor=${details.floor}${filterQuery}">← Back to ${ordinal(details.floor)} floor</a></div></div>${unit.sample ? `<p class="sample-notice">${isPlaceholderAlbum(unit) ? `Placeholder photos · Replace these images when ${esc(albumName)} photos are available.` : "Sample interiors · These images illustrate the gallery and are not photographs of this unit."}</p>` : ""}${galleryMarkup(unit)}${albumSequence(unit, details)}<section class="album-about-bridge" aria-labelledby="album-about-heading"><div><h2 id="album-about-heading">About the building</h2><p>See what is included, find ${esc(siteLocation.name)}, and explore nearby locations.</p></div><a class="text-link" href="#/about">Explore the building guide <span aria-hidden="true">↗</span></a></section></main>${footer()}`;
+  const shareUrl = unitShareUrl(unit);
+  return `${header("units")}<main class="album page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/units?tower=${details.tower}${filterQuery}">Our units</a><span>/</span><span>${esc(buildingName)}</span><span>/</span><a href="#/units?tower=${details.tower}&floor=${details.floor}${filterQuery}">Tower ${details.tower}</a><span>/</span><span>${ordinal(details.floor)} floor</span>${detail ? `<span>/</span><span>${esc(detail)}</span>` : ""}</div><div class="album-heading"><div class="album-identity"><span class="album-index-mark" aria-hidden="true"><b>${details.tower}</b><small>Tower</small><b>${String(details.floor).padStart(2, "0")}</b><small>Floor</small></span><div><h1>Unit <em>${esc(unitDisplayName(unit))}</em></h1><p class="intro">${esc(buildingName)}${detail ? ` <span aria-hidden="true">·</span> ${esc(detail)}` : ""}</p></div></div><div class="album-heading-actions"><button class="share-unit" type="button" data-unit-id="${esc(unit.id)}">Share this unit</button><a class="back-link" href="#/units?tower=${details.tower}&floor=${details.floor}${filterQuery}">← Back to ${ordinal(details.floor)} floor</a></div></div>${unit.sample ? `<p class="sample-notice">${isPlaceholderAlbum(unit) ? `Placeholder photos · Replace these images when ${esc(albumName)} photos are available.` : "Sample interiors · These images illustrate the gallery and are not photos of this unit."}</p>` : ""}${galleryMarkup(unit, shareUrl)}${inquirySection(unit)}${albumSequence(unit, details)}<section class="album-about-bridge" aria-labelledby="album-about-heading"><div><h2 id="album-about-heading">About the building</h2><p>See what is included, find ${esc(siteLocation.name)}, and explore nearby locations.</p></div><a class="text-link" href="#/about">Explore the building guide <span aria-hidden="true">↗</span></a></section></main>${footer()}`;
 }
 
 function normalizeRentalType(value) {
@@ -289,7 +315,7 @@ function setPageMetadata(route) {
             : `${catalog.name} · ${buildingName}`;
   const description =
     route.type === "album"
-      ? `View photographs for Unit ${unitAlbumName(route.unit)} at ${buildingName}.`
+      ? `View photos for Unit ${unitAlbumName(route.unit)} at ${buildingName}.`
       : `Explore ${catalog.name} unit photo albums at ${buildingName} by tower, floor and unit.`;
   const image =
     route.type === "album"
@@ -333,7 +359,7 @@ function render({ initial = false } = {}) {
   setPageMetadata(route);
   const routeCleanup =
     route.type === "album"
-      ? mountGallery(route.unit)
+      ? mountGallery(route.unit, unitShareUrl(route.unit))
       : route.type === "directory"
         ? mountDirectorySearch()
         : route.type === "about"

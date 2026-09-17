@@ -257,6 +257,92 @@ main:focus {
   font-size: 0.75rem;
   color: #e2e7df;
 }
+.home-collections {
+  padding: clamp(4.5rem, 8vw, 8rem) 5%;
+  border-bottom: 1px solid var(--line);
+}
+.home-collections-heading {
+  display: grid;
+  grid-template-columns: 0.8fr 1.35fr 0.75fr;
+  align-items: end;
+  gap: clamp(2rem, 5vw, 5rem);
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+.home-collections-heading .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.home-collections-heading h2 {
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+.home-collections-heading > p:last-child {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.home-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+}
+.home-feature-image {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--forest-dark);
+}
+.home-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.home-feature:first-child .home-feature-image img {
+  object-position: center bottom;
+}
+.home-feature-image > span {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  background: rgba(16, 43, 37, 0.9);
+  color: var(--paper);
+  font-size: 0.8125rem;
+}
+.home-feature-image:hover img {
+  transform: scale(1.025);
+}
+.home-feature-copy {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.55rem 1.5rem;
+  padding-top: 1.25rem;
+}
+.home-feature-copy .eyebrow,
+.home-feature-copy > p {
+  grid-column: 1;
+}
+.home-feature-copy h3 {
+  grid-column: 1;
+  font-size: clamp(2rem, 3vw, 3.25rem);
+  line-height: 1;
+}
+.home-feature-copy > p:not(.eyebrow) {
+  max-width: 430px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.home-feature-copy .text-link {
+  grid-column: 2;
+  grid-row: 2 / 4;
+  align-self: end;
+}
 .tower-intro {
   padding: 4rem 5%;
   display: grid;
@@ -973,6 +1059,40 @@ main:focus {
   margin-top: clamp(3.5rem, 7vw, 6rem);
   padding: clamp(2rem, 4vw, 3.5rem) 0 0;
   border-top: 1px solid var(--line);
+}
+.unit-inquiry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 2.5rem;
+  margin-top: clamp(3.5rem, 7vw, 6rem);
+  padding: clamp(2.5rem, 5vw, 4.5rem);
+  background: var(--forest);
+  color: var(--paper);
+}
+.unit-inquiry .eyebrow {
+  margin-bottom: 1rem;
+  color: #cbd7d1;
+}
+.unit-inquiry h2 {
+  font-size: clamp(2.75rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+}
+.unit-inquiry p:last-child {
+  max-width: 650px;
+  margin-top: 1.25rem;
+  color: #dce4df;
+  line-height: 1.7;
+}
+.unit-inquiry p a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.unit-inquiry .button {
+  background: var(--paper);
+  color: var(--forest);
+  white-space: nowrap;
 }
 .album-about-bridge h2 {
   font-size: clamp(2.5rem, 4vw, 4rem);
@@ -1973,19 +2093,43 @@ main:focus {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  justify-content: space-between;
+  gap: 2rem;
   min-height: 54px;
   padding-top: 0.5rem;
   overflow: hidden;
+}
+.presentation-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 .presentation-controls button {
   min-width: 150px;
   border: 1px solid rgba(247, 247, 242, 0.45);
   font-weight: 650;
 }
-.presentation-controls > span {
+.presentation-actions > span {
   color: #cbd7d1;
   font-size: 0.8125rem;
+}
+.presentation-qr {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 0.75rem;
+}
+.presentation-qr canvas {
+  width: 58px !important;
+  height: 58px !important;
+  border: 4px solid var(--paper);
+  background: var(--paper);
+}
+.presentation-qr span {
+  max-width: 90px;
+  color: #cbd7d1;
+  font-size: 0.75rem;
+  line-height: 1.25;
 }
 .presentation-progress {
   position: absolute;
@@ -2067,6 +2211,32 @@ main:focus {
   .tower-intro {
     grid-template-columns: 1fr 1.5fr;
     gap: 2rem;
+  }
+  .home-collections {
+    padding: 3.5rem 6%;
+  }
+  .home-collections-heading {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  .home-collections-heading h2 {
+    font-size: clamp(3rem, 14vw, 4.5rem);
+  }
+  .home-collections-heading > p:last-child {
+    max-width: 420px;
+  }
+  .home-feature-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .home-feature-copy {
+    grid-template-columns: 1fr;
+  }
+  .home-feature-copy .text-link {
+    grid-column: 1;
+    grid-row: auto;
+    margin-top: 0.4rem;
   }
   .tower-intro > .eyebrow {
     grid-column: 1/-1;
@@ -2200,8 +2370,8 @@ main:focus {
   }
   .hero-shade {
     background:
-      linear-gradient(90deg, rgba(8, 24, 19, 0.7), rgba(8, 24, 19, 0.14)),
-      linear-gradient(0deg, rgba(8, 24, 19, 0.3), transparent);
+      linear-gradient(90deg, rgba(8, 24, 19, 0.78), rgba(8, 24, 19, 0.24)),
+      linear-gradient(0deg, rgba(8, 24, 19, 0.38), transparent);
   }
   .hero-content {
     padding: 3rem 6% 5rem;
@@ -2298,6 +2468,14 @@ main:focus {
   }
   .album-about-bridge {
     display: block;
+  }
+  .unit-inquiry {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 1.5rem;
+  }
+  .unit-inquiry .button {
+    justify-self: start;
+    white-space: normal;
   }
   .album-about-bridge .text-link {
     margin-top: 1.25rem;
@@ -2708,7 +2886,12 @@ main:focus {
   .presentation-controls {
     justify-content: center;
   }
-  .presentation-controls > span {
+  .presentation-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .presentation-actions > span,
+  .presentation-qr {
     display: none;
   }
   .directory-footnote {

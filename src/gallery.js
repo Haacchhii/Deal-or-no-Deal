@@ -6,8 +6,9 @@ import {
   unitAlbumName,
   wrapIndex,
 } from "./catalog.js";
+import QRCode from "qrcode";
 
-export function galleryMarkup(unit) {
+export function galleryMarkup(unit, shareUrl = "") {
   const first = unit.photos[0];
   const firstGroup = photoGroup(unit, 0);
   const controls = unit.photos.length > 1;
@@ -16,7 +17,7 @@ export function galleryMarkup(unit) {
     ? groupedThumbnails(unit)
     : `<div class="thumbnails" aria-label="Choose a photograph">${unit.photos.map((photo, index) => thumbnail(unit, photo, index)).join("")}</div>`;
   return `<section class="gallery unified-gallery" aria-labelledby="gallery-heading" tabindex="0">
-    <div class="gallery-heading"><h2 id="gallery-heading">Photo gallery</h2><div class="gallery-heading-meta"><p>${unit.photos.length} ${unit.photos.length === 1 ? "photograph" : "photographs"} · Unit ${esc(albumName)}</p><button class="present-album" type="button">Present album <span aria-hidden="true">↗</span></button></div></div>
+    <div class="gallery-heading"><h2 id="gallery-heading">Photo gallery</h2><div class="gallery-heading-meta"><p>${unit.photos.length} ${unit.photos.length === 1 ? "photo" : "photos"} · Unit ${esc(albumName)}</p><button class="present-album" type="button">Present album <span aria-hidden="true">↗</span></button></div></div>
     <div class="photo-stage">
       <img class="main-photo" src="${photoPath(unit, first)}" alt="${esc(first.alt)}" width="1800" height="1200" fetchpriority="high">
       <p class="photo-error" hidden>We couldn’t load this photo. Try another image or reload the page.</p>
@@ -26,7 +27,7 @@ export function galleryMarkup(unit) {
     </div>
     <p class="current-caption" aria-live="polite">${esc(first.caption)}</p>
     ${thumbnails}
-  </section>${lightboxMarkup(unit, controls)}`;
+  </section>${lightboxMarkup(unit, controls, shareUrl)}`;
 }
 
 function photoGroup(unit, index) {
@@ -52,21 +53,22 @@ function groupedThumbnails(unit) {
     .join("")}</div>`;
 }
 
-function lightboxMarkup(unit, controls) {
+function lightboxMarkup(unit, controls, shareUrl) {
   const albumName = unitAlbumName(unit);
   const identity = parseUnit(unit.unitNumber || unit.id);
   return `<dialog class="lightbox" aria-label="Unit ${esc(albumName)} photo viewer">
     <div class="lightbox-top"><div class="viewer-identity"><span>JPP Rental Homestay</span><strong>Unit ${esc(albumName)}</strong><small>Tower ${identity.tower} / ${ordinal(identity.floor)} floor</small></div><button class="close-viewer" autofocus aria-label="Close photo viewer">Close <span aria-hidden="true">×</span></button></div>
     <div class="lightbox-image"><img alt=""><p class="viewer-error" hidden>Photo could not be loaded.</p></div>
-    <div class="lightbox-bottom"><button data-step="-1" aria-label="Previous photo" ${controls ? "" : "hidden"}>←</button><p class="viewer-caption" aria-live="polite"></p><button data-step="1" aria-label="Next photo" ${controls ? "" : "hidden"}>→</button></div><div class="presentation-controls" hidden><button class="autoplay-toggle" type="button" aria-pressed="false" ${controls ? "" : "hidden"}>Start slideshow</button><span>Arrow keys to move / Space to pause</span><i class="presentation-progress" aria-hidden="true"></i></div>
+    <div class="lightbox-bottom"><button data-step="-1" aria-label="Previous photo" ${controls ? "" : "hidden"}>←</button><p class="viewer-caption" aria-live="polite"></p><button data-step="1" aria-label="Next photo" ${controls ? "" : "hidden"}>→</button></div><div class="presentation-controls" hidden><div class="presentation-actions"><button class="autoplay-toggle" type="button" aria-pressed="false" ${controls ? "" : "hidden"}>Start slideshow</button><button class="end-presentation" type="button">End presentation</button><span>Arrow keys to move / Space to pause</span></div>${shareUrl ? `<div class="presentation-qr"><canvas aria-hidden="true"></canvas><span>Scan to open this unit</span></div>` : ""}<i class="presentation-progress" aria-hidden="true"></i></div>
   </dialog>`;
 }
 
-export function mountGallery(unit) {
+export function mountGallery(unit, shareUrl = "") {
   let index = 0;
   let pointerStart;
   let presenting = false;
   let autoplayTimer;
+  const controls = unit.photos.length > 1;
   const gallery = document.querySelector(".gallery");
   const dialog = document.querySelector(".lightbox");
   const mainImage = gallery.querySelector(".main-photo");
@@ -76,6 +78,13 @@ export function mountGallery(unit) {
   const buttons = [...gallery.querySelectorAll("[data-index]")];
   const autoplayButton = dialog.querySelector(".autoplay-toggle");
   const presentationControls = dialog.querySelector(".presentation-controls");
+  const qrCanvas = dialog.querySelector(".presentation-qr canvas");
+  if (qrCanvas && shareUrl)
+    QRCode.toCanvas(qrCanvas, shareUrl, {
+      width: 116,
+      margin: 1,
+      color: { dark: "#102b25", light: "#f7f7f2" },
+    });
   function stopAutoplay() {
     clearTimeout(autoplayTimer);
     autoplayTimer = undefined;
@@ -150,6 +159,11 @@ export function mountGallery(unit) {
     syncViewer();
     dialog.showModal();
     document.body.classList.add("viewer-open");
+    if (presenting && controls) {
+      autoplayButton.setAttribute("aria-pressed", "true");
+      autoplayButton.textContent = "Pause slideshow";
+      scheduleAutoplay();
+    }
   }
   gallery
     .querySelector(".expand-photo")
@@ -166,6 +180,9 @@ export function mountGallery(unit) {
   });
   dialog
     .querySelector(".close-viewer")
+    .addEventListener("click", () => dialog.close());
+  dialog
+    .querySelector(".end-presentation")
     .addEventListener("click", () => dialog.close());
   dialog.addEventListener("close", () => {
     stopAutoplay();
