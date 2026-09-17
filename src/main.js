@@ -30,6 +30,7 @@ const app = document.querySelector("#app");
 let cleanup = () => {};
 const directoryPositions = new Map();
 let previousRoute;
+const comparisonStorageKey = "jpp-unit-comparison";
 const buildingName = catalog.building || "Victoria De Makati";
 const brand = `<a class="brand" href="#/" aria-label="${esc(catalog.name)} home"><img src="brand/jpp-rental-homestay-logo.webp" alt="" width="180" height="180"><span>${esc(catalog.name)}</span></a>`;
 const isPlaceholderAlbum = (unit) =>
@@ -47,7 +48,36 @@ function header(active) {
   return `<header class="site-header">${brand}<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation"><span>Menu</span><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg></button><nav id="main-navigation" aria-label="Main navigation"><a href="#/" ${active === "home" ? 'aria-current="page"' : ""}>Home</a><a href="#/about" ${active === "about" ? 'aria-current="page"' : ""}>About</a><a href="#/units?tower=A" ${active === "units" ? 'aria-current="page"' : ""}>Our units</a>${active === "home" ? "" : '<a class="button header-cta" href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a>'}</nav></header>`;
 }
 function footer() {
-  return `<footer class="site-footer"><span>${esc(catalog.name)}</span><p>${esc(buildingName)} · ${catalog.preview ? "Placeholder albums are labeled" : "A closer look at your next home."}</p><a href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a></footer>`;
+  const phone = catalog.contact?.phone?.trim();
+  const facebookUrl = catalog.contact?.facebookUrl?.trim();
+  return `<footer class="site-footer"><div class="footer-brand"><span>${esc(catalog.name)}</span><p>${esc(buildingName)} · ${catalog.preview ? "Placeholder albums are labeled" : "A closer look at your next home."}</p></div>${phone && facebookUrl ? `<div class="footer-contact"><span>Contact</span><a href="tel:${esc(phone.replace(/[^+\d]/g, ""))}">${esc(phone)}</a><a href="${esc(facebookUrl)}" target="_blank" rel="noopener noreferrer">Message on Facebook <span aria-hidden="true">↗</span></a></div>` : ""}<a class="footer-units" href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a></footer>`;
+}
+
+function comparisonUnits() {
+  try {
+    const ids = JSON.parse(localStorage.getItem(comparisonStorageKey) || "[]");
+    return Array.isArray(ids)
+      ? ids
+          .map((id) => catalog.units.find((unit) => unit.id === id))
+          .filter(Boolean)
+          .slice(0, 3)
+      : [];
+  } catch {
+    return [];
+  }
+}
+
+function comparisonButton(unit, compact = false) {
+  const units = comparisonUnits();
+  const selected = units.some((item) => item.id === unit.id);
+  const full = units.length >= 3 && !selected;
+  return `<button class="compare-toggle${compact ? " compare-toggle-compact" : ""}" type="button" data-compare-unit="${esc(unit.id)}" aria-pressed="${selected}" ${full ? "disabled" : ""}>${selected ? "Remove from comparison" : full ? "Comparison is full" : "Add to comparison"}</button>`;
+}
+
+function comparisonTray() {
+  const units = comparisonUnits();
+  if (!units.length) return `<aside class="comparison-tray" aria-label="Unit comparison" hidden></aside>`;
+  return `<aside class="comparison-tray" aria-label="Unit comparison"><div><span>Compare units</span><strong>${units.map((unit) => esc(unitDisplayName(unit))).join(" · ")}</strong><small>${units.length} of 3 selected</small></div><div class="comparison-tray-actions"><button type="button" data-clear-comparison>Clear</button><a href="#/compare" ${units.length < 2 ? 'aria-disabled="true" tabindex="-1"' : ""}>Compare ${units.length} units <span aria-hidden="true">↗</span></a></div><p class="visually-hidden" aria-live="polite">${units.length} ${units.length === 1 ? "unit" : "units"} selected for comparison.</p></aside>`;
 }
 function locationSection() {
   return `<section class="location-section" id="about-location" aria-labelledby="location-heading"><div class="location-copy"><p class="eyebrow"><span class="fine-line"></span>Location</p><h2 id="location-heading">Find us at<br><em>${esc(siteLocation.name)}</em></h2><p>${esc(siteLocation.address)}</p><a class="button" href="${esc(siteLocation.mapsUrl)}" target="_blank" rel="noopener noreferrer">Open in Google Maps <span aria-hidden="true">↗</span></a></div><div class="map-card"><iframe title="${esc(siteLocation.name)} map" src="${esc(siteLocation.embedUrl)}" width="900" height="520" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a class="map-overlay" href="${esc(siteLocation.mapsUrl)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${esc(siteLocation.name)} on Google Maps"><span>${esc(siteLocation.name)}</span><small>${esc(siteLocation.address)}</small><b aria-hidden="true">↗</b></a></div></section>`;
@@ -116,7 +146,7 @@ function directory(tower, rentalType) {
     const cover = directoryCoverPhoto(unit);
     const identity = parseUnit(unit.unitNumber || unit.id);
     const types = unitRentalTypes(unit);
-    return `<a class="unit-album" href="#/units/${unit.id}${rentalType ? `?type=${encodeURIComponent(rentalType)}` : ""}" aria-label="View ${esc(unitAlbumName(unit))} photo album"><div class="unit-cover"><img src="${photoPath(unit, cover, "thumb")}" alt="${esc(cover.alt)}" width="640" height="427" loading="lazy"><span class="unit-index-mark" aria-hidden="true">T${identity.tower} / F${String(identity.floor).padStart(2, "0")}</span>${unit.sample ? `<span class="sample-tag">${isPlaceholderAlbum(unit) ? "Placeholder photos" : "Sample interiors"}</span>` : ""}<span class="cover-arrow" aria-hidden="true">↗</span></div><div class="unit-title"><div><h3>${esc(unitDisplayName(unit))}</h3>${types.length ? `<p>${types.map((type) => `<span>${esc(type)}</span>`).join("")}</p>` : ""}</div><span>${unit.photos.length} photos <span aria-hidden="true">↗</span></span></div></a>`;
+    return `<article class="unit-card"><a class="unit-album" href="#/units/${unit.id}${rentalType ? `?type=${encodeURIComponent(rentalType)}` : ""}" aria-label="View ${esc(unitAlbumName(unit))} photo album"><div class="unit-cover"><img src="${photoPath(unit, cover, "thumb")}" alt="${esc(cover.alt)}" width="640" height="427" loading="lazy"><span class="unit-index-mark" aria-hidden="true">T${identity.tower} / F${String(identity.floor).padStart(2, "0")}</span>${unit.sample ? `<span class="sample-tag">${isPlaceholderAlbum(unit) ? "Placeholder photos" : "Sample interiors"}</span>` : ""}<span class="cover-arrow" aria-hidden="true">↗</span></div><div class="unit-title"><div><h3>${esc(unitDisplayName(unit))}</h3>${types.length ? `<p>${types.map((type) => `<span>${esc(type)}</span>`).join("")}</p>` : ""}</div><span>${unit.photos.length} photos <span aria-hidden="true">↗</span></span></div></a>${comparisonButton(unit, true)}</article>`;
   }).join("")}</div></section>`).join("") : `<div class="empty-state"><h2>No ${rentalType ? rentalType.toLowerCase() : "unit"} albums in Tower ${tower}.</h2><p>Choose another filter or explore the other tower.</p></div>`}</div>
     <p class="directory-footnote">Photos are for viewing reference. Please confirm current availability with the office.</p></main>${footer()}`;
 }
@@ -150,7 +180,20 @@ function album(unit, rentalType) {
     ? `&type=${encodeURIComponent(rentalType)}`
     : "";
   const shareUrl = unitShareUrl(unit);
-  return `${header("units")}<main class="album page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/units?tower=${details.tower}${filterQuery}">Our units</a><span>/</span><span>${esc(buildingName)}</span><span>/</span><a href="#/units?tower=${details.tower}&floor=${details.floor}${filterQuery}">Tower ${details.tower}</a><span>/</span><span>${ordinal(details.floor)} floor</span>${detail ? `<span>/</span><span>${esc(detail)}</span>` : ""}</div><div class="album-heading"><div class="album-identity"><span class="album-index-mark" aria-hidden="true"><b>${details.tower}</b><small>Tower</small><b>${String(details.floor).padStart(2, "0")}</b><small>Floor</small></span><div><h1>Unit <em>${esc(unitDisplayName(unit))}</em></h1><p class="intro">${esc(buildingName)}${detail ? ` <span aria-hidden="true">·</span> ${esc(detail)}` : ""}</p></div></div><div class="album-heading-actions"><button class="share-unit" type="button" data-unit-id="${esc(unit.id)}">Share this unit</button><a class="back-link" href="#/units?tower=${details.tower}&floor=${details.floor}${filterQuery}">← Back to ${ordinal(details.floor)} floor</a></div></div>${unit.sample ? `<p class="sample-notice">${isPlaceholderAlbum(unit) ? `Placeholder photos · Replace these images when ${esc(albumName)} photos are available.` : "Sample interiors · These images illustrate the gallery and are not photos of this unit."}</p>` : ""}${galleryMarkup(unit, shareUrl)}${inquirySection(unit)}${albumSequence(unit, details)}<section class="album-about-bridge" aria-labelledby="album-about-heading"><div><h2 id="album-about-heading">About the building</h2><p>See what is included, find ${esc(siteLocation.name)}, and explore nearby locations.</p></div><a class="text-link" href="#/about">Explore the building guide <span aria-hidden="true">↗</span></a></section></main>${footer()}`;
+  return `${header("units")}<main class="album page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/units?tower=${details.tower}${filterQuery}">Our units</a><span>/</span><span>${esc(buildingName)}</span><span>/</span><a href="#/units?tower=${details.tower}&floor=${details.floor}${filterQuery}">Tower ${details.tower}</a><span>/</span><span>${ordinal(details.floor)} floor</span>${detail ? `<span>/</span><span>${esc(detail)}</span>` : ""}</div><div class="album-heading"><div class="album-identity"><span class="album-index-mark" aria-hidden="true"><b>${details.tower}</b><small>Tower</small><b>${String(details.floor).padStart(2, "0")}</b><small>Floor</small></span><div><h1>Unit <em>${esc(unitDisplayName(unit))}</em></h1><p class="intro">${esc(buildingName)}${detail ? ` <span aria-hidden="true">·</span> ${esc(detail)}` : ""}</p></div></div><div class="album-heading-actions"><button class="share-unit" type="button" data-unit-id="${esc(unit.id)}">Share this unit</button>${comparisonButton(unit)}<a class="back-link" href="#/units?tower=${details.tower}&floor=${details.floor}${filterQuery}">← Back to ${ordinal(details.floor)} floor</a></div></div>${unit.sample ? `<p class="sample-notice">${isPlaceholderAlbum(unit) ? `Placeholder photos · Replace these images when ${esc(albumName)} photos are available.` : "Sample interiors · These images illustrate the gallery and are not photos of this unit."}</p>` : ""}${galleryMarkup(unit, shareUrl)}${inquirySection(unit)}${albumSequence(unit, details)}<section class="album-about-bridge" aria-labelledby="album-about-heading"><div><h2 id="album-about-heading">About the building</h2><p>See what is included, find ${esc(siteLocation.name)}, and explore nearby locations.</p></div><a class="text-link" href="#/about">Explore the building guide <span aria-hidden="true">↗</span></a></section></main>${footer()}`;
+}
+
+function comparisonPage() {
+  const units = comparisonUnits();
+  const cards = units
+    .map((unit) => {
+      const details = parseUnit(unit.unitNumber || unit.id);
+      const cover = directoryCoverPhoto(unit);
+      const types = unitRentalTypes(unit);
+      return `<article class="comparison-unit"><a class="comparison-photo" href="#/units/${esc(unit.id)}"><img src="${photoPath(unit, cover)}" alt="${esc(cover.alt)}" width="1800" height="1200"><span>Open album <b aria-hidden="true">↗</b></span></a><div class="comparison-unit-heading"><h2>${esc(unitDisplayName(unit))}</h2>${comparisonButton(unit, true)}</div><dl><div><dt>Tower</dt><dd>${details.tower}</dd></div><div><dt>Floor</dt><dd>${ordinal(details.floor)}</dd></div><div><dt>Rental type</dt><dd>${types.length ? types.map(esc).join(" & ") : "Not yet labelled"}</dd></div><div><dt>Album</dt><dd>${unit.photos.length} ${unit.photos.length === 1 ? "photo" : "photos"}</dd></div></dl>${unit.sample ? `<p class="comparison-note">${isPlaceholderAlbum(unit) ? "Placeholder photos" : "Sample interiors"}</p>` : ""}</article>`;
+    })
+    .join("");
+  return `${header("units")}<main class="comparison-page page-shell" id="main" tabindex="-1"><div class="breadcrumb"><a href="#/units?tower=A">Our units</a><span>/</span><span>Compare</span></div><div class="comparison-heading"><h1>Compare your <em>shortlist.</em></h1><p>Review confirmed catalog details side by side, then open each album for the full set of photos.</p></div>${units.length >= 2 ? `<section class="comparison-grid" aria-label="Selected units">${cards}</section>` : `<section class="comparison-empty"><h2>Select at least two units.</h2><p>Add units from either tower to compare their confirmed details here.</p><a class="button" href="#/units?tower=A">Browse the units <span aria-hidden="true">↗</span></a></section>`}</main>${footer()}`;
 }
 
 function normalizeRentalType(value) {
@@ -161,6 +204,7 @@ function getRoute() {
   const [path, query = ""] = location.hash.slice(1).split("?");
   if (!path || path === "/") return { type: "home" };
   if (path === "/about") return { type: "about" };
+  if (path === "/compare") return { type: "compare" };
   if (path === "/units")
     return {
       type: "directory",
@@ -302,12 +346,51 @@ function mountShareUnit(unit) {
   return () => button.removeEventListener("click", share);
 }
 
+function mountComparison() {
+  const handleClick = (event) => {
+    const toggle = event.target.closest("[data-compare-unit]");
+    const clear = event.target.closest("[data-clear-comparison]");
+    if (!toggle && !clear) return;
+    let ids = comparisonUnits().map((unit) => unit.id);
+    if (clear) ids = [];
+    if (toggle) {
+      const id = toggle.dataset.compareUnit;
+      ids = ids.includes(id)
+        ? ids.filter((item) => item !== id)
+        : ids.length < 3
+          ? [...ids, id]
+          : ids;
+    }
+    localStorage.setItem(comparisonStorageKey, JSON.stringify(ids));
+    if (getRoute().type === "compare") {
+      render();
+      return;
+    }
+    document.querySelectorAll("[data-compare-unit]").forEach((button) => {
+      const selected = ids.includes(button.dataset.compareUnit);
+      button.setAttribute("aria-pressed", String(selected));
+      button.textContent = selected
+        ? "Remove from comparison"
+        : ids.length >= 3
+          ? "Comparison is full"
+          : "Add to comparison";
+      button.disabled = !selected && ids.length >= 3;
+    });
+    document.querySelector(".comparison-tray")?.remove();
+    document.body.insertAdjacentHTML("beforeend", comparisonTray());
+  };
+  document.addEventListener("click", handleClick);
+  return () => document.removeEventListener("click", handleClick);
+}
+
 function setPageMetadata(route) {
   const title =
     route.type === "album"
       ? `Unit ${unitAlbumName(route.unit)} | ${catalog.name}`
       : route.type === "directory"
         ? `Tower ${route.tower} · ${buildingName} | ${catalog.name}`
+        : route.type === "compare"
+          ? `Compare units | ${catalog.name}`
         : route.type === "about"
           ? `About ${buildingName} | ${catalog.name}`
           : route.type === "missing"
@@ -343,10 +426,11 @@ function render({ initial = false } = {}) {
   if (previousRoute?.type === "directory")
     directoryPositions.set(previousRoute.tower, window.scrollY);
   cleanup();
+  document.querySelector(".comparison-tray")?.remove();
   const route = getRoute();
   const returning =
     previousRoute?.type === "album" && route.type === "directory";
-  app.innerHTML =
+  const page =
     route.type === "home"
       ? home()
       : route.type === "about"
@@ -355,7 +439,12 @@ function render({ initial = false } = {}) {
         ? directory(route.tower, route.rentalType)
         : route.type === "album"
           ? album(route.unit, route.rentalType)
+          : route.type === "compare"
+            ? comparisonPage()
           : `${header("units")}<main id="main" class="page-shell empty-state" tabindex="-1"><p class="eyebrow">Our collection</p><h1>That album isn’t here.</h1><p>The unit may not have photos yet, or the link may be incorrect.</p><a class="button" href="#/units?tower=A">Back to the units ↗</a></main>${footer()}`;
+  app.innerHTML = page;
+  if (route.type !== "compare")
+    document.body.insertAdjacentHTML("beforeend", comparisonTray());
   setPageMetadata(route);
   const routeCleanup =
     route.type === "album"
@@ -367,6 +456,7 @@ function render({ initial = false } = {}) {
           : () => {};
   cleanup = combineCleanups(
     mountHeader(),
+    mountComparison(),
     routeCleanup,
     route.type === "album" ? mountShareUnit(route.unit) : () => {},
   );
