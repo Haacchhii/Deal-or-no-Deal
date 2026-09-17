@@ -144,6 +144,19 @@ test("combined albums separate common areas from bedroom and bedspace photos", (
   assert.equal((markup.match(/class="thumbnail"/g) || []).length, 3);
   assert.match(markup, /units\/1023B\/common-area\/kitchen-thumb.webp/);
 });
+test("real-photo albums expose every confirmed sleeping-area type to directory filters", () => {
+  for (const catalogUnit of catalog.units.filter((item) => !item.sample)) {
+    const groupedTypes = (catalogUnit.photoGroups || [])
+      .map((group) => group.label)
+      .filter((label) => ["Bedroom", "Bedspace"].includes(label));
+    const rentalTypes = unitRentalTypes(catalogUnit);
+    for (const groupedType of groupedTypes)
+      assert.ok(
+        rentalTypes.includes(groupedType),
+        `${catalogUnit.id} is missing its ${groupedType} directory label`,
+      );
+  }
+});
 const unit = {
   id: "2103B",
   photos: [{ file: "living-room", alt: "Living room", caption: "Living area" }],
