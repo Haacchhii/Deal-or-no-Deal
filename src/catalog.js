@@ -97,6 +97,14 @@ export function unitDetailLabel(unit) {
   return [rentalLabel, unit.spaceLabel].filter(Boolean).join(" · ");
 }
 
+export function unitRentalTypes(unit) {
+  return unit.rentalTypes || (unit.rentalType ? [unit.rentalType] : []);
+}
+
+export function unitHasRentalType(unit, rentalType) {
+  return !rentalType || unitRentalTypes(unit).includes(rentalType);
+}
+
 export function unitAlbumName(unit) {
   const detail = unitDetailLabel(unit);
   return detail

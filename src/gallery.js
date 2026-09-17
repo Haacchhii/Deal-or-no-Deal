@@ -9,6 +9,7 @@ import {
 
 export function galleryMarkup(unit) {
   const first = unit.photos[0];
+  const firstGroup = photoGroup(unit, 0);
   const controls = unit.photos.length > 1;
   const albumName = unitAlbumName(unit);
   const thumbnails = unit.photoGroups?.length
@@ -21,11 +22,21 @@ export function galleryMarkup(unit) {
       <p class="photo-error" hidden>We couldn’t load this photo. Try another image or reload the page.</p>
       <button class="photo-arrow previous" data-step="-1" aria-label="Previous photo" ${controls ? "" : "hidden"}>←</button>
       <button class="photo-arrow next" data-step="1" aria-label="Next photo" ${controls ? "" : "hidden"}>→</button>
-      <div class="photo-bottom"><span class="photo-counter">01 / ${String(unit.photos.length).padStart(2, "0")}</span><button class="expand-photo">View full screen <span aria-hidden="true">↗</span></button></div>
+      <div class="photo-bottom"><span class="photo-position"><b class="photo-group-label">${esc(firstGroup.label)}</b><span class="photo-counter">${String(firstGroup.position).padStart(2, "0")} / ${String(firstGroup.count).padStart(2, "0")}</span></span><button class="expand-photo">View full screen <span aria-hidden="true">↗</span></button></div>
     </div>
     <p class="current-caption" aria-live="polite">${esc(first.caption)}</p>
     ${thumbnails}
   </section>${lightboxMarkup(unit, controls)}`;
+}
+
+function photoGroup(unit, index) {
+  const group = unit.photoGroups?.find(
+    (candidate) =>
+      index >= candidate.start && index < candidate.start + candidate.count,
+  );
+  return group
+    ? { label: group.label, position: index - group.start + 1, count: group.count }
+    : { label: "Photo", position: index + 1, count: unit.photos.length };
 }
 
 function thumbnail(unit, photo, index) {
@@ -84,21 +95,24 @@ export function mountGallery(unit) {
   }
   function syncViewer() {
     const photo = unit.photos[index];
+    const group = photoGroup(unit, index);
     viewerImage.src = photoPath(unit, photo);
     viewerImage.alt = photo.alt;
     dialog.querySelector(".viewer-caption").textContent =
-      `${photo.caption} · ${index + 1} / ${unit.photos.length}`;
+      `${group.label} · ${group.position} / ${group.count} · ${photo.caption}`;
     dialog.querySelector(".viewer-error").hidden = true;
   }
   function show(next) {
     index = wrapIndex(next, unit.photos.length);
     const photo = unit.photos[index];
+    const group = photoGroup(unit, index);
     if (mainImage) {
       mainImage.src = photoPath(unit, photo);
       mainImage.alt = photo.alt;
       gallery.querySelector(".photo-error").hidden = true;
       caption.textContent = photo.caption;
-      counter.textContent = `${String(index + 1).padStart(2, "0")} / ${String(unit.photos.length).padStart(2, "0")}`;
+      gallery.querySelector(".photo-group-label").textContent = group.label;
+      counter.textContent = `${String(group.position).padStart(2, "0")} / ${String(group.count).padStart(2, "0")}`;
       buttons.forEach((button, i) =>
         button.setAttribute("aria-pressed", String(index === i)),
       );

@@ -2,6 +2,10 @@ import assert from 'node:assert/strict';
 import { access, readFile } from 'node:fs/promises';
 import path from 'node:path';
 
+const catalog = JSON.parse(
+  await readFile(new URL('../src/catalog.json', import.meta.url), 'utf8'),
+);
+
 // Test the actual artifact, not the development-server entry point.
 const output = path.resolve(process.argv[2] || 'dist');
 const html = await readFile(path.join(output, 'index.html'), 'utf8');
@@ -16,4 +20,13 @@ for (const asset of [...scripts, ...styles]) {
   assert.ok(url.pathname.startsWith(origin.pathname), `Asset escapes the GitHub Pages repository path: ${asset}`);
   await access(path.join(output, url.pathname.slice(origin.pathname.length)));
 }
-console.log('Deployment verified: built HTML, JavaScript and CSS resolve under /Unit-Page/.');
+for (const unit of catalog.units) {
+  const sharePage = await readFile(
+    path.join(output, 'units', unit.id, 'index.html'),
+    'utf8',
+  );
+  assert.match(sharePage, new RegExp(`<meta property="og:title" content="Unit `));
+  assert.ok(sharePage.includes(`/Unit-Page/units/${unit.id}/`));
+  assert.ok(sharePage.includes(`../../#/units/${unit.id}`));
+}
+console.log(`Deployment verified: bundles resolve under /Unit-Page/ and ${catalog.units.length} unit share pages include social metadata.`);

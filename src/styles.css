@@ -104,6 +104,8 @@ main:focus {
   transform: none;
 }
 .site-header {
+  position: relative;
+  z-index: 20;
   min-height: 96px;
   padding: 1.25rem 5%;
   display: flex;
@@ -111,6 +113,9 @@ main:focus {
   justify-content: space-between;
   gap: 2rem;
   border-bottom: 1px solid var(--line);
+}
+.nav-toggle {
+  display: none;
 }
 .brand {
   display: inline-flex;
@@ -494,6 +499,36 @@ main:focus {
 .tower-tabs a[aria-current] > span {
   opacity: 1;
 }
+.rental-filters {
+  display: flex;
+  gap: 0.65rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+}
+.rental-filters a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--line);
+  color: var(--forest);
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.rental-filters a:hover,
+.rental-filters a[aria-current] {
+  background: var(--forest);
+  border-color: var(--forest);
+  color: var(--paper);
+}
+.rental-filters small {
+  min-width: 1.5rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  opacity: 0.72;
+}
 .floor-index {
   display: flex;
   align-items: center;
@@ -685,6 +720,20 @@ main:focus {
 .unit-title h3 {
   font-size: 1.6rem;
 }
+.unit-title > div > p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+.unit-title > div > p span {
+  padding: 0.18rem 0.45rem;
+  border: 1px solid var(--line);
+  color: var(--forest);
+  font-size: 0.625rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
 .unit-title > span {
   font-size: 0.75rem;
   color: var(--muted);
@@ -708,6 +757,23 @@ main:focus {
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
+}
+.album-heading-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.share-unit {
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--forest);
+  font-size: 0.8125rem;
+  font-weight: 650;
+}
+.share-unit:hover {
+  border-color: var(--forest);
 }
 .album-identity {
   display: flex;
@@ -1712,6 +1778,18 @@ main:focus {
 }
 .photo-counter {
   font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+.photo-position {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+}
+.photo-group-label {
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .expand-photo {
   color: white;
@@ -2055,26 +2133,61 @@ main:focus {
 }
 @media (max-width: 700px) {
   .site-header {
-    min-height: 80px;
-    padding: 1rem 5%;
+    min-height: 68px;
+    padding: 0.7rem 5%;
     gap: 1rem;
+    background: var(--paper);
   }
   .brand {
     gap: 0.6rem;
   }
   .brand img {
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
   }
   .brand > span {
-    font-size: 0.78rem;
+    max-width: 154px;
+    font-size: 0.7rem;
     letter-spacing: 0.06em;
+    line-height: 1.2;
+    white-space: normal;
+  }
+  .nav-toggle {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 0;
+    background: transparent;
+    color: var(--forest);
+    font-size: 0.75rem;
+    font-weight: 650;
   }
   .site-header nav {
-    gap: 0.85rem;
-    font-size: 0.75rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 5% 1rem;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+    font-size: 0.875rem;
+    box-shadow: 0 16px 30px rgba(16, 43, 37, 0.1);
   }
-  .site-header nav > a:first-child {
+  .nav-open .site-header nav {
+    display: flex;
+  }
+  .site-header nav > a:not(.button) {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header nav > a:not(.button):after {
     display: none;
   }
   .hero {
@@ -2315,6 +2428,10 @@ main:focus {
     align-items: flex-start;
     flex-wrap: wrap;
     gap: 1rem;
+  }
+  .album-heading-actions {
+    width: 100%;
+    justify-content: space-between;
   }
   .album-identity {
     align-items: flex-start;

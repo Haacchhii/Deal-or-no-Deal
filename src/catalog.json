@@ -1044,35 +1044,33 @@
         },
         {
           "file": "658205788-825339360646838-2363058331142207191-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 1",
-          "alt": "Bedroom view 1 inside unit 1505B",
-          "classificationReview": true
+          "folder": "common-area",
+          "caption": "Living area 1",
+          "alt": "Living area with sofa inside unit 1505B"
+        },
+        {
+          "file": "683769916-974743588810865-1547931724909784430-n",
+          "folder": "common-area",
+          "caption": "Living area 2",
+          "alt": "Living area with sofa, table and window inside unit 1505B"
         },
         {
           "file": "680485533-1525676832258648-1967197297198970819-n",
           "folder": "bedroom",
-          "caption": "Bedroom 3",
-          "alt": "Bedroom view 3 inside unit 1505B"
+          "caption": "Bedroom 1",
+          "alt": "Bedroom view 1 inside unit 1505B"
         },
         {
           "file": "682709871-1763104401056830-8475806591727822505-n",
           "folder": "bedroom",
-          "caption": "Bedroom 4",
-          "alt": "Bedroom view 4 inside unit 1505B"
-        },
-        {
-          "file": "683769916-974743588810865-1547931724909784430-n",
-          "folder": "bedroom",
-          "caption": "Bedroom 5",
-          "alt": "Bedroom view 5 inside unit 1505B",
-          "classificationReview": true
+          "caption": "Bedroom 2",
+          "alt": "Bedroom view 2 inside unit 1505B"
         },
         {
           "file": "688917313-994043083084392-1691367160712320561-n",
           "folder": "bedroom",
-          "caption": "Bedroom 6",
-          "alt": "Bedroom view 6 inside unit 1505B"
+          "caption": "Bedroom 3",
+          "alt": "Bedroom view 3 inside unit 1505B"
         },
         {
           "file": "802595322-1435533855112318-3423843851907351787-n",
@@ -1091,12 +1089,12 @@
         {
           "label": "Common area",
           "start": 0,
-          "count": 3
+          "count": 5
         },
         {
           "label": "Bedroom",
-          "start": 3,
-          "count": 7
+          "start": 5,
+          "count": 5
         }
       ]
     },
@@ -2542,12 +2540,16 @@
     {
       "id": "2132B",
       "sample": false,
+      "rentalTypes": [
+        "Bedspace",
+        "Bedroom"
+      ],
       "photos": [
         {
           "file": "634141784-889970020316646-1065071846973517631-n",
-          "caption": "Interior 1",
-          "alt": "Interior view 1 inside unit 2132B",
-          "folder": "common-area"
+          "caption": "Bedspace 1",
+          "alt": "Bedspace with bunk beds inside unit 2132B",
+          "folder": "bedspace"
         },
         {
           "file": "636689801-2072676009973227-4666832307305952612-n",
@@ -2588,9 +2590,14 @@
       ],
       "photoGroups": [
         {
-          "label": "Common area",
+          "label": "Bedspace",
           "start": 0,
-          "count": 5
+          "count": 1
+        },
+        {
+          "label": "Common area",
+          "start": 1,
+          "count": 4
         },
         {
           "label": "Bedroom",

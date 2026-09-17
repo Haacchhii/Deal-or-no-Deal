@@ -11,6 +11,8 @@ import {
   unitAlbumName,
   unitDetailLabel,
   unitDisplayName,
+  unitHasRentalType,
+  unitRentalTypes,
   wrapIndex,
   escapeHtml,
   findUnitsByExactLabel,
@@ -102,6 +104,11 @@ test("rental type labels remain distinct from existing unit details", () => {
   };
   assert.equal(unitDetailLabel(combined), "Bedroom & Bedspace");
   assert.equal(unitAlbumName(combined), "1023B · Bedroom & Bedspace");
+  assert.deepEqual(unitRentalTypes(combined), ["Bedroom", "Bedspace"]);
+  assert.equal(unitHasRentalType(combined, "Bedroom"), true);
+  assert.equal(unitHasRentalType(combined, "Bedspace"), true);
+  assert.equal(unitHasRentalType(bedspace, "Bedroom"), false);
+  assert.equal(unitHasRentalType(bedspace, null), true);
   assert.doesNotThrow(() =>
     validateCatalog({ name: "Example", units: [combined] }),
   );
@@ -132,7 +139,8 @@ test("combined albums separate common areas from bedroom and bedspace photos", (
   assert.match(markup, />Common area<\/h3>/);
   assert.match(markup, />Bedroom<\/h3>/);
   assert.match(markup, />Bedspace<\/h3>/);
-  assert.match(markup, /01 \/ 03/);
+  assert.match(markup, /class="photo-group-label">Common area/);
+  assert.match(markup, /class="photo-counter">01 \/ 01/);
   assert.equal((markup.match(/class="thumbnail"/g) || []).length, 3);
   assert.match(markup, /units\/1023B\/common-area\/kitchen-thumb.webp/);
 });
@@ -343,5 +351,8 @@ test("app code does not shadow browser location used by hash routing", () => {
   assert.match(mainSource, /class="unit-search"/);
   assert.match(mainSource, /class="about-index"/);
   assert.match(mainSource, /class="album-sequence"/);
+  assert.match(mainSource, /class="rental-filters"/);
+  assert.match(mainSource, /class="nav-toggle"/);
+  assert.match(mainSource, /class="share-unit"/);
   assert.match(mainSource, /floor=\$\{details\.floor\}/);
 });
