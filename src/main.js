@@ -10,6 +10,7 @@ import {
   parseUnit,
   ordinal,
   photoPath,
+  sleepingAreaPhoto,
   unitAlbumName,
   unitDetailLabel,
   unitDisplayName,
@@ -188,7 +189,7 @@ function comparisonPage() {
   const cards = units
     .map((unit) => {
       const details = parseUnit(unit.unitNumber || unit.id);
-      const cover = directoryCoverPhoto(unit);
+      const cover = sleepingAreaPhoto(unit);
       const types = unitRentalTypes(unit);
       return `<article class="comparison-unit"><a class="comparison-photo" href="#/units/${esc(unit.id)}"><img src="${photoPath(unit, cover)}" alt="${esc(cover.alt)}" width="1800" height="1200"><span>Open album <b aria-hidden="true">↗</b></span></a><div class="comparison-unit-heading"><h2>${esc(unitDisplayName(unit))}</h2>${comparisonButton(unit, true)}</div><dl><div><dt>Tower</dt><dd>${details.tower}</dd></div><div><dt>Floor</dt><dd>${ordinal(details.floor)}</dd></div><div><dt>Rental type</dt><dd>${types.length ? types.map(esc).join(" & ") : "Not yet labelled"}</dd></div><div><dt>Album</dt><dd>${unit.photos.length} ${unit.photos.length === 1 ? "photo" : "photos"}</dd></div></dl>${unit.sample ? `<p class="comparison-note">${isPlaceholderAlbum(unit) ? "Placeholder photos" : "Sample interiors"}</p>` : ""}</article>`;
     })

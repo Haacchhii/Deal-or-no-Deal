@@ -116,6 +116,18 @@ export function directoryCoverPhoto(unit) {
   return unit.photos[0];
 }
 
+export function sleepingAreaPhoto(unit) {
+  const group = unit.photoGroups?.find((item) =>
+    ["Bedroom", "Bedspace"].includes(item.label),
+  );
+  if (group && unit.photos[group.start]) return unit.photos[group.start];
+  return (
+    unit.photos.find((photo) =>
+      ["bedroom", "bedspace"].includes(photo.folder),
+    ) || directoryCoverPhoto(unit)
+  );
+}
+
 export function findUnitsByExactLabel(units, input) {
   const query = String(input).trim().toLowerCase();
   return units.filter((unit) =>

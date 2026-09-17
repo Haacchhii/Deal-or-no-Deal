@@ -8,6 +8,7 @@ import {
   validateCatalog,
   photoPath,
   directoryCoverPhoto,
+  sleepingAreaPhoto,
   unitAlbumName,
   unitDetailLabel,
   unitDisplayName,
@@ -258,6 +259,33 @@ test("directory cards use the first unit photo at every album size", () => {
     directoryCoverPhoto({ ...sixPhotoUnit, photos: sixPhotoUnit.photos.slice(0, 4) }).file,
     "building",
   );
+});
+test("comparison cards prioritize a confirmed bedroom or bedspace photo", () => {
+  const groupedUnit = {
+    id: "2116B",
+    photos: [
+      { file: "living", folder: "common-area" },
+      { file: "bunk", folder: "bedspace" },
+      { file: "room", folder: "bedroom" },
+    ],
+    photoGroups: [
+      { label: "Common area", start: 0, count: 1 },
+      { label: "Bedspace", start: 1, count: 1 },
+      { label: "Bedroom", start: 2, count: 1 },
+    ],
+  };
+  assert.equal(sleepingAreaPhoto(groupedUnit).file, "bunk");
+  assert.equal(
+    sleepingAreaPhoto({
+      id: "1505B",
+      photos: [
+        { file: "living", folder: "common-area" },
+        { file: "room", folder: "bedroom" },
+      ],
+    }).file,
+    "room",
+  );
+  assert.equal(sleepingAreaPhoto(unit).file, "living-room");
 });
 test("exact unit lookup preserves route ids and surfaces ambiguous display numbers", () => {
   const units = [
