@@ -50,7 +50,7 @@ function header(active) {
 function footer() {
   const phone = catalog.contact?.phone?.trim();
   const facebookUrl = catalog.contact?.facebookUrl?.trim();
-  return `<footer class="site-footer"><div class="footer-brand"><span>${esc(catalog.name)}</span><p>${esc(buildingName)} · ${catalog.preview ? "Placeholder albums are labeled" : "A closer look at your next home."}</p></div>${phone && facebookUrl ? `<div class="footer-contact"><span>Contact</span><a href="tel:${esc(phone.replace(/[^+\d]/g, ""))}">${esc(phone)}</a><a href="${esc(facebookUrl)}" target="_blank" rel="noopener noreferrer">Message on Facebook <span aria-hidden="true">↗</span></a></div>` : ""}<a class="footer-units" href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a></footer>`;
+  return `<footer class="site-footer"><div class="footer-brand"><span>${esc(catalog.name)}</span><p>${esc(buildingName)} · ${catalog.preview ? "Placeholder albums are labeled" : "A closer look at your next home."}</p></div>${phone && facebookUrl ? `<div class="footer-contact"><div><span>Questions about a unit?</span><strong>Contact JPP Rental Homestay</strong></div><a class="footer-phone" href="tel:${esc(phone.replace(/[^+\d]/g, ""))}"><small>Call or text</small><b>${esc(phone)}</b></a><a class="footer-facebook" href="${esc(facebookUrl)}" target="_blank" rel="noopener noreferrer">Ask on Facebook <span aria-hidden="true">↗</span></a></div>` : ""}<a class="footer-units" href="#/units?tower=A">Explore the units <span aria-hidden="true">↗</span></a></footer>`;
 }
 
 function comparisonUnits() {
