@@ -415,3 +415,11 @@ test("game supports custom case counts, prize values, and banker offers", () => 
   assert.match(mainSource, /Deal or No Deal/);
   assert.doesNotMatch(mainSource, /RIDDLES|Bugtong|HINT|HALF|SWAP/);
 });
+test("game hub includes Deal or No Deal and a timed Pinoy Henyo flow", () => {
+  const mainSource = readFileSync(new URL("../src/main.js", import.meta.url), "utf8");
+  assert.match(mainSource, /data-game="deal"/);
+  assert.match(mainSource, /data-game="henyo"/);
+  assert.match(mainSource, /function submitHenyo/);
+  assert.match(mainSource, /function revealWord/);
+  assert.match(mainSource, /OO<\/span><span>HINDI<\/span><span>PWEDE/);
+});
