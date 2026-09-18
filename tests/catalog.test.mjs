@@ -430,3 +430,8 @@ test("Deal or No Deal includes a balanced minimum and maximum value generator", 
   assert.match(mainSource, /id="max-value"/);
   assert.match(mainSource, /Generate fair values/);
 });
+test("the game can load when index.html is opened directly", () => {
+  const indexSource = readFileSync(new URL("../index.html", import.meta.url), "utf8");
+  assert.match(indexSource, /<script defer src="\.\/src\/main\.js"><\/script>/);
+  assert.doesNotMatch(indexSource, /type="module"/);
+});
