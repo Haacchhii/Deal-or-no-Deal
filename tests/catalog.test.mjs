@@ -405,15 +405,13 @@ test("catalog text cannot inject markup", () =>
     escapeHtml('<img onerror="x">'),
     "&lt;img onerror=&quot;x&quot;&gt;",
   ));
-test("app code does not shadow browser location used by hash routing", () => {
+test("game supports custom case counts, prize values, and banker offers", () => {
   const mainSource = readFileSync(new URL("../src/main.js", import.meta.url), "utf8");
-  assert.doesNotMatch(mainSource, /\bconst\s+location\s*=/);
-  assert.match(mainSource, /class="floor-index"/);
-  assert.match(mainSource, /class="unit-search"/);
-  assert.match(mainSource, /class="about-index"/);
-  assert.match(mainSource, /class="album-sequence"/);
-  assert.match(mainSource, /class="rental-filters"/);
-  assert.match(mainSource, /class="nav-toggle"/);
-  assert.match(mainSource, /class="share-unit"/);
-  assert.match(mainSource, /floor=\$\{details\.floor\}/);
+  assert.match(mainSource, /name="caseCount"/);
+  assert.match(mainSource, /name="values"/);
+  assert.match(mainSource, /function target/);
+  assert.match(mainSource, /function bankerOffer/);
+  assert.match(mainSource, /Banker’s offer/);
+  assert.match(mainSource, /Deal or No Deal/);
+  assert.doesNotMatch(mainSource, /RIDDLES|Bugtong|HINT|HALF|SWAP/);
 });
