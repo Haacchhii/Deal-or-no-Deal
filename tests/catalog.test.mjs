@@ -423,3 +423,10 @@ test("game hub includes Deal or No Deal and a timed Pinoy Henyo flow", () => {
   assert.match(mainSource, /function revealWord/);
   assert.match(mainSource, /OO<\/span><span>HINDI<\/span><span>PWEDE/);
 });
+test("Deal or No Deal includes a balanced minimum and maximum value generator", () => {
+  const mainSource = readFileSync(new URL("../src/main.js", import.meta.url), "utf8");
+  assert.match(mainSource, /function fairValues/);
+  assert.match(mainSource, /id="min-value"/);
+  assert.match(mainSource, /id="max-value"/);
+  assert.match(mainSource, /Generate fair values/);
+});
