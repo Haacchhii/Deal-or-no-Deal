@@ -1,7 +1,3 @@
-import "@fontsource-variable/newsreader";
-import "@fontsource-variable/source-sans-3";
-import "./styles.css";
-
 const MONEY=[1,5,10,25,50,75,100,200,300,400,500,750,1000,2500,5000,7500,10000,20000,30000,40000,50000,75000,100000,250000,500000,1000000];
 const HENYO_WORDS=["Adobo","Jeepney","Karaoke","Tsinelas","Halo-halo","Manny Pacquiao","Jollibee","Payong","Sinigang","Basketball","Palengke","Tricycle"];
 const app=document.querySelector("#app");
