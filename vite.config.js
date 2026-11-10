@@ -8,7 +8,9 @@ export default defineConfig({
       name: "copy-classic-game-script",
       closeBundle() {
         mkdirSync("dist/src", { recursive: true });
-        copyFileSync("src/main.js", "dist/src/main.js");
+        for (const file of ["main.js", "feud-game.js", "feud.js"]) {
+          copyFileSync(`src/${file}`, `dist/src/${file}`);
+        }
       },
     },
   ],
